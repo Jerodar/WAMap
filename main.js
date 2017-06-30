@@ -20,7 +20,7 @@ var MapMaker = (function () {
     // Async load the settings file
     $.ajax({
       dataType: "json",
-      url: "/data/settings.json",
+      url: "data/settings.json",
       cache: false,
       success: onSettingsLoaded,
       error: function (jqXHR, textStatus, errorThrown) {
