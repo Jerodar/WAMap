@@ -1,0 +1,55 @@
+﻿{
+  "parcelSize": 255,
+  "duplicateRange": 30,
+  "shadingFactor": 0.6,
+  "minX": -18000,
+  "maxX": 18000,
+  "minY": -18000,
+  "maxY": 18000,
+  "lowThreshold": -200,
+  "highThreshold": 200,
+  "islandOptions": {
+    "fill": true,
+    "fillColor": "#ffffff",
+    "fillOpacity": 1,
+    "stroke": true,
+    "width": 0.5,
+    "color": "#aaaaaa",
+    "opacity": 1,
+    "radius": 8
+  },
+  "wallOptions": {
+    "fill": false,
+    "stroke": true,
+    "width": 2,
+    "color": "#000000",
+    "opacity": 1,
+	"interactive": false
+  },
+  "sectorOptions": {
+    "fill": true,
+    "stroke": false,
+    "fillcolor": "#ffffff",
+    "fillopacity": 0.2,
+	"interactive": false
+  },
+  "sectorLabelOptions": {
+    "interactive": false, 
+	"zIndexOffset": -1000,
+	"pane": "overlayPane"
+  },
+  "colors": {
+    "islands": {
+      "1": [ 147, 196, 125],
+      "2": [ 109, 158, 235],
+      "3": [ 142, 124, 195],
+      "4": [ 246, 178, 107]
+    },
+    "walls": {
+      "1": [ 0, 0, 0],
+      "2": [ 153, 153, 153],
+      "3": [ 0, 0, 255],
+      "4": [ 241, 194, 50]
+    }
+  }
+}
