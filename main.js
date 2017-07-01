@@ -41,6 +41,8 @@ var MapMaker = (function () {
     map.setMaxBounds(maxBounds);
     
     map.on("zoomend", onZoomEnd);
+	
+	L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
 
     poiLayers.sectorLayer = new L.LayerGroup();
     poiLayers.sectorLayer.addTo(map);
@@ -172,9 +174,12 @@ var MapMaker = (function () {
         // island.Screenshot = data[i][5];
         // Mapping to 2d plane, so X = X, Y = Height (used for coloring), Z = Y
         island.X = Number(data[i][6]);
-        island.Height = Number(data[i][7]);
+        island.Height = Number(data[i][7]) + settings.ZtoAltitude;
         island.Y = Number(data[i][8]);
         island.Databanks = Number(data[i][9]);
+		island.Respawner = data[i][10];
+		island.Trees = data[i][11];
+		island.Surveyor = data[i][12];
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
@@ -206,10 +211,16 @@ var MapMaker = (function () {
         // Create the popup that will appear when clicked
         // adding m to an imgur link creates a medium thumbnail 320 width
         var thumbnail = island.Screenshot.replace(".jpg","m.jpg");
+		var respawnString = "";
+		if (island.Respawner == "Yes") {
+			respawnString = "Has respawners.<br>";
+		}
         var popup = "<b>" + island.Name + "</b><br>" + 
                     "By: " + island.Author + "<br>" +
-                    "Databanks: " + island.Databanks + "<br>" +
-                    "<a href=\"" + island.Screenshot + "\"  target=\"_blank\"><img src=\"" + thumbnail + "\"></a>"
+                    "Databanks: " + island.Databanks + ", Sector: " + island.Sector + ", Altitude: " + island.Height + "<br>" +
+					respawnString +
+                    "<a href=\"" + island.Screenshot + "\"  target=\"_blank\"><img src=\"" + thumbnail + "\"></a><br>" +
+					"Surveyed by: " + island.Surveyor
         marker.bindPopup(popup, {minWidth: "320"});
         zoomedMarker.bindPopup(popup, {minWidth: "320"});
       }

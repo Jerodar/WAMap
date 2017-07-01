@@ -6,8 +6,9 @@
   "maxX": 18000,
   "minY": -18000,
   "maxY": 18000,
-  "lowThreshold": -200,
-  "highThreshold": 200,
+  "ZtoAltitude" : 2000,
+  "lowThreshold": 1800,
+  "highThreshold": 2200,
   "islandOptions": {
     "fill": true,
     "fillColor": "#ffffff",
