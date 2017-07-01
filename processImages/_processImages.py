@@ -42,5 +42,3 @@ for infile in filenames:
     except IOError:
         print("cannot create square image for", infile)
     i = i + 1
-
-raw_input("Done!")

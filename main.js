@@ -39,7 +39,6 @@ var MapMaker = (function () {
     var maxBounds = [[settings.minY - 25000, settings.minX - 25000], 
                     [settings.maxY + 25000, settings.maxX + 25000]];
     map.setMaxBounds(maxBounds);
-    //L.imageOverlay("img/DocMap.png", bounds).addTo(map);
     
     map.on("zoomend", onZoomEnd);
 
