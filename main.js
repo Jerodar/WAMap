@@ -17,11 +17,26 @@ var MapMaker = (function () {
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
     map.getRenderer(map).options.padding = 100;
+    
+    // Check if there is a cookie to read
+    var allcookies = document.cookie;
+     
+     // Get all the cookies pairs in an array
+     var cookiearray = allcookies.split(';');
+     
+     // Now take key value pair out of this array
+     for(var i=0; i<cookiearray.length; i++){
+        var name = cookiearray[i].split('=')[0];
+        if (name == "server") {
+          var value = cookiearray[i].split('=')[1];
+          selectedServer = Number(value)
+        }
+     }
 
     // Async load the settings file
     $.ajax({
-      dataType: "json",
-      url: "data/settings.json",
+      dataType: 'json',
+      url: 'data/settings.json',
       cache: false,
       success: onSettingsLoaded,
       error: function (jqXHR, textStatus, errorThrown) {
@@ -40,11 +55,12 @@ var MapMaker = (function () {
     var maxBounds = [[settings.minY - settings.maxBounds, settings.minX - settings.maxBounds], 
                     [settings.maxY + settings.maxBounds, settings.maxX + settings.maxBounds]];
     map.setMaxBounds(maxBounds);
-    map.on("zoomend", onZoomEnd);
+    map.on('zoomend', onZoomEnd);
     
     L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
     var select = L.control.select({entries: settings.servers}).addTo(map);
     select.on('change', onSelectChange);
+    $(".leaflet-select").prop( "selectedIndex", selectedServer - 1 );
     
     poiLayers.sectorLayer = new L.LayerGroup();
     poiLayers.sectorLayer.addTo(map);
@@ -55,13 +71,13 @@ var MapMaker = (function () {
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
     // Zoomed layer is hidden at first
     
-    L.control.mousePosition({separator: ",", lngFirst: true}).addTo(map);
+    L.control.mousePosition({separator: ',', lngFirst: true}).addTo(map);
     
     // Load the sector data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/" + selectedServer + "/sector_data.csv",
-      type: "GET",
+      url: 'data/' + selectedServer + '/sector_data.csv',
+      type: 'GET',
       cache: false,
       success: function (text) {
         var data = $.csv.toArrays(text)
@@ -76,7 +92,7 @@ var MapMaker = (function () {
   function onSectorDataLoaded(data) {
     // Render all walls
     for (var i = 1; i < data.length; i++) {
-      if (data[i][0] !== "") {
+      if (data[i][0] !== '') {
         var sector = {}
         // Sector, Region, Tier, X1, Z1, X2, Z2, X3, Z3, X4, Z4, X5, Z5
         sector.Sector = data[i][0];
@@ -84,7 +100,7 @@ var MapMaker = (function () {
         sector.Tier = Number(data[i][2]);
         sector.Pos = [];
         for (var j = 3; j < 17; j=j+2) {
-            if(data[i][j] !== "") {
+            if(data[i][j] !== '') {
                 sector.Pos.push([Number(data[i][j+1]),Number(data[i][j])]);
             }
         }
@@ -97,7 +113,7 @@ var MapMaker = (function () {
         // Create and add the marker to the island layer
         var marker = new L.polyline(sector.Pos, options)
             .addTo(poiLayers.sectorLayer);
-        var labelIcon = new L.divIcon({html: sector.Sector, className: "sector-label sector-label-"+sector.Tier});
+        var labelIcon = new L.divIcon({html: sector.Sector, className: 'sector-label sector-label-'+sector.Tier});
         var labelPos = marker.getBounds().getCenter();
         options = settings.sectorLabelOptions;
         options.icon = labelIcon;
@@ -111,8 +127,8 @@ var MapMaker = (function () {
     // Load the wall data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/" + selectedServer + "/wall_data.csv",
-      type: "GET",
+      url: 'data/' + selectedServer + '/wall_data.csv',
+      type: 'GET',
       cache: false,
       success: function (text) {
         var data = $.csv.toArrays(text)
@@ -127,7 +143,7 @@ var MapMaker = (function () {
   function onWallDataLoaded(data) {
     // Render all walls
     for (var i = 1; i < data.length; i++) {
-      if (data[i][0] !== "") {
+      if (data[i][0] !== '') {
         var wall = {}
         // Tier,X1,Z1,X2,Z2,Sector
         wall.Tier = Number(data[i][0]);
@@ -150,8 +166,8 @@ var MapMaker = (function () {
     // Load the POI data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/" + selectedServer + "/island_data.csv",
-      type: "GET",
+      url: 'data/' + selectedServer + '/island_data.csv',
+      type: 'GET',
       cache: false,
       success: function (text) {
         var data = $.csv.toArrays(text)
@@ -166,7 +182,7 @@ var MapMaker = (function () {
   function onIslandDataLoaded(data) {
     // Render all islands
     for (var i = 1; i < data.length; i++) {
-      if (data[i][0] !== "") {
+      if (data[i][0] !== '') {
         var island = {}
         island.Id = data[i][0];
         island.Name = data[i][1];
@@ -200,11 +216,11 @@ var MapMaker = (function () {
         var marker = new L.circleMarker([island.Y, island.X], options)
           .addTo(poiLayers.islandLayer);
         
-        island.Screenshot = "img/" + island.Id + ".jpg"
+        island.Screenshot = 'img/' + island.Id + '.jpg'
         
         // Create and add the marker to the zoomed island layer
         var myIcon = L.icon({
-          iconUrl: island.Screenshot.replace(".jpg","s.jpg"),
+          iconUrl: island.Screenshot.replace('.jpg','s.jpg'),
           iconSize: [90,90]
         });
         var zoomedMarker = L.marker([island.Y, island.X], {icon: myIcon})
@@ -212,21 +228,21 @@ var MapMaker = (function () {
         
         // Create the popup that will appear when clicked
         // adding m to an imgur link creates a medium thumbnail 320 width
-        var thumbnail = island.Screenshot.replace(".jpg","m.jpg");
-        var respawnString = "";
-        if (island.Respawner == "Yes") {
-          respawnString = "Has respawners.<br>";
+        var thumbnail = island.Screenshot.replace('.jpg','m.jpg');
+        var respawnString = '';
+        if (island.Respawner == 'Yes') {
+          respawnString = 'Has respawners.<br>';
         }
-        var popup = "<b>" + island.Name + "</b><br>" + 
-          "By: " + island.Author + "<br>" +
-          "Databanks: " + island.Databanks + ", Sector: " + island.Sector + 
-          ", Altitude: " + island.Height + "<br>" +
+        var popup = '<b>' + island.Name + '</b><br>' + 
+          'By: ' + island.Author + '<br>' +
+          'Databanks: ' + island.Databanks + ', Sector: ' + island.Sector + 
+          ', Altitude: ' + island.Height + '<br>' +
           respawnString +
-          "<a href=\"" + island.Screenshot + "\"  target=\"_blank\"><img src=\"" + 
-          thumbnail + "\"></a><br>" +
-          "Surveyed by: " + island.Surveyor
-        marker.bindPopup(popup, {minWidth: "320"});
-        zoomedMarker.bindPopup(popup, {minWidth: "320"});
+          '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' + 
+          thumbnail + '\'></a><br>' +
+          'Surveyed by: ' + island.Surveyor
+        marker.bindPopup(popup, {minWidth: '320'});
+        zoomedMarker.bindPopup(popup, {minWidth: '320'});
       }
     }
   }
@@ -247,7 +263,7 @@ var MapMaker = (function () {
   }
   
   function onSelectChange(e) {
-    console.log("Selected option: " + e.feature);
+    console.log('Selected option: ' + e.feature);
     if(selectedServer != e.feature) {
       poiLayers.sectorLayer.clearLayers();
       poiLayers.wallLayer.clearLayers();
@@ -256,11 +272,16 @@ var MapMaker = (function () {
       
       selectedServer = e.feature;
       
+      // Write a cooky to store preference
+      var d = new Date();
+      d.setTime(d.getTime() + (360 * 24 * 60 * 60 * 1000));
+      document.cookie='server=' + selectedServer + ';expires=' + d.toUTCString() + ';';
+      
       // Load the sector data
       // Async Load and read the csv file
       $.ajax({
-        url: "data/" + selectedServer + "/sector_data.csv",
-        type: "GET",
+        url: 'data/' + selectedServer + '/sector_data.csv',
+        type: 'GET',
         cache: false,
         success: function (text) {
           var data = $.csv.toArrays(text)
@@ -278,7 +299,7 @@ var MapMaker = (function () {
     rgbarray[0] = Math.floor(rgbarray[0]);
     rgbarray[1] = Math.floor(rgbarray[1]);
     rgbarray[2] = Math.floor(rgbarray[2]);
-    var rgbstring = "#" + ((1 << 24) + (rgbarray[0] << 16) + (rgbarray[1] << 8)
+    var rgbstring = '#' + ((1 << 24) + (rgbarray[0] << 16) + (rgbarray[1] << 8)
       + rgbarray[2]).toString(16).slice(1);
     return rgbstring;
   }
