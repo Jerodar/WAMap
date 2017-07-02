@@ -5,6 +5,7 @@ var MapMaker = (function () {
   var map = {};
   var poiLayers = {};
   var wasZoomedIn = false;
+  var selectedServer = 1;
 
   function init() {
     // Create the map container
@@ -36,14 +37,15 @@ var MapMaker = (function () {
 
     var bounds = [[settings.minY, settings.minX], [settings.maxY, settings.maxX]];
     map.fitBounds(bounds);
-    var maxBounds = [[settings.minY - 25000, settings.minX - 25000], 
-                    [settings.maxY + 25000, settings.maxX + 25000]];
+    var maxBounds = [[settings.minY - settings.maxBounds, settings.minX - settings.maxBounds], 
+                    [settings.maxY + settings.maxBounds, settings.maxX + settings.maxBounds]];
     map.setMaxBounds(maxBounds);
-    
     map.on("zoomend", onZoomEnd);
-	
-	L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
-
+    
+    L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
+    var select = L.control.select({entries: settings.servers}).addTo(map);
+    select.on('change', onSelectChange);
+    
     poiLayers.sectorLayer = new L.LayerGroup();
     poiLayers.sectorLayer.addTo(map);
     poiLayers.wallLayer = new L.LayerGroup();
@@ -54,11 +56,11 @@ var MapMaker = (function () {
     // Zoomed layer is hidden at first
     
     L.control.mousePosition({separator: ",", lngFirst: true}).addTo(map);
-
+    
     // Load the sector data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/sector_data.csv",
+      url: "data/" + selectedServer + "/sector_data.csv",
       type: "GET",
       cache: false,
       success: function (text) {
@@ -109,7 +111,7 @@ var MapMaker = (function () {
     // Load the wall data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/wall_data.csv",
+      url: "data/" + selectedServer + "/wall_data.csv",
       type: "GET",
       cache: false,
       success: function (text) {
@@ -148,7 +150,7 @@ var MapMaker = (function () {
     // Load the POI data
     // Async Load and read the csv file
     $.ajax({
-      url: "data/island_data.csv",
+      url: "data/" + selectedServer + "/island_data.csv",
       type: "GET",
       cache: false,
       success: function (text) {
@@ -177,50 +179,52 @@ var MapMaker = (function () {
         island.Height = Number(data[i][7]) + settings.ZtoAltitude;
         island.Y = Number(data[i][8]);
         island.Databanks = Number(data[i][9]);
-		island.Respawner = data[i][10];
-		island.Trees = data[i][11];
-		island.Surveyor = data[i][12];
+        island.Respawner = data[i][10];
+        island.Trees = data[i][11];
+        island.Surveyor = data[i][12];
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
         var options = settings.islandOptions;
         // Share or tint the base color based on height
         if (island.Height < settings.lowThreshold) {
-            color = ShadeRgb(color);
+          color = ShadeRgb(color);
         }
         else if (island.Height > settings.highThreshold) {
-            color = TintRgb(color);
+          color = TintRgb(color);
         }
         options.fillColor = rgb(color);
         options.color = rgb(ShadeRgb(color));
 
         // Create and add the marker to the island layer
         var marker = new L.circleMarker([island.Y, island.X], options)
-            .addTo(poiLayers.islandLayer);
+          .addTo(poiLayers.islandLayer);
         
         island.Screenshot = "img/" + island.Id + ".jpg"
         
         // Create and add the marker to the zoomed island layer
         var myIcon = L.icon({
-            iconUrl: island.Screenshot.replace(".jpg","s.jpg"),
-            iconSize: [90,90]
+          iconUrl: island.Screenshot.replace(".jpg","s.jpg"),
+          iconSize: [90,90]
         });
         var zoomedMarker = L.marker([island.Y, island.X], {icon: myIcon})
-            .addTo(poiLayers.zoomedIslandLayer);
+          .addTo(poiLayers.zoomedIslandLayer);
         
         // Create the popup that will appear when clicked
         // adding m to an imgur link creates a medium thumbnail 320 width
         var thumbnail = island.Screenshot.replace(".jpg","m.jpg");
-		var respawnString = "";
-		if (island.Respawner == "Yes") {
-			respawnString = "Has respawners.<br>";
-		}
+        var respawnString = "";
+        if (island.Respawner == "Yes") {
+          respawnString = "Has respawners.<br>";
+        }
         var popup = "<b>" + island.Name + "</b><br>" + 
-                    "By: " + island.Author + "<br>" +
-                    "Databanks: " + island.Databanks + ", Sector: " + island.Sector + ", Altitude: " + island.Height + "<br>" +
-					respawnString +
-                    "<a href=\"" + island.Screenshot + "\"  target=\"_blank\"><img src=\"" + thumbnail + "\"></a><br>" +
-					"Surveyed by: " + island.Surveyor
+          "By: " + island.Author + "<br>" +
+          "Databanks: " + island.Databanks + ", Sector: " + island.Sector + 
+          ", Altitude: " + island.Height + "<br>" +
+          respawnString +
+          "<a href=\"" + island.Screenshot + "\"  target=\"_blank\"><img src=\"" + 
+          thumbnail + "\"></a><br>" +
+          "Surveyed by: " + island.Surveyor
         marker.bindPopup(popup, {minWidth: "320"});
         zoomedMarker.bindPopup(popup, {minWidth: "320"});
       }
@@ -241,6 +245,33 @@ var MapMaker = (function () {
         map.addLayer(poiLayers.islandLayer);
     }
   }
+  
+  function onSelectChange(e) {
+    console.log("Selected option: " + e.feature);
+    if(selectedServer != e.feature) {
+      poiLayers.sectorLayer.clearLayers();
+      poiLayers.wallLayer.clearLayers();
+      poiLayers.islandLayer.clearLayers();
+      poiLayers.zoomedIslandLayer.clearLayers();
+      
+      selectedServer = e.feature;
+      
+      // Load the sector data
+      // Async Load and read the csv file
+      $.ajax({
+        url: "data/" + selectedServer + "/sector_data.csv",
+        type: "GET",
+        cache: false,
+        success: function (text) {
+          var data = $.csv.toArrays(text)
+          onSectorDataLoaded(data)
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.error(errorThrown);
+        }
+      });
+    }
+  };
 
   // RGB helper functions
   function rgb(rgbarray) {
