@@ -29,8 +29,10 @@ L.Control.Select = L.Control.extend({
     }
     
     this.select.innerHTML = content;
-
+    
     this.select.onmousedown = L.DomEvent.stopPropagation;
+    
+    L.DomEvent.disableClickPropagation(this.div);
     
     return this.div;
   },
