@@ -4,15 +4,19 @@ var MapMaker = (function () {
   var settings = {};
   var map = {};
   var poiLayers = {};
-  var wasZoomedIn = false;
+  var prevZoom = -6;
   var selectedServer = 1;
 
   function init() {
     // Create the map container
     map = L.map('mapid', {
       crs: L.CRS.Simple,
+      zoom: -6,
       minZoom: -6,
-      maxZoom: -3
+      maxZoom: -3,
+      zoomDelta: 0.5,
+      zoomSnap: 0.5
+      
     });
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
@@ -62,8 +66,12 @@ var MapMaker = (function () {
     select.on('change', onSelectChange);
     $(".leaflet-select").prop( "selectedIndex", selectedServer - 1 );
     
+    poiLayers.zoneLayer = new L.LayerGroup();
+    poiLayers.zoneLayer.addTo(map);
     poiLayers.sectorLayer = new L.LayerGroup();
     poiLayers.sectorLayer.addTo(map);
+    poiLayers.sectorNameLayer = new L.LayerGroup();
+    poiLayers.sectorNameLayer.addTo(map);
     poiLayers.wallLayer = new L.LayerGroup();
     poiLayers.wallLayer.addTo(map);
     poiLayers.islandLayer = new L.LayerGroup();
@@ -90,7 +98,7 @@ var MapMaker = (function () {
   }
 
   function onSectorDataLoaded(data) {
-    // Render all walls
+    // Render all sectors
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
         var sector = {}
@@ -117,11 +125,11 @@ var MapMaker = (function () {
         var labelPos = marker.getBounds().getCenter();
         options = settings.sectorLabelOptions;
         options.icon = labelIcon;
-        var label = new L.Marker(labelPos,options).addTo(poiLayers.sectorLayer);
+        var label = new L.Marker(labelPos,options).addTo(poiLayers.sectorNameLayer);
       }
     }
     
-    poiLayers.sectorLayer.setZIndex(-100);
+    poiLayers.sectorNameLayer.setZIndex(-100);
 
     
     // Load the wall data
@@ -248,27 +256,40 @@ var MapMaker = (function () {
   }
   
   function onZoomEnd(e) {
-    if (map.getZoom() > -4 && !wasZoomedIn) {
-        // if zoomed in to the max display island screenshots instead of markers
-        wasZoomedIn = true;
-        map.removeLayer(poiLayers.islandLayer);
-        map.addLayer(poiLayers.zoomedIslandLayer);
+    var nextZoom = map.getZoom();
+    if (nextZoom > -4 && prevZoom <= -4) {
+      // if zoomed in to the max display island screenshots instead of markers
+      map.removeLayer(poiLayers.islandLayer);
+      map.addLayer(poiLayers.zoomedIslandLayer);
     }
-    else if (map.getZoom() < -3 && wasZoomedIn) {
-        // switch back to circle markers
-        wasZoomedIn = false;
-        map.removeLayer(poiLayers.zoomedIslandLayer);
-        map.addLayer(poiLayers.islandLayer);
+    else if (nextZoom <= -4 && prevZoom > -4) {
+      // switch back to circle markers
+      map.removeLayer(poiLayers.zoomedIslandLayer);
+      map.addLayer(poiLayers.islandLayer);
     }
+    /*
+    else if (nextZoom == -6 && prevZoom > -6) {
+      // switch to zone name display
+      map.removeLayer(poiLayers.islandLayer);
+      map.removeLayer(poiLayers.sectorNameLayer);
+      //map.addLayer(poiLayers.zoneLayer);
+    }
+    else if (nextZoom > -6 && prevZoom == -6) {
+      // switch to island display
+      //map.removeLayer(poiLayers.zoneLayer);
+      map.addLayer(poiLayers.islandLayer);
+      map.addLayer(poiLayers.sectorNameLayer);
+    }
+    */
+    prevZoom = nextZoom;
   }
   
   function onSelectChange(e) {
     console.log('Selected option: ' + e.feature);
     if(selectedServer != e.feature) {
-      poiLayers.sectorLayer.clearLayers();
-      poiLayers.wallLayer.clearLayers();
-      poiLayers.islandLayer.clearLayers();
-      poiLayers.zoomedIslandLayer.clearLayers();
+      for (var layer in poiLayers) {
+        poiLayers[layer].clearLayers();
+      }
       
       selectedServer = e.feature;
       
