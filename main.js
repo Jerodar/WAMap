@@ -61,6 +61,8 @@ var MapMaker = (function () {
     map.setMaxBounds(maxBounds);
     map.on('zoomend', onZoomEnd);
     
+    // L.imageOverlay('img/map.png', bounds).addTo(map);
+    
     L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
     var select = L.control.select({entries: settings.servers}).addTo(map);
     select.on('change', onSelectChange);
@@ -79,7 +81,7 @@ var MapMaker = (function () {
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
     // Zoomed layer is hidden at first
     
-    L.control.mousePosition({separator: ',', lngFirst: true}).addTo(map);
+    L.control.mousePosition({separator: ',', lngFirst: true, numDigits: 0}).addTo(map);
     
     // Load the sector data
     // Async Load and read the csv file
