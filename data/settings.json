@@ -30,19 +30,19 @@
     "width": 2,
     "color": "#000000",
     "opacity": 1,
-	"interactive": false
+    "interactive": false
   },
   "sectorOptions": {
     "fill": true,
     "stroke": false,
     "fillcolor": "#ffffff",
     "fillopacity": 0.2,
-	"interactive": false
+    "interactive": false
   },
   "sectorLabelOptions": {
     "interactive": false, 
-	"zIndexOffset": -1000,
-	"pane": "overlayPane"
+    "zIndexOffset": -1000,
+    "pane": "overlayPane"
   },
   "colors": {
     "islands": {
@@ -56,6 +56,15 @@
       "2": [ 153, 153, 153],
       "3": [ 0, 0, 255],
       "4": [ 241, 194, 50]
+    },
+    "altitude": {
+      "high": [ 217, 217, 217],
+      "medium": [ 153, 153, 153],
+      "low": [ 67, 67, 67]
     }
+  },
+  "shapes": {
+    "island": "m 2,10 a 8 8 0 1 1 16,0 a 8 8 0 1 1 -16,0 z",
+    "wall": "m 2,2 l 16,16"
   }
 }

@@ -31,7 +31,7 @@ var MapMaker = (function () {
      // Now take key value pair out of this array
      for(var i=0; i<cookiearray.length; i++){
         var name = cookiearray[i].split('=')[0];
-        if (name == "server") {
+        if (name == 'server') {
           var value = cookiearray[i].split('=')[1];
           selectedServer = Number(value)
         }
@@ -63,10 +63,75 @@ var MapMaker = (function () {
     
     // L.imageOverlay('img/map.png', bounds).addTo(map);
     
+    // Add watermark control with the Cardinal Guild logo
     L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
+    
+    // Add server selection dropbox
     var select = L.control.select({entries: settings.servers}).addTo(map);
     select.on('change', onSelectChange);
-    $(".leaflet-select").prop( "selectedIndex", selectedServer - 1 );
+    $('.leaflet-select').prop( 'selectedIndex', selectedServer - 1 );
+    
+    // Add a legend to the map using a custom control
+    var legend = L.control({position: 'topright'});
+    
+    legend.onAdd = function (map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      var container = document.createElement('div');
+      var imageNode = document.createElement('img');
+      imageNode.setAttribute('src','img/compass.png');
+      container.appendChild(imageNode);
+      container.appendChild(document.createElement('br'));
+      
+      container.appendChild(document.createElement('br'));
+      container.appendChild(document.createTextNode('Altitudes:'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.high, ShadeRgb(settings.colors.altitude.high)));
+      container.appendChild(document.createTextNode('High'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.medium, ShadeRgb(settings.colors.altitude.medium)));
+      container.appendChild(document.createTextNode('Medium'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.low, ShadeRgb(settings.colors.altitude.low)));
+      container.appendChild(document.createTextNode('Low'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(document.createElement('br'));
+      
+      container.appendChild(document.createTextNode('Biome:'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+      container.appendChild(document.createTextNode('Wilderness'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[2], ShadeRgb(settings.colors.islands[2])));
+      container.appendChild(document.createTextNode('Expanse'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[3], ShadeRgb(settings.colors.islands[3])));
+      container.appendChild(document.createTextNode('Remnants'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[4], ShadeRgb(settings.colors.islands[4])));
+      container.appendChild(document.createTextNode('Badlands'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(document.createElement('br'));
+      
+      container.appendChild(document.createTextNode('Walls:'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[1], settings.colors.walls[1]));
+      container.appendChild(document.createTextNode('World Border'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[2], settings.colors.walls[2]));
+      container.appendChild(document.createTextNode('Windwall'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[3], settings.colors.walls[3]));
+      container.appendChild(document.createTextNode('Stormwall'));
+      container.appendChild(document.createElement('br'));
+      container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[4], settings.colors.walls[4]));
+      container.appendChild(document.createTextNode('Sandstorm'));
+      container.appendChild(document.createElement('br'));
+
+      div.innerHTML = container.innerHTML;
+      return div;
+    };
+
+  legend.addTo(map);
     
     poiLayers.zoneLayer = new L.LayerGroup();
     poiLayers.zoneLayer.addTo(map);
@@ -97,6 +162,20 @@ var MapMaker = (function () {
         console.error(errorThrown);
       }
     });
+  }
+
+  function generateSvgImage(shape, fillcolor, strokecolor) {
+    var svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgNode.setAttribute('width', '20');
+    svgNode.setAttribute('height', '20');
+    svgNode.setAttribute('viewBox', '0 0 20 20');
+    svgNode.setAttribute('class', 'svgImage');
+    var pathNode = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathNode.setAttribute('style', 'fill: ' + rgb(fillcolor) + '; stroke: '
+      + rgb(strokecolor) + '; stroke-width:3px;');
+    pathNode.setAttribute('d', shape);
+    svgNode.appendChild(pathNode);
+    return svgNode;
   }
 
   function onSectorDataLoaded(data) {
