@@ -97,7 +97,6 @@ var MapMaker = (function () {
       textPlaceholder: 'Search Authors...',
       targetProperty: 'author',
       displayProperty: 'name',
-      hideMarkerOnCollapse: true,
       initial: false,
       zoom: 12,
       marker: {

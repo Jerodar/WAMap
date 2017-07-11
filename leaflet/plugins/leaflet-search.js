@@ -384,7 +384,7 @@ L.Control.Search = L.Control.extend({
           this._input.value = text;
           this._handleAutoresize();
           this._input.focus();
-          this._hideTooltip();  
+          //this._hideTooltip();  
           this._handleSubmit();
         }, this);
 
@@ -806,7 +806,6 @@ L.Control.Search = L.Control.extend({
     this._hideAutoType();
     
     this.hideAlert();
-    this._hideTooltip();
 
     if(this._input.style.display == 'none')  //on first click show _input only
       this.expand();
@@ -829,6 +828,7 @@ L.Control.Search = L.Control.extend({
               layer: loc.layer ? loc.layer : null
             });
         }
+        this._input.value = this._recordsCache[this._input.value].target;
       }
     }
   },
