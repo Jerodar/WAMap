@@ -100,7 +100,7 @@ var MapMaker = (function () {
     legend.addTo(map);
     
     // Search bar
-    var controlSearch = new L.Control.Search({
+    var controlSearch = new L.control.search({
       position:'topleft',
       layer: poiLayers.islandLayer,
       textPlaceholder: 'Search Authors...',
