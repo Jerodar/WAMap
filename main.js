@@ -107,12 +107,11 @@ var MapMaker = (function () {
       targetProperty: 'author',
       displayProperty: 'name',
       initial: false,
-      zoom: 12,
-      marker: {
-        icon: new L.Icon.Default,
-        animate: false,
-        circle: false
-      }
+      zoom: -4,
+      marker: false
+    });
+    controlSearch.on('search:locationfound', function(e) {
+      e.layer.openPopup();
     });
     controlSearch.addTo(map);
     
