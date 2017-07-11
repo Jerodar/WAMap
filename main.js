@@ -94,14 +94,16 @@ var MapMaker = (function () {
     var controlSearch = new L.Control.Search({
       position:'topleft',
       layer: poiLayers.islandLayer,
-      propertyName: 'author',
       textPlaceholder: 'Search Authors...',
+      targetProperty: 'author',
+      displayProperty: 'name',
       hideMarkerOnCollapse: true,
       initial: false,
       zoom: 12,
       marker: {
         icon: new L.Icon.Default,
-        animate: false
+        animate: false,
+        circle: false
       }
     });
     map.addControl( controlSearch );
