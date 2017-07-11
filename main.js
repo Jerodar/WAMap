@@ -15,8 +15,8 @@ var MapMaker = (function () {
       minZoom: -6,
       maxZoom: -3,
       zoomDelta: 0.5,
-      zoomSnap: 0.5
-      
+      zoomSnap: 0.5,
+      attributionControl: false
     });
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
@@ -77,8 +77,17 @@ var MapMaker = (function () {
     
     // Add the controls
     
+    // Fill in the attribution without a tile layer
+    var attributionControl = L.control.attribution();
+    attributionControl.addAttribution('App made by Jerodar. Mapped by the <a href="https://www.worldsadrift.com/forums/topic/cardinal-guild-map-making-navigation-and-helmsmanship/">Cardinal Guild.</a>');
+    attributionControl.addTo(map);
+    
     // Watermark control with the Cardinal Guild logo
-    L.control.watermark({ position: 'bottomright', width: '100px' }).addTo(map);
+    L.control.watermark({
+      position: 'bottomright',
+      width: '100px',
+      url: 'https://www.worldsadrift.com/forums/topic/cardinal-guild-map-making-navigation-and-helmsmanship/'
+    }).addTo(map);
     
     // Server selection dropbox
     var select = L.control.select({entries: settings.servers}).addTo(map);
@@ -105,7 +114,7 @@ var MapMaker = (function () {
         circle: false
       }
     });
-    map.addControl( controlSearch );
+    controlSearch.addTo(map);
     
     // Cursor coordinate display
     L.control.mousePosition({separator: ',', lngFirst: true, numDigits: -1}).addTo(map);
