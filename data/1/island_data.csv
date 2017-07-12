@@ -41,8 +41,8 @@ N2_8,Canyon,Synovus,N2,4,https://i.imgur.com/zkz0NKh.png,-8442,272,-6131,3,Yes,P
 M3_1,Arboreal,Gamer3226,M3,3,https://i.imgur.com/y9iVyq6.png,-2163,375,-8068,5,Yes,"Birch, Oak",Jerodar
 M3_2,Ruby Town,Lexhy,M3,3,https://i.imgur.com/6CCFIYo.png,-1340,389,-6542,5,Yes,Chestnut,Jerodar
 M3_3,Canyon Town,Lexhy,M3,3,https://i.imgur.com/ht53yRA.png,-2043,571,-6253,4,No,Birch,Jerodar
-M3_4,Artillery,Z4ipher,M3,3,https://i.imgur.com/kpCHhS9.png,-1546,445,-5508,4,No,"Oak, Cedar",Jerodar
-M3_5,Circle of Worship,jazzdog,M3,3,https://i.imgur.com/qorT1Mh.png,370,-128,-4550,3,Yes,"Oak, Elm, Helmlock",Jerodar
+M3_4,Artillery,Z4ipher,M3,5,https://i.imgur.com/kpCHhS9.png,-1546,445,-5508,4,No,"Oak, Cedar",Jerodar
+M3_5,Circle of Worship,jazzdog,M3,4,https://i.imgur.com/qorT1Mh.png,370,-128,-4550,3,Yes,"Oak, Elm, Helmlock",Jerodar
 M3_6,Maelstrom,Synovus,M3,3,https://i.imgur.com/AiwIAx5.png,-111,627,-5513,5,Yes,"Cedar, Palm, Chestnut",Jerodar
 M3_7,Castle Town,aeixovu,M3,3,https://i.imgur.com/COIx12q.png,624,548,-6727,3,No,Birch,Jerodar
 M3_8,Mountain Palace,Lexhy,M3,3,https://i.imgur.com/XWBA3MX.png,-549,346,-7930,5,Yes,"Oak, Elm, Birch",Jerodar
@@ -93,6 +93,7 @@ A2_3,Reaching,VivaLaDoctor,A2,1,https://gyazo.com/fba4d38b74d3e90e5014849f6b6cd1
 A2_4,Crashed airship,tollymain,A2,1,https://gyazo.com/413bb54e3a5e656d01e18e4454cbc50d,15905,340,6141,4,Yes,Chestnut,SonneillonZ
 A2_5,Cliffside Forest,MadStronk,A2,1,https://gyazo.com/453b21675e6b26839cb3181dc09b27b4,16716,-191,5480,1,No,"Birch, Oak",SonneillonZ
 A2_6,Roofed Plateau,Narciciss,A2,1,https://gyazo.com/d081474350ec68696bded14055ac3617,16391,-361,7807,4,Yes,Elm,SonneillonZ
+I1_1,Final Restingplace,mikhaeldionio,I1,4,https://i.imgur.com/V2VQl40.png,7703,-200,11760,2,Yes,Hemlock,Archaegeo
 I1_2,Dinosaur Bones,Diabase,I1,4,https://i.imgur.com/SWW5r2j.png,5653,-110,10914,2,No,Hemlock,Jerodar
 I1_3,Sinkhole,Huntanian,I1,4,https://i.imgur.com/cnEOAY3.png,4322,235,11030,4,Yes,"Palm, Hemlock",Jerodar
 I1_4,Spire Harbor,NewWay,I1,4,https://i.imgur.com/5UoYWZP.png,4839,294,12028,2,No,"Palm, Hemlock",Jerodar
@@ -102,6 +103,10 @@ I1_7,Battleship,Teras,I1,4,https://i.imgur.com/BmkzxKz.png,2880,-416,13770,2,No,
 I1_8,Pharaoh's Palace,Darklight,I1,4,https://i.imgur.com/Qd6rByt.png,2931,-280,16332,3,Yes,"Oak, Birch, Palm, Hemlock",Jerodar
 I1_9,Dark Jungle,Loryenne,I1,4,https://i.imgur.com/8eZItZ7.png,2584,497,14940,1,Yes,"Palm, Hemlock",Jerodar
 I1_10,Pink Hills,GermanLeagueGamingX,I1,4,https://i.imgur.com/xcctpAv.png,4038,-264,15448,5,No,"Birch, Elm, Cedar, Oak, Hemlock",Jerodar
+I1_11,Behelith,McWizard,I1,4,https://i.imgur.com/wki9Gxq.png,5284,566,16201,1,No,Hemlock,Jerodar
+I1_12,Dust Ball,Zammy,I1,4,https://i.imgur.com/UpCn9Oz.png,6056,-232,14639,0,Yes,Hemlock,Jerodar
+I1_13,Launch Pad,NoNameMouse,I1,4,https://i.imgur.com/VcqnoBf.png,6374,483,13176,2,No,Hemlock,Jerodar
+I1_14,Monks Peak,Dosko,I1,4,https://i.imgur.com/a3wLQau.png,6345,510,11999,3,Yes,Hemlock,Jerodar
 I3_1,Tilted Spire,Captainheathcliff,I3,4,https://i.imgur.com/AgZHqH9.png,16599,559,15350,,,,Archaegeo
 I3_2,Black Spires,?,I3,4,https://i.imgur.com/HcqGUOR.png,16886,-44,14000,,,,Archaegeo
 I3_3,I3_3,?,I3,4,https://i.imgur.com/iXi8mI2.png,16814,75,16506,,,,Archaegeo
@@ -113,7 +118,6 @@ I2_2,I2_2,『溶岩の魔法』| Lavavex,I2,4,https://i.imgur.com/LdixyKQ.png,10
 I2_3,I2_3,DeadDropping,I2,4,https://i.imgur.com/d5ToCz4.png,10052,536,14333,,,,Archaegeo
 I2_4,I2_4,Synovus,I2,4,https://i.imgur.com/xPd0lPx.png,8998,-545,14984,,,,Archaegeo
 I2_5,I2_5,Cpt.hon,I2,4,https://i.imgur.com/x33cWqT.png,9672,517,13539,,,,Archaegeo
-I1_1,I1_1,Mikhaeldionio,I1,4,https://i.imgur.com/0LJKZhD.png,7703,-200,11760,,,,Archaegeo
 M2_1,Mine Shaft,Oafrat,M2,3,https://i.imgur.com/QHvEfkI.png,-2315,342,-1485,4,,,Archaegeo
 M2_2,Halo Town,Plowablebat,M2,3,https://i.imgur.com/xt5QpRI.png,-2038,313,-2463,0,,,Archaegeo
 M2_3,Tomb,The Ninjaneer,M2,3,https://i.imgur.com/YJvQ3LH.png,-3033,-400,-629,3,,,Archaegeo
