@@ -144,15 +144,25 @@ I2_7,Cube,Planetfall,I2,4,https://i.imgur.com/1PpT5uV.png,8339,188,16627,1,No,He
 I2_8,Worship,Unknown,I2,4,https://i.imgur.com/CyYZSSy.png,9833,-273,16358,3,Yes,Hemlock,Jerodar
 I2_9,Hillside Town,Rex,I2,4,https://i.imgur.com/FfQvcl4.png,10553,397,15226,5,Yes,Hemlock,Jerodar
 I2_10,Desert City,ArchEngel,I2,4,https://i.imgur.com/wvK6ZLa.png,12047,-112,12905,4,No,Palm,Jerodar
-I3_1,Tilted Spire,Captainheathcliff,I3,4,https://i.imgur.com/AgZHqH9.png,16599,559,15350,,,,Archaegeo
-I3_2,Black Spires,?,I3,4,https://i.imgur.com/HcqGUOR.png,16886,-44,14000,,,,Archaegeo
-I3_3,I3_3,?,I3,4,https://i.imgur.com/iXi8mI2.png,16814,75,16506,,,,Archaegeo
-I3_4,I3_4,?,I3,4,https://i.imgur.com/J7O396u.png,15849,376,16140,,,,Archaegeo
-I3_5,Shipyard,?,I3,4,https://i.imgur.com/yvPryqu.png,14372,-201,16734,,,,Archaegeo
+I3_1,Tilted Spire,Captainheathcliff,I3,4,https://i.imgur.com/gxdxyfW.png,16599,559,15350,2,No,Hemlock,Archaegeo
+I3_2,Black Spires,Arkendi,I3,4,https://i.imgur.com/HcqGUOR.png,16886,-44,14000,3,Yes,"Palm, Hemlock",Archaegeo
+I3_3,Canyon of Life,Daft Vader,I3,4,https://i.imgur.com/43z8SHk.png,16814,75,16506,2,Yes,"Palm, Hemlock",Archaegeo
+I3_4,Archaeological Dig,Mr.Secundus,I3,4,https://i.imgur.com/YPJEUAd.png,15849,376,16140,5,No,"Palm, Hemlock, Birch, Oak",Archaegeo
+I3_5,Shipyard,Diabase,I3,4,https://i.imgur.com/xzRtv3Y.png,14338,-201,16648,5,No,Hemlock,Archaegeo
 I3_6,I3_6,Kranot,I3,4,https://i.imgur.com/l2wnz9K.png,13708,-419,14390,2,,,Archaegeo
+I3_7,Red Canyons,Kranot,I3,4,https://i.imgur.com/sQ03xmt.png,12965,123,16128,4,Yes,"Palm, Hemlock",Jerodar
+I3_8,Sand Cloister,Mc.Marc,I3,4,https://i.imgur.com/0SUaxVv.png,15845,-330,14755,1,Yes,"Palm, Hemlock",Jerodar
+I3_9,Divide,#MOB| Mr.Stone :),I3,4,https://i.imgur.com/xZxOAe5.png,16148,-109,12953,2,Yes,"Oak, Birch, Hemlock",Jerodar
+I3_10,Sky Station,NoNameMouse,I3,4,https://i.imgur.com/VVnJc8U.png,15395,97,13747,5,No,"Birch, Palm",Jerodar
+I3_11,Migrant Isle,Nausical,I3,4,https://i.imgur.com/rCHQVSo.png,14714,297,12612,0,No,"Birch, Hemlock",Jerodar
 M2_1,Mine Shaft,Oafrat,M2,3,https://i.imgur.com/QHvEfkI.png,-2315,342,-1485,4,,,Archaegeo
 M2_2,Halo Town,Plowablebat,M2,3,https://i.imgur.com/xt5QpRI.png,-2038,313,-2463,0,,,Archaegeo
 M2_3,Tomb,The Ninjaneer,M2,3,https://i.imgur.com/YJvQ3LH.png,-3033,-400,-629,3,,,Archaegeo
+M2_4,Isles Sanctuary,Unknown,M2,3,https://i.imgur.com/XnrlgfC.png,-524,-246,-1176,4,Yes,"Elm, Birch, Oak",Lonely Fox & Exiles Crew
+M2_5,Pierce Canyon,OddNova,M2,3,https://i.imgur.com/3bBCwAu.png,309,482,65,2,No,"Elm, Birch",Lonely Fox & Exiles Crew
+M2_6,Oil Rig,The Doogality of Man,M2,3,https://i.imgur.com/3kiQ48A.png,-1606,384,-301,5,No,Chestnut,Lonely Fox & Exiles Crew
+M2_7,Landbridge,Unknown,M2,3,https://i.imgur.com/iBQv34k.png,650,450,2400,2,No,"Cedar, Elm, Hemlock",Lonely Fox & Exiles Crew
+M2_8,Stonebeast's Vigil,Unknown,M2,3,https://i.imgur.com/c8e0tl5.png,797,416,1470,5,No,"Elm, Birch, Ash",Lonely Fox & Exiles Crew
 Z1_1,Hidden Jungle,?,Z1,1,https://puu.sh/wry4I/0485b778e5.png,-17100,0,-500,2,,,Jerodar
 Z1_2,Tubes,Narciciss,Z1,1,https://puu.sh/wry6b/e700a2a9a7.png,-15200,-500,-700,2,,,Jerodar
 Z1_3,Mountain Lake,OddNova,Z1,1,https://puu.sh/wrwtc/c90da35a95.png,-17100,0,-1800,3,,,Jerodar
@@ -267,3 +277,4 @@ K5_3,Hidden Caverns,Seypho,K5,1,https://i.imgur.com/fCzcfmx.png,2188,-373,8863,4
 K5_4,Lonely Mountain,Narciciss,K5,1,https://i.imgur.com/xA476lM.png,-672,-73,7516,4,,,djJrock
 K5_5,Lighthouse,Jaros,K5,1,https://i.imgur.com/Z1779pI.png,-283,-410,5302,3,,,djJrock
 K5_6,Hermit's Hold,olobit,K5,1,https://i.imgur.com/7S2BNWB.png,-2163,142,6459,1,,,djJrock
+K6_1,City Storage,OddNova,K6,2,https://i.imgur.com/D5EtDjK.png,-4137,230,4009,1,,,djJrock

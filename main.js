@@ -22,21 +22,32 @@ var MapMaker = (function () {
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
     map.getRenderer(map).options.padding = 100;
     
-    // Check if there is a cookie to read
-    var allcookies = document.cookie;
-     
-     // Get all the cookies pairs in an array
-     var cookiearray = allcookies.split(';');
-     
-     // Now take key value pair out of this array
-     for(var i=0; i<cookiearray.length; i++){
-        var name = cookiearray[i].split('=')[0];
-        if (name == 'server') {
-          var value = cookiearray[i].split('=')[1];
-          selectedServer = Number(value)
-        }
-     }
-
+    // Check if the URL or cooky has a server preference
+    var urlVars = getUrlVars();
+    // First check url get parameters
+    if(urlVars["server"] == "euwuse") {
+      selectedServer = 2;
+    } else if(urlVars["server"] == "eueusw") {
+      selectedServer = 1;
+    }
+    else {
+    // Then check the cookies
+      // Check if there is a cookie to read
+      var allcookies = document.cookie;
+       
+       // Get all the cookies pairs in an array
+       var cookiearray = allcookies.split(';');
+       
+       // Now take key value pair out of this array
+       for(var i=0; i<cookiearray.length; i++){
+          var name = cookiearray[i].split('=')[0];
+          if (name == 'server') {
+            var value = cookiearray[i].split('=')[1];
+            selectedServer = Number(value)
+          }
+       }
+    }
+    
     // Async load the settings file
     $.ajax({
       dataType: 'json',
@@ -401,12 +412,16 @@ var MapMaker = (function () {
   
   function onSelectChange(e) {
     console.log('Selected option: ' + e.feature);
-    if(selectedServer != e.feature) {
+    changeServerMap(e.feature);
+  };
+  
+  function changeServerMap(server) {
+    if(selectedServer != server) {
       for (var layer in poiLayers) {
         poiLayers[layer].clearLayers();
       }
       
-      selectedServer = e.feature;
+      selectedServer = server;
       
       // Write a cooky to store preference
       var d = new Date();
@@ -428,7 +443,17 @@ var MapMaker = (function () {
         }
       });
     }
-  };
+  }
+
+  // Retrieve Html GET parameters
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
 
   // RGB helper functions
   function rgb(rgbarray) {
