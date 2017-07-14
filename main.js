@@ -11,7 +11,6 @@ var MapMaker = (function () {
     // Create the map container
     map = L.map('mapid', {
       crs: L.CRS.Simple,
-      zoom: -6,
       minZoom: -6,
       maxZoom: -3,
       zoomDelta: 0.5,
@@ -25,9 +24,9 @@ var MapMaker = (function () {
     // Check if the URL or cooky has a server preference
     var urlVars = getUrlVars();
     // First check url get parameters
-    if(urlVars["server"] == "euwuse") {
+    if(urlVars["server"] === "euwuse") {
       selectedServer = 2;
-    } else if(urlVars["server"] == "eueusw") {
+    } else if(urlVars["server"] === "eueusw") {
       selectedServer = 1;
     }
     else {
@@ -41,9 +40,9 @@ var MapMaker = (function () {
        // Now take key value pair out of this array
        for(var i=0; i<cookiearray.length; i++){
           var name = cookiearray[i].split('=')[0];
-          if (name == 'server') {
+          if (name === 'server') {
             var value = cookiearray[i].split('=')[1];
-            selectedServer = Number(value)
+            selectedServer = Number(value);
           }
        }
     }
@@ -65,10 +64,11 @@ var MapMaker = (function () {
     
     // Prepare the map object
     var bounds = [[settings.minY, settings.minX], [settings.maxY, settings.maxX]];
-    map.fitBounds(bounds);
+    //map.fitBounds(bounds);
     var maxBounds = [[settings.minY - settings.maxBounds, settings.minX - settings.maxBounds], 
                     [settings.maxY + settings.maxBounds, settings.maxX + settings.maxBounds]];
     map.setMaxBounds(maxBounds);
+    map.setView([0, 0], -6);
     map.on('zoomend', onZoomEnd);
     
     // L.imageOverlay('img/map.png', bounds).addTo(map);
@@ -83,9 +83,8 @@ var MapMaker = (function () {
     poiLayers.wallLayer = new L.LayerGroup();
     poiLayers.wallLayer.addTo(map);
     poiLayers.islandLayer = new L.LayerGroup();
-    poiLayers.islandLayer.addTo(map);
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
-    
+
     // Add the controls
     
     // Fill in the attribution without a tile layer
@@ -125,20 +124,18 @@ var MapMaker = (function () {
       e.layer.openPopup();
     });
     controlSearch.addTo(map);
+
+    map.removeLayer(poiLayers.islandLayer);
     
     // Cursor coordinate display
     L.control.mousePosition({separator: ',', lngFirst: true, numDigits: -1}).addTo(map);
     
-    // Load the sector data
-    // Async Load and read the csv file
+    // Async load the zone data file
     $.ajax({
-      url: 'data/' + selectedServer + '/sector_data.csv',
-      type: 'GET',
+      dataType: 'json',
+      url: 'data/' + selectedServer + '/zone_data.json',
       cache: false,
-      success: function (text) {
-        var data = $.csv.toArrays(text)
-        onSectorDataLoaded(data)
-      },
+      success: onZoneDataLoaded,
       error: function (jqXHR, textStatus, errorThrown) {
         console.error(errorThrown);
       }
@@ -216,11 +213,40 @@ var MapMaker = (function () {
     return svgNode;
   }
 
+  function onZoneDataLoaded(zones) {
+    for (var zone in zones) {
+      if (!zones.hasOwnProperty(zone)) {
+        //The current property is not a direct property
+        continue;
+      }
+      var html = '<div style="transform: rotate(' + zones[zone].angle + 'deg); letter-spacing: ' + zones[zone].spacing + 'em">' + zone + '</div>';
+      var labelIcon = new L.divIcon({ html: html, className: 'zone-label'});
+      var options = settings.sectorLabelOptions;
+      options.icon = labelIcon;
+      var label = new L.Marker(zones[zone].pos, options).addTo(poiLayers.zoneLayer);
+    }
+
+    // Load the sector data
+    // Async Load and read the csv file
+    $.ajax({
+      url: 'data/' + selectedServer + '/sector_data.csv',
+      type: 'GET',
+      cache: false,
+      success: function (text) {
+        var data = $.csv.toArrays(text);
+        onSectorDataLoaded(data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+      }
+    });
+  }
+
   function onSectorDataLoaded(data) {
     // Render all sectors
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
-        var sector = {}
+        var sector = {};
         // Sector, Region, Tier, X1, Z1, X2, Z2, X3, Z3, X4, Z4, X5, Z5
         sector.Sector = data[i][0];
         sector.Region = data[i][1];
@@ -239,9 +265,12 @@ var MapMaker = (function () {
         
         // Create and add the marker to the island layer
         var marker = new L.polyline(sector.Pos, options)
-            .addTo(poiLayers.sectorLayer);
-        var labelIcon = new L.divIcon({html: sector.Sector, className: 'sector-label sector-label-'+sector.Tier});
+          .addTo(poiLayers.sectorLayer);
+        var labelIcon = new L.divIcon({ html: sector.Sector, className: 'sector-label sector-label-'+sector.Tier});
         var labelPos = marker.getBounds().getCenter();
+        var point = map.latLngToContainerPoint(labelPos);
+        point = L.point([point.x - 10, point.y - 10]);
+        labelPos = map.containerPointToLatLng(point);
         options = settings.sectorLabelOptions;
         options.icon = labelIcon;
         var label = new L.Marker(labelPos,options).addTo(poiLayers.sectorNameLayer);
@@ -258,8 +287,8 @@ var MapMaker = (function () {
       type: 'GET',
       cache: false,
       success: function (text) {
-        var data = $.csv.toArrays(text)
-        onWallDataLoaded(data)
+        var data = $.csv.toArrays(text);
+        onWallDataLoaded(data);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error(errorThrown);
@@ -271,7 +300,7 @@ var MapMaker = (function () {
     // Render all walls
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
-        var wall = {}
+        var wall = {};
         // Tier,X1,Z1,X2,Z2,Sector
         wall.Tier = Number(data[i][1]);
         wall.X1 = Number(data[i][2]);
@@ -297,8 +326,8 @@ var MapMaker = (function () {
       type: 'GET',
       cache: false,
       success: function (text) {
-        var data = $.csv.toArrays(text)
-        onIslandDataLoaded(data)
+        var data = $.csv.toArrays(text);
+        onIslandDataLoaded(data);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error(errorThrown);
@@ -310,7 +339,7 @@ var MapMaker = (function () {
     // Render all islands
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
-        var island = {}
+        var island = {};
         island.Id = data[i][0];
         island.Name = data[i][1];
         island.Author = data[i][2];
@@ -343,7 +372,7 @@ var MapMaker = (function () {
         var marker = new L.circleMarker([island.Y, island.X], options)
           .addTo(poiLayers.islandLayer);
         
-        island.Screenshot = 'img/' + island.Id + '.jpg'
+        island.Screenshot = 'img/' + island.Id + '.jpg';
         
         // Create and add the marker to the zoomed island layer
         var myIcon = L.icon({
@@ -357,17 +386,17 @@ var MapMaker = (function () {
         // adding m to an imgur link creates a medium thumbnail 320 width
         var thumbnail = island.Screenshot.replace('.jpg','m.jpg');
         var respawnString = '';
-        if (island.Respawner == 'Yes') {
+        if (island.Respawner === 'Yes') {
           respawnString = 'Has respawners.<br>';
         }
-        var popup = '<b>' + island.Name + '</b><br>' + 
+        var popup = '<b>' + island.Name + '</b><br>' +
           'By: ' + island.Author + '<br>' +
-          'Databanks: ' + island.Databanks + ', Sector: ' + island.Sector + 
+          'Databanks: ' + island.Databanks + ', Sector: ' + island.Sector +
           ', Altitude: ' + island.Height + '<br>' +
           respawnString +
-          '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' + 
+          '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' +
           thumbnail + '\'></a><br>' +
-          'Surveyed by: ' + island.Surveyor
+          'Surveyed by: ' + island.Surveyor;
         marker.bindPopup(popup, {minWidth: '320'});
         zoomedMarker.bindPopup(popup, {minWidth: '320'});
         
@@ -383,6 +412,7 @@ var MapMaker = (function () {
   
   function onZoomEnd(e) {
     var nextZoom = map.getZoom();
+    console.log('Zoomed to: ' + nextZoom);
     if (nextZoom > -4 && prevZoom <= -4) {
       // if zoomed in to the max display island screenshots instead of markers
       map.removeLayer(poiLayers.islandLayer);
@@ -393,30 +423,26 @@ var MapMaker = (function () {
       map.removeLayer(poiLayers.zoomedIslandLayer);
       map.addLayer(poiLayers.islandLayer);
     }
-    /*
-    else if (nextZoom == -6 && prevZoom > -6) {
+    else if (nextZoom === -6 && prevZoom > -6) {
       // switch to zone name display
       map.removeLayer(poiLayers.islandLayer);
-      map.removeLayer(poiLayers.sectorNameLayer);
-      //map.addLayer(poiLayers.zoneLayer);
+      map.addLayer(poiLayers.zoneLayer);
     }
-    else if (nextZoom > -6 && prevZoom == -6) {
+    else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
-      //map.removeLayer(poiLayers.zoneLayer);
+      map.removeLayer(poiLayers.zoneLayer);
       map.addLayer(poiLayers.islandLayer);
-      map.addLayer(poiLayers.sectorNameLayer);
     }
-    */
     prevZoom = nextZoom;
   }
   
   function onSelectChange(e) {
     console.log('Selected option: ' + e.feature);
     changeServerMap(e.feature);
-  };
+  }
   
   function changeServerMap(server) {
-    if(selectedServer != server) {
+    if(selectedServer !== server) {
       for (var layer in poiLayers) {
         poiLayers[layer].clearLayers();
       }
@@ -428,16 +454,12 @@ var MapMaker = (function () {
       d.setTime(d.getTime() + (360 * 24 * 60 * 60 * 1000));
       document.cookie='server=' + selectedServer + ';expires=' + d.toUTCString() + ';';
       
-      // Load the sector data
-      // Async Load and read the csv file
+      // Async load the zone data file
       $.ajax({
-        url: 'data/' + selectedServer + '/sector_data.csv',
-        type: 'GET',
+        dataType: 'json',
+        url: 'data/' + selectedServer + '/zone_data.json',
         cache: false,
-        success: function (text) {
-          var data = $.csv.toArrays(text)
-          onSectorDataLoaded(data)
-        },
+        success: onZoneDataLoaded,
         error: function (jqXHR, textStatus, errorThrown) {
           console.error(errorThrown);
         }
@@ -466,14 +488,14 @@ var MapMaker = (function () {
   }
 
   function ShadeRgb(color) {
-    var shade = []
+    var shade = [];
     for (var i = 0; i < color.length; i++)
       shade[i] = color[i] * settings.shadingFactor;
     return shade;
   }
 
   function TintRgb(color) {
-    var tint = []
+    var tint = [];
     for (var i = 0; i < color.length; i++)
       tint[i] = color[i] + ((255 - color[i]) * settings.shadingFactor);
     return tint;

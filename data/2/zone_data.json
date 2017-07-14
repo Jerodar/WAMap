@@ -1,0 +1,47 @@
+﻿{
+  "SERENITY": {
+    "pos": [-15000,-11500],
+    "angle": -70,
+    "spacing": 1.6
+  },
+  "MIRANDA": {
+    "pos": [-14000,10000],
+    "angle": -70,
+    "spacing": 0.8
+  },
+  "ARIEL": {
+    "pos": [16200,-17000],
+    "angle": -10,
+    "spacing": 0.8
+  },
+  "HERA": {
+    "pos": [-13600,-17000],
+    "angle": -70,
+    "spacing": 0.5
+  },
+  "SIHNON": {
+    "pos": [-15000,-3800],
+    "angle": -10,
+    "spacing": 0.3
+  },
+  "LILAC": {
+    "pos": [2000,4500],
+    "angle": -40,
+    "spacing": 1
+  },
+  "EZRA": {
+    "pos": [5000, -16800],
+    "angle": -80,
+    "spacing": 0.4
+  },
+  "OSIRIS": {
+    "pos": [ -6000, -300 ],
+    "angle": -60,
+    "spacing": 0
+  },
+  "CANTON": {
+    "pos": [8000, 3000],
+    "angle": -40,
+    "spacing": 0.8
+  }
+}

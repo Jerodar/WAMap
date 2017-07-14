@@ -21,17 +21,21 @@ html, body {
 }
 
 .leaflet-container .leaflet-control-mouseposition {
+  background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 0 5px #bbb;
   padding: 0 5px;
-  margin:0;
+  margin: 0;
   color: #333;
   font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-.leaflet-div-icon {
-  background: rgba(255, 255, 255, 0);
-  border: none;
+.zone-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: xx-large;
+  color: #555;
+  color: rgba(85,85,85,0.9);
 }
 
 .sector-label {
@@ -40,19 +44,23 @@ html, body {
 }
 
 .sector-label-1 {
-  color: rgb(147, 196, 125)
+  color: rgb(147, 196, 125);
+  color: rgba(147, 196, 125, 0.5);
 }
 
 .sector-label-2 {
-  color: rgb(109, 158, 235)
+  color: rgb(109, 158, 235);
+  color: rgba(109, 158, 235, 0.5);
 }
 
 .sector-label-3 {
-  color: rgb(142, 124, 195)
+  color: rgb(142, 124, 195);
+  color: rgba(142, 124, 195, 0.5);
 }
 
 .sector-label-4 {
-  color: rgb(246, 178, 107)
+  color: rgb(246, 178, 107);
+  color: rgba(246, 178, 107, 0.5);
 }
 
 .legend {
@@ -64,6 +72,7 @@ html, body {
 .info {
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
+  background: rgb(255, 255, 255);
   background: rgba(255,255,255,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -77,5 +86,6 @@ html, body {
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: rgb(255, 255, 255);
   background: rgba(255,255,255,0.8);
 }

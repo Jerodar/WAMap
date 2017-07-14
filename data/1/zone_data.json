@@ -1,0 +1,47 @@
+﻿{
+  "ZWEIBACK": {
+    "pos": [-9000,-16300],
+    "angle": 15,
+    "spacing": 0.8
+  },
+  "KEYES": {
+    "pos": [15000,-12400],
+    "angle": 35,
+    "spacing": 1
+  },
+  "ARBOR": {
+    "pos": [10000,8000],
+    "angle": 50,
+    "spacing": 0.8
+  },
+  "TRITON": {
+    "pos": [16200,-16600],
+    "angle": 85,
+    "spacing": 0.5
+  },
+  "MEZZO": {
+    "pos": [-6600,-3200],
+    "angle": -55,
+    "spacing": 1
+  },
+  "BOB": {
+    "pos": [-14000,10000],
+    "angle": 0,
+    "spacing": 0.8
+  },
+  "INYANGA": {
+    "pos": [15500, 2600],
+    "angle": 0,
+    "spacing": 0.4
+  },
+  "NASTROND": {
+    "pos": [ 3400, -9800 ],
+    "angle": 60,
+    "spacing": -0.05
+  },
+  "HORUS": {
+    "pos": [-5000, 3800],
+    "angle": 10,
+    "spacing": 0.8
+  }
+}
