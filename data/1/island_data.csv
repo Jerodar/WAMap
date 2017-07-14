@@ -87,6 +87,7 @@ A1_5,World Ash Tree,B a r,A1,2,https://gyazo.com/0c284a3a65887e745cf37e27c7e3e10
 A1_6,Paradise Cave,SkullDrexBG,A1,2,https://gyazo.com/861c8e23667d6df094e33e028be0d691,9981,-479,7311,4,Yes,"Cedar, Birch, Palm, Oak",SonneillonZ
 A1_7,Autumn island,Phlop,A1,2,https://gyazo.com/58e79f8cea5d34a6f3d37342ddb5c09b,9198,-340,6324,1,Yes,"Chestnut, Birch",SonneillonZ
 A1_8,Fertile Farm,Unknown,A1,2,https://i.imgur.com/Vi0T9mq.png,9076,227,5404,1,No,"Oak, Ash",SonneillonZ
+A1_9,Twin Towers,Davemane42,A1,2,https://i.imgur.com/PRyBaOy.png,9521,240,8053,2,No,Oak,Jerodar
 A2_1,Angelic Hedgehog,Puppy Fur |,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54X0pnOVlFRWl6SVE,11830,-406,4683,2,No,Elm,SonneillonZ
 A2_2,Vulcanic Mold,Moonstone,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54Njd5R1QwOTZEOHc,13891,182,4365,3,Yes,Chestnut,SonneillonZ
 A2_3,Reaching,VivaLaDoctor,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54bko0NWp3T3haOFU,16000,-243,4357,3,Yes,Elm,SonneillonZ
@@ -156,14 +157,23 @@ I3_9,Divide,#MOB| Mr.Stone :),I3,4,https://i.imgur.com/xZxOAe5.png,16148,-109,12
 I3_10,Sky Station,NoNameMouse,I3,4,https://i.imgur.com/VVnJc8U.png,15395,97,13747,5,No,"Birch, Palm",Jerodar
 I3_11,Migrant Isle,Nausical,I3,4,https://i.imgur.com/rCHQVSo.png,14714,297,12612,2,Yes,"Birch, Hemlock",Jerodar
 I3_12,Watchers,Lexhy,I3,4,https://i.imgur.com/NgR5PSt.png,14601,334,15119,1,Yes,Palm,Jerodar
+M1_1,Garden of Industry,Kranot,M1,3,http://i.imgur.com/XZ2E4v1.png,2239,326,3428,2,No,Birch,Lonely Fox & Exiles Crew
+M1_2,Nightwatch Hold,Lexhy,M1,3,http://i.imgur.com/pllLzcU.png,2877,455,2237,5,No,Cedar,Lonely Fox & Exiles Crew
+M1_3,Derelict Watch,RLCannibal,M1,3,http://i.imgur.com/2cLKwJO.png,3395,-440,1270,0,Yes,"Cedar, Chestnut",Lonely Fox & Exiles Crew
+M1_4,Overgrown Lab,uTube EmberstoneGaming,M1,3,http://i.imgur.com/zD0sJVx.png,4219,-146,2212,2,No,"Cedar, Elm",Lonely Fox & Exiles Crew
+M1_5,Autumn Ship Grave,Kranot,M1,3,http://i.imgur.com/SMu1RSE.png,5134,-86,2116,2,No,"Birch, Chestnut, Hemlock",Lonely Fox & Exiles Crew
+M1_6,Suramar,Lexhy,M1,3,http://i.imgur.com/AWltOh1.png,4029,-59,3491,4,Yes,"Ash, Cedar",Lonely Fox & Exiles Crew
+M1_7,Fuji,Mr.Secundus,M1,3,http://i.imgur.com/tUtpQ3D.png,3498,-67,5012,5,No,"Oak, Birch",Lonely Fox & Exiles Crew
+M1_8,Saborian Chapel,InquisitorCrumbleduck,M1,3,http://i.imgur.com/jhfCLHH.png,4654,-479,6141,4,Yes,"Oak, Chestnut",Lonely Fox & Exiles Crew
+M1_9,Last Wall,dia3,M1,3,http://i.imgur.com/8RMbwTL.png,5306,70,4664,2,No,Birch,Lonely Fox & Exiles Crew
 M2_1,Mine Shaft,Oafrat,M2,3,https://i.imgur.com/QHvEfkI.png,-2315,342,-1485,4,,,Archaegeo
 M2_2,Halo Town,Plowablebat,M2,3,https://i.imgur.com/xt5QpRI.png,-2038,313,-2463,0,,,Archaegeo
 M2_3,Tomb,The Ninjaneer,M2,3,https://i.imgur.com/YJvQ3LH.png,-3033,-400,-629,3,,,Archaegeo
 M2_4,Isles Sanctuary,Unknown,M2,3,https://i.imgur.com/XnrlgfC.png,-524,-246,-1176,4,Yes,"Elm, Birch, Oak",Lonely Fox & Exiles Crew
 M2_5,Pierce Canyon,OddNova,M2,3,https://i.imgur.com/3bBCwAu.png,309,482,65,2,No,"Elm, Birch",Lonely Fox & Exiles Crew
 M2_6,Oil Rig,The Doogality of Man,M2,3,https://i.imgur.com/3kiQ48A.png,-1606,384,-301,5,No,Chestnut,Lonely Fox & Exiles Crew
-M2_7,Landbridge,Unknown,M2,3,https://i.imgur.com/iBQv34k.png,650,450,2400,2,No,"Cedar, Elm, Hemlock",Lonely Fox & Exiles Crew
-M2_8,Stonebeast's Vigil,Unknown,M2,3,https://i.imgur.com/c8e0tl5.png,797,416,1470,5,No,"Elm, Birch, Ash",Lonely Fox & Exiles Crew
+M2_7,Landbridge,Unknown,M2,3,https://i.imgur.com/iBQv34k.png,650,450,-2400,2,No,"Cedar, Elm, Hemlock",Lonely Fox & Exiles Crew
+M2_8,Stonebeast's Vigil,Unknown,M2,3,https://i.imgur.com/c8e0tl5.png,797,416,-1470,5,No,"Elm, Birch, Ash",Lonely Fox & Exiles Crew
 Z1_1,Hidden Jungle,?,Z1,1,https://puu.sh/wry4I/0485b778e5.png,-17100,0,-500,2,,,Jerodar
 Z1_2,Tubes,Narciciss,Z1,1,https://puu.sh/wry6b/e700a2a9a7.png,-15200,-500,-700,2,,,Jerodar
 Z1_3,Mountain Lake,OddNova,Z1,1,https://puu.sh/wrwtc/c90da35a95.png,-17100,0,-1800,3,,,Jerodar
@@ -279,3 +289,6 @@ K5_4,Lonely Mountain,Narciciss,K5,1,https://i.imgur.com/xA476lM.png,-672,-73,751
 K5_5,Lighthouse,Jaros,K5,1,https://i.imgur.com/Z1779pI.png,-283,-410,5302,3,,,djJrock
 K5_6,Hermit's Hold,olobit,K5,1,https://i.imgur.com/7S2BNWB.png,-2163,142,6459,1,,,djJrock
 K6_1,City Storage,OddNova,K6,2,https://i.imgur.com/D5EtDjK.png,-4137,230,4009,1,,,djJrock
+K6_2,Floating Core,Kranot,K6,2,https://i.imgur.com/C5BSp9p.png,-4068,282,2258,3,Yes,"Birch, Hemlock, Chestnut",Jerodar
+K6_3,Grapple Isles,jaguerre,K6,2,https://i.imgur.com/UKItP3X.png,-2803,717,2178,2,Yes,Elm,Jerodar
+K6_4,Menhir Hill,Birby,K6,2,https://i.imgur.com/34vjRlE.png,-901,465,2840,4,No,Hemlock,Jerodar
