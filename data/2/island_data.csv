@@ -1,38 +1,45 @@
-ID,Name,Author,Sector,Tier,Screenshot,X,Y,Z,Databanks,Respawner,Trees,Surveyor
-E1_1,Temple of Caves,?,E1,4,,-17100,400,10800,,,,Lavayar
-E1_2,Natives' Village,?,E1,4,,-15900,-400,10600,,,,Lavayar
-E1_3,Lost Bunker,?,E1,4,,-14000,300,10300,,,,Lavayar
-E1_4,Pillars of Eternity,?,E1,4,,-16600,-600,9800,,,,Lavayar
-E1_5,Plains,?,E1,4,,-17100,300,8700,,,,Lavayar
-E1_6,Ruined Hideout,?,E1,4,,-15900,450,8700,,,,Lavayar
-E1_7,Ruined City,?,E1,4,,-13400,-500,8700,,,,Lavayar
-E1_8,Battlefield,?,E1,4,,-17100,0,7600,,,,Lavayar
-E1_9,Temple of Cheese,?,E1,4,,-15900,50,7700,,,,Lavayar
-E1_10,Dinosaur Skeleton,?,E1,4,,-14000,200,8000,,,,Lavayar
-E2_1,Port Royal,?,E2,4,,-17100,450,6300,,,,Lavayar
-E2_2,Junkyard,?,E2,4,,-16100,-200,6300,,,,Lavayar
-E2_3,Four Towers,?,E2,4,,-17100,470,5400,,,,Lavayar
-E2_4,Shipyard,?,E2,4,,-15600,270,5100,,,,Lavayar
-E2_5,Sphere,?,E2,4,,-15200,-550,4100,,,,Lavayar
-E2_6,Small Port,?,E2,4,,-17100,-760,3100,,,,Lavayar
-E2_7,Crash Site,?,E2,4,,-17100,-650,1000,,,,Lavayar
-O1_1,Cavum Complex,Synovus,O1,4,,-400,0,-1000,,,,MeisterKeen
-O1_2,Understructure,Unknown,O1,4,,1100,0,-600,,,,MeisterKeen
-O1_3,Kalima,?,O1,4,,-1300,0,-1900,,,,MeisterKeen
-O1_4,Palma,?,O1,4,,600,0,-1600,,,,MeisterKeen
-O1_5,Dry-Dock,?,O1,4,,2600,0,-1100,,,,MeisterKeen
-O1_6,The Triplets,?,O1,4,,880,0,-3400,,,,MeisterKeen
-O1_7,Blue-Tips,?,O1,4,,2800,0,-3300,3,,,MeisterKeen
-O1_8,Mines of Tartarus,Node,O1,4,,0,0,-5000,5,,,MeisterKeen
-O1_9,O'Dowd Airbase,Teras,O1,4,,1600,0,-5000,4,,,MeisterKeen
-O1_10,Mesas Rojas,Synovus,O1,4,,3000,0,-5000,2,,,MeisterKeen
-O1_11,Cementario,?,O1,4,,1900,0,-6000,,,,MeisterKeen
-O1_12,Port Halycon,Eternz,O1,4,,3100,0,-6500,,,,MeisterKeen
-O1_13,Pueblo,Darklight,O1,4,,2000,0,-7700,,,,MeisterKeen
-O1_14,Amarillo,?,O1,4,,3500,0,-8200,,,,MeisterKeen
-C3_1,nw,?,C3,4,,5400,-450,17100,,,,Girgsi
-C3_2,n,?,C3,4,,9100,-200,17100,,,,Girgsi
-C3_3,ne,?,C3,4,,10700,800,17000,,,,Girgsi
-C3_4,sw,?,C3,4,,6300,500,15500,,,,Girgsi
-C3_5,s,Eternz,C3,4,,8700,300,16300,,,,Girgsi
-C3_6,se,?,C3,4,,11100,-100,16300,,,,Girgsi
+ID,Name,Author,Sec,Tier,Screenshot,X,Y,Z,XP,Res,Trees,Surveyor,Steam name
+E1_1,Temple of Caves,?,E1,4,,-17100,400,10800,,,,Lavayar,
+E1_2,Natives' Village,?,E1,4,,-15900,-400,10600,,,,Lavayar,
+E1_3,Lost Bunker,?,E1,4,,-14000,300,10300,,,,Lavayar,
+E1_4,Pillars of Eternity,?,E1,4,,-16600,-600,9800,,,,Lavayar,
+E1_5,Plains,?,E1,4,,-17100,300,8700,,,,Lavayar,
+E1_6,Ruined Hideout,?,E1,4,,-15900,450,8700,,,,Lavayar,
+E1_7,Ruined City,?,E1,4,,-13400,-500,8700,,,,Lavayar,
+E1_8,Battlefield,?,E1,4,,-17100,0,7600,,,,Lavayar,
+E1_9,Temple of Cheese,?,E1,4,,-15900,50,7700,,,,Lavayar,
+E1_10,Dinosaur Skeleton,?,E1,4,,-14000,200,8000,,,,Lavayar,
+E2_1,Port Royal,?,E2,4,,-17100,450,6300,,,,Lavayar,
+E2_2,Junkyard,?,E2,4,,-16100,-200,6300,,,,Lavayar,
+E2_3,Four Towers,?,E2,4,,-17100,470,5400,,,,Lavayar,
+E2_4,Shipyard,?,E2,4,,-15600,270,5100,,,,Lavayar,
+E2_5,Sphere,?,E2,4,,-15200,-550,4100,,,,Lavayar,
+E2_6,Small Port,?,E2,4,,-17100,-760,3100,,,,Lavayar,
+E2_7,Crash Site,?,E2,4,,-17100,-650,1000,,,,Lavayar,
+O1_1,Cavum Complex,Synovus,O1,4,,-400,0,-1000,,,,MeisterKeen,
+O1_2,Understructure,Unknown,O1,4,,1100,0,-600,,,,MeisterKeen,
+O1_3,Kalima,?,O1,4,,-1300,0,-1900,,,,MeisterKeen,
+O1_4,Palma,?,O1,4,,600,0,-1600,,,,MeisterKeen,
+O1_5,Dry-Dock,?,O1,4,,2600,0,-1100,,,,MeisterKeen,
+O1_6,The Triplets,?,O1,4,,880,0,-3400,,,,MeisterKeen,
+O1_7,Blue-Tips,?,O1,4,,2800,0,-3300,3,,,MeisterKeen,
+O1_8,Mines of Tartarus,Node,O1,4,,0,0,-5000,5,,,MeisterKeen,
+O1_9,O'Dowd Airbase,Teras,O1,4,,1600,0,-5000,4,,,MeisterKeen,
+O1_10,Mesas Rojas,Synovus,O1,4,,3000,0,-5000,2,,,MeisterKeen,
+O1_11,Cementario,?,O1,4,,1900,0,-6000,,,,MeisterKeen,
+O1_12,Port Halycon,Eternz,O1,4,,3100,0,-6500,,,,MeisterKeen,
+O1_13,Pueblo,Darklight,O1,4,,2000,0,-7700,,,,MeisterKeen,
+O1_14,Amarillo,?,O1,4,,3500,0,-8200,,,,MeisterKeen,
+C3_1,nw,?,C3,4,,5400,-450,17100,,,,Girgsi,
+C3_2,n,?,C3,4,,9100,-200,17100,,,,Girgsi,
+C3_3,ne,?,C3,4,,10700,800,17000,,,,Girgsi,
+C3_4,sw,?,C3,4,,6300,500,15500,,,,Girgsi,
+C3_5,s,Eternz,C3,4,,8700,300,16300,,,,Girgsi,
+C3_6,se,?,C3,4,,11100,-100,16300,,,,Girgsi,
+C2_1,Watcher's Canyon,Mc.Marc,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154849619596/3963554FCF720428B8D57B1D564E3B69F0BD8E19/,10000,200,12000,2,Yes,"Palm, Hemlock",Bored,Silent Oasis
+C2_2,Saborian Observatory,NewWay,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154849790381/DBF5DF4472F4DECB5ABB597F250A1E171385AE02/,9000,500,11300,4,Yes,"Palm, Hemlock",Bored,Planetarium
+C2_3,Overwatch Shrine,McWizard,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850112461/6869B030A163B73458A9F72642ECC92E11B240F2/,9750,600,13300,1,No,"Hemlock, Ash",Bored,Shrine of the Sandman
+C2_4,Redusan District,Huntanian,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850491829/269465A5AC24C92E201DB3202E0F173A0280E945/,9000,0,13000,4,Yes,"Palm, Hemlock","Bored, Mediokrek",Old Saboria
+C2_5,Sunken Throne,NewWay,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850633968/1AF0ACF49BE59687BE41FCF1CEE7BA6FE66788DF/,8200,-300,12400,1,Yes,"Palm, Hemlock","Bored, Mediokrek",Little Kingdom
+C2_6,Red Rock Mines,Nausical,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850634278/0C7D801CC1F5D7C8DCBA0977810AD4FF91025B89/,7100,-400,12800,2,Yes,"Birch, Hemlock","Bored, Mediokrek",Desperation
+C2_7,The Refinery,Kranot,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850831391/C82E1151B7A45D26A0E3FF8959A2D04EB3230A75/,8000,0,13300,2,No,Hemlock,Bored,Homestead of Ro
