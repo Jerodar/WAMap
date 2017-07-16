@@ -6,6 +6,7 @@ var MapMaker = (function () {
   var poiLayers = {};
   var prevZoom = -6;
   var selectedServer = 1;
+  var points = {};
 
   function init() {
     // Create the map container
@@ -74,6 +75,9 @@ var MapMaker = (function () {
     // L.imageOverlay('img/map.png', bounds).addTo(map);
     
     // Add the various layergroups
+    poiLayers.pointLayer = new L.LayerGroup();
+    // Only used for debugging point data
+    // poiLayers.pointLayer.addTo(map);
     poiLayers.zoneLayer = new L.LayerGroup();
     poiLayers.zoneLayer.addTo(map);
     poiLayers.sectorLayer = new L.LayerGroup();
@@ -129,13 +133,17 @@ var MapMaker = (function () {
     
     // Cursor coordinate display
     L.control.mousePosition({separator: ',', lngFirst: true, numDigits: -1}).addTo(map);
-    
-    // Async load the zone data file
+
+    // Load the point data
+    // Async Load and read the csv file
     $.ajax({
-      dataType: 'json',
-      url: 'data/' + selectedServer + '/zone_data.json',
+      url: 'data/' + selectedServer + '/point_data.csv',
+      type: 'GET',
       cache: false,
-      success: onZoneDataLoaded,
+      success: function (text) {
+        var data = $.csv.toArrays(text);
+        onPointDataLoaded(data);
+      },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error(errorThrown);
       }
@@ -213,6 +221,38 @@ var MapMaker = (function () {
     return svgNode;
   }
 
+  function onPointDataLoaded(data) {
+	// Render all sectors
+    for (var i = 1; i < data.length; i++) {
+      if (data[i][0] !== '') {
+        var point = {};
+        // ID, X, Z, Sectors
+        var Id = data[i][0];
+        points[Id] = {};
+        points[Id].X = Number(data[i][1]);
+        points[Id].Z = Number(data[i][2]);
+        
+        // Create and add the marker to the island layer
+        var labelIcon = new L.divIcon({ html: Id, className: 'sector-label'});
+        var options = settings.sectorLabelOptions;
+        options.fillcolor = '#AAAAAA';
+        options.icon = labelIcon;
+        var label = new L.Marker([points[Id].Z, points[Id].X], options).addTo(poiLayers.pointLayer);
+      }
+    }  
+
+    // Async load the zone data file
+    $.ajax({
+      dataType: 'json',
+      url: 'data/' + selectedServer + '/zone_data.json',
+      cache: false,
+      success: onZoneDataLoaded,
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+      }
+    });
+  }
+
   function onZoneDataLoaded(zones) {
     for (var zone in zones) {
       if (!zones.hasOwnProperty(zone)) {
@@ -247,14 +287,14 @@ var MapMaker = (function () {
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
         var sector = {};
-        // Sector, Region, Tier, X1, Z1, X2, Z2, X3, Z3, X4, Z4, X5, Z5
+        // Sector, Region, Tier, P1, P2, P3, P4, P5, P6, P7
         sector.Sector = data[i][0];
         sector.Region = data[i][1];
         sector.Tier = Number(data[i][2]);
         sector.Pos = [];
-        for (var j = 3; j < 17; j=j+2) {
+        for (var j = 3; j < 10; j++) {
             if(data[i][j] !== '') {
-                sector.Pos.push([Number(data[i][j+1]),Number(data[i][j])]);
+                sector.Pos.push([points[data[i][j]].Z,points[data[i][j]].X]);
             }
         }
         
@@ -268,9 +308,9 @@ var MapMaker = (function () {
           .addTo(poiLayers.sectorLayer);
         var labelIcon = new L.divIcon({ html: sector.Sector, className: 'sector-label sector-label-'+sector.Tier});
         var labelPos = marker.getBounds().getCenter();
-        var point = map.latLngToContainerPoint(labelPos);
-        point = L.point([point.x - 10, point.y - 10]);
-        labelPos = map.containerPointToLatLng(point);
+        var labelPoint = map.latLngToContainerPoint(labelPos);
+        labelPoint = L.point([labelPoint.x - 10, labelPoint.y - 10]);
+        labelPos = map.containerPointToLatLng(labelPoint);
         options = settings.sectorLabelOptions;
         options.icon = labelIcon;
         var label = new L.Marker(labelPos,options).addTo(poiLayers.sectorNameLayer);
@@ -301,12 +341,10 @@ var MapMaker = (function () {
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
         var wall = {};
-        // Tier,X1,Z1,X2,Z2,Sector
+        // Id, Tier, P1, P2
         wall.Tier = Number(data[i][1]);
-        wall.X1 = Number(data[i][2]);
-        wall.Y1 = Number(data[i][3]);
-        wall.X2 = Number(data[i][4]);
-        wall.Y2 = Number(data[i][5]);
+        wall.P1 = [points[data[i][2]].Z, points[data[i][2]].X];
+        wall.P2 = [points[data[i][3]].Z, points[data[i][3]].X];
         
         // Set the colors of the marker
         var color = settings.colors.walls[wall.Tier];
@@ -314,7 +352,7 @@ var MapMaker = (function () {
         options.color = rgb(color);
         
         // Create and add the marker to the island layer
-        var marker = new L.polyline([[wall.Y1, wall.X1],[wall.Y2, wall.X2]], options)
+        var marker = new L.polyline([wall.P1, wall.P2], options)
             .addTo(poiLayers.wallLayer);
       }
     }
@@ -454,12 +492,16 @@ var MapMaker = (function () {
       d.setTime(d.getTime() + (360 * 24 * 60 * 60 * 1000));
       document.cookie='server=' + selectedServer + ';expires=' + d.toUTCString() + ';';
       
-      // Async load the zone data file
+      // Load the point data
+      // Async Load and read the csv file
       $.ajax({
-        dataType: 'json',
-        url: 'data/' + selectedServer + '/zone_data.json',
+        url: 'data/' + selectedServer + '/point_data.csv',
+        type: 'GET',
         cache: false,
-        success: onZoneDataLoaded,
+        success: function (text) {
+          var data = $.csv.toArrays(text);
+          onPointDataLoaded(data);
+        },
         error: function (jqXHR, textStatus, errorThrown) {
           console.error(errorThrown);
         }
