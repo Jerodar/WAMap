@@ -430,10 +430,11 @@ var WAMap = (function () {
         var marker = new L.circleMarker([island.Y, island.X], options)
           .addTo(poiLayers.islandLayer);
         
-        island.Screenshot = 'img/' + island.Id + '.jpg';
+        island.Screenshot = 'img/' + selectedServer + '/' + island.Id + '.jpg';
         
         // Create and add the marker to the zoomed island layer
         var myIcon = L.icon({
+          // Copy of screenshot ending with s is a square thumbnail of 90x90
           iconUrl: island.Screenshot.replace('.jpg','s.jpg'),
           iconSize: [90,90]
         });
@@ -441,7 +442,7 @@ var WAMap = (function () {
           .addTo(poiLayers.zoomedIslandLayer);
         
         // Create the popup that will appear when clicked
-        // adding m to an imgur link creates a medium thumbnail 320 width
+        // Copy of screenshot ending with m is a thumbnail of 320 width
         var thumbnail = island.Screenshot.replace('.jpg','m.jpg');
         var respawnString = '';
         if (island.Respawner === 'Yes') {
@@ -489,16 +490,18 @@ var WAMap = (function () {
       if (data[i][1] !== '') {
         var wall = {};
         // Timestamp, x, y, z
-        wall.P1 = [data[i][3], data[i][1]];
-        wall.P2 = [data[i+1][3], data[i+1][1]];
+        wall.P1 = [Number(data[i][3]), Number(data[i][1])];
+        wall.P2 = [Number(data[i + 1][3]), Number(data[i + 1][1])];
+        var distanse = Math.hypot(wall.P1[0] - wall.P2[0], wall.P1[1] - wall.P2[1]);
+        if (distanse < 1000) {
+          // Set the colors of the marker
+          var options = settings.wallOptions;
+          options.color = '#FF0000';
 
-        // Set the colors of the marker
-        var options = settings.wallOptions;
-        options.color = '#FF0000';
-
-        // Create and add the marker to the island layer
-        var marker = new L.polyline([wall.P1, wall.P2], options)
-          .addTo(poiLayers.routeLayer);
+          // Create and add the marker to the island layer
+          var marker = new L.polyline([wall.P1, wall.P2], options)
+            .addTo(poiLayers.routeLayer);
+        }
       }
     }
   }
