@@ -89,6 +89,8 @@ var WAMap = (function () {
     poiLayers.wallLayer.addTo(map);
     poiLayers.islandLayer = new L.LayerGroup();
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
+    poiLayers.routeLayer = new L.LayerGroup();
+    poiLayers.routeLayer.addTo(map);
 
     // Add the controls
     
@@ -462,6 +464,41 @@ var WAMap = (function () {
         var props = feature.properties = feature.properties || {}; // Initialize feature.properties
         props.name = island.Name;
         props.author = island.Author;
+      }
+    }
+
+    // Load the route data for tracing walls
+    // Async Load and read the csv file
+    $.ajax({
+      url: 'data/' + selectedServer + '/route_data.csv',
+      type: 'GET',
+      cache: false,
+      success: function (text) {
+        var data = $.csv.toArrays(text);
+        onRouteDataLoaded(data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.warn(errorThrown);
+      }
+    });
+  }
+
+  function onRouteDataLoaded(data) {
+    // Render all walls
+    for (var i = 1; i < data.length-1; i++) {
+      if (data[i][1] !== '') {
+        var wall = {};
+        // Timestamp, x, y, z
+        wall.P1 = [data[i][3], data[i][1]];
+        wall.P2 = [data[i+1][3], data[i+1][1]];
+
+        // Set the colors of the marker
+        var options = settings.wallOptions;
+        options.color = '#FF0000';
+
+        // Create and add the marker to the island layer
+        var marker = new L.polyline([wall.P1, wall.P2], options)
+          .addTo(poiLayers.routeLayer);
       }
     }
   }
