@@ -70,6 +70,7 @@ var MapMaker = (function () {
                     [settings.maxY + settings.maxBounds, settings.maxX + settings.maxBounds]];
     map.setMaxBounds(maxBounds);
     map.setView([0, 0], -6);
+    map.on('zoomanim', onZoomAnim);
     map.on('zoomend', onZoomEnd);
     
     // L.imageOverlay('img/map.png', bounds).addTo(map);
@@ -447,31 +448,52 @@ var MapMaker = (function () {
       }
     }
   }
-  
-  function onZoomEnd(e) {
-    var nextZoom = map.getZoom();
-    console.log('Zoomed to: ' + nextZoom);
+
+  // Two separate events for zooming:
+  // ZoomAnim fires at the start and lists the target zoom level
+  // Hide the old layers here
+  // ZoomEnd fires at the end, display the new layers here
+  function onZoomAnim(e) {
+    prevZoom = map.getZoom();
+    var nextZoom = e.zoom;
+    console.log('Zoomed from:' + prevZoom + ' to: ' + nextZoom);
     if (nextZoom > -4 && prevZoom <= -4) {
       // if zoomed in to the max display island screenshots instead of markers
       map.removeLayer(poiLayers.islandLayer);
-      map.addLayer(poiLayers.zoomedIslandLayer);
     }
     else if (nextZoom <= -4 && prevZoom > -4) {
       // switch back to circle markers
       map.removeLayer(poiLayers.zoomedIslandLayer);
-      map.addLayer(poiLayers.islandLayer);
     }
     else if (nextZoom === -6 && prevZoom > -6) {
       // switch to zone name display
       map.removeLayer(poiLayers.islandLayer);
-      map.addLayer(poiLayers.zoneLayer);
     }
     else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
       map.removeLayer(poiLayers.zoneLayer);
+    }
+  }
+
+  function onZoomEnd(e) {
+    var nextZoom = map.getZoom();
+    console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
+    if (nextZoom > -4 && prevZoom <= -4) {
+      // if zoomed in to the max display island screenshots instead of markers
+      map.addLayer(poiLayers.zoomedIslandLayer);
+    }
+    else if (nextZoom <= -4 && prevZoom > -4) {
+      // switch back to circle markers
       map.addLayer(poiLayers.islandLayer);
     }
-    prevZoom = nextZoom;
+    else if (nextZoom === -6 && prevZoom > -6) {
+      // switch to zone name display
+      map.addLayer(poiLayers.zoneLayer);
+    }
+    else if (nextZoom > -6 && prevZoom === -6) {
+      // switch to island display
+      map.addLayer(poiLayers.islandLayer);
+    }
   }
   
   function onSelectChange(e) {
