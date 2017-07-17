@@ -1,4 +1,4 @@
-var MapMaker = (function () {
+var WAMap = (function () {
   'use strict';
 
   var settings = {};
@@ -104,15 +104,11 @@ var MapMaker = (function () {
       url: 'https://www.worldsadrift.com/forums/topic/cardinal-guild-map-making-navigation-and-helmsmanship/'
     }).addTo(map);
     
-    // Server selection dropbox
-    var select = L.control.select({entries: settings.servers}).addTo(map);
-    select.on('change', onSelectChange);
-    $('.leaflet-select').prop( 'selectedIndex', selectedServer - 1 );
-    
     // Displays a div containing the legend
     var legend = L.control({position: 'topright'});
     legend.onAdd = constructLegend;
     legend.addTo(map);
+    $('.leaflet-radio-' + selectedServer).prop('checked',true);
     
     // Search bar
     var controlSearch = new L.control.search({
@@ -203,6 +199,27 @@ var MapMaker = (function () {
     container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[4], settings.colors.walls[4]));
     container.appendChild(document.createTextNode('Sandstorm'));
     container.appendChild(document.createElement('br'));
+    container.appendChild(document.createElement('br'));
+
+    container.appendChild(document.createTextNode('Server select:'));
+    container.appendChild(document.createElement('br'));
+    var inputNode = document.createElement('input');
+    inputNode.setAttribute('type', 'radio');
+    inputNode.setAttribute('name', 'server');
+    inputNode.setAttribute('value', '1');
+    inputNode.setAttribute('class', 'leaflet-radio-1');
+    inputNode.setAttribute('onClick', 'WAMap.onServerChange(this);');
+    container.appendChild(inputNode);
+    container.appendChild(document.createTextNode('USW & EUE'));
+    container.appendChild(document.createElement('br'));
+    inputNode = document.createElement('input');
+    inputNode.setAttribute('type', 'radio');
+    inputNode.setAttribute('name', 'server');
+    inputNode.setAttribute('value', '2');
+    inputNode.setAttribute('class', 'leaflet-radio-2');
+    inputNode.setAttribute('onClick', 'WAMap.onServerChange(this);');
+    container.appendChild(inputNode);
+    container.appendChild(document.createTextNode('USE & EUW'));
 
     div.innerHTML = container.innerHTML;
     return div;
@@ -496,9 +513,9 @@ var MapMaker = (function () {
     }
   }
   
-  function onSelectChange(e) {
-    console.log('Selected option: ' + e.feature);
-    changeServerMap(e.feature);
+  function onServerChange(e) {
+    console.log('Selected option: ' + e.value);
+    changeServerMap(e.value);
   }
   
   function changeServerMap(server) {
@@ -570,5 +587,6 @@ var MapMaker = (function () {
 
   return {
       // Pass on any pubic function here
+    onServerChange: onServerChange
   };
 }());
