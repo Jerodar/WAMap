@@ -27,7 +27,7 @@
   "LILAC": {
     "pos": [2000,4500],
     "angle": -40,
-    "spacing": 1
+    "spacing": 0.8
   },
   "EZRA": {
     "pos": [5000, -16800],
