@@ -408,7 +408,11 @@ var WAMap = (function () {
         island.X = Number(data[i][6]);
         island.Height = Number(data[i][7]) + settings.ZtoAltitude;
         island.Y = Number(data[i][8]);
-        island.Databanks = Number(data[i][9]);
+        if (data[i][9] === "") {
+          island.Databanks = "Unknown";
+        } else {
+          island.Databanks = Number(data[i][9]);
+        }
         island.Respawner = data[i][10];
         island.Trees = data[i][11];
         island.Surveyor = data[i][12];
@@ -444,18 +448,23 @@ var WAMap = (function () {
         // Create the popup that will appear when clicked
         // Copy of screenshot ending with m is a thumbnail of 320 width
         var thumbnail = island.Screenshot.replace('.jpg','m.jpg');
-        var respawnString = '';
-        if (island.Respawner === 'Yes') {
-          respawnString = 'Has respawners.<br>';
-        }
+        
         var popup = '<b>' + island.Name + '</b><br>' +
           'By: ' + island.Author + '<br>' +
           'Databanks: ' + island.Databanks + ', Sector: ' + island.Sector +
-          ', Altitude: ' + island.Height + '<br>' +
-          respawnString +
-          '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' +
+          ', Altitude: ' + island.Height + '<br>';
+          
+        if (island.Trees !== "") {
+          popup = popup + 'Trees found: ' + island.Trees + '<br>';
+        }
+        if (island.Respawner === 'Yes') {
+          popup = popup + 'Has respawners<br>';
+        }
+        
+        popup = popup + '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' +
           thumbnail + '\'></a><br>' +
           'Surveyed by: ' + island.Surveyor;
+        
         marker.bindPopup(popup, {minWidth: '320'});
         zoomedMarker.bindPopup(popup, {minWidth: '320'});
         
