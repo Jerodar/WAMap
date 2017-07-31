@@ -162,12 +162,12 @@ Se5_3,Hill Fortress,InquisitorCrumbleDuck,Se5,2,https://i.imgur.com/jHKixel.png,
 Se5_4,Autumn Island,Phlop,Se5,2,https://i.imgur.com/re4T15O.png,-6287,509,6480,1,Yes,"Birch, Chestnut",Jerodar,
 Se5_5,Basecamp,Nivis,Se5,2,https://i.imgur.com/UyKJsYa.png,-7705,394,6481,2,No,"Birch, Chestnut",Jerodar,
 Se5_6,Manor,Frenk4,Se5,2,https://i.imgur.com/tOhZbK4.png,-7503,-330,4761,1,No,"Birch, Chestnut",Jerodar,
-Se5_7,Kings Statue,çek çek ihtan,Se5,2,https://i.imgur.com/nRdKwzv.png,-8737,514,5226,3,No,"Elm, Birch",Jerodar,
-Se5_8,Mini Jungle,Oafrat,Se5,2,https://i.imgur.com/lIcC9zw.png,-7609,485,3551,3,No,"Palm, Oak",Jerodar,
-Se5_9,Halo Peak,Atriox,Se5,2,https://i.imgur.com/KYjx2ys.png,-6822,681,2379,5,Yes,"Oak, Chestnut",Jerodar,
+Se5_7,Kings Statue,çek çek ihtan,Se5,2,https://i.imgur.com/nRdKwzv.png,-8737,514,5226,3,No,"Elm, Birch",Jerodar,Kerim Kocak
+Se5_8,Mini Jungle,Oafrat,Se5,2,https://i.imgur.com/lIcC9zw.png,-7609,485,3551,3,No,"Palm, Oak",Jerodar,Bunker 52
+Se5_9,Halo Peak,Atriox,Se5,2,https://i.imgur.com/KYjx2ys.png,-6822,681,2379,5,Yes,"Oak, Chestnut",Jerodar,Tomb Raider
 Se5_10,Fall Bluffs,Unknown,Se5,2,https://i.imgur.com/WofYHTT.png,-6422,224,1051,2,No,"Chestnut, Oak",Jerodar,
-Se5_11,Hidden Garden,OddNova,Se5,2,https://i.imgur.com/HcTf7yF.png,-5369,232,912,2,No,"Elm, Ash",Jerodar,
-Se5_12,Drainage,Oafrat,Se5,2,https://i.imgur.com/JK9nTWn.png,-5276,423,2768,1,Yes,"Cedar, Hemlock",Jerodar,
+Se5_11,Hidden Garden,OddNova,Se5,2,https://i.imgur.com/HcTf7yF.png,-5369,232,912,2,No,"Elm, Ash",Jerodar,Mushroom Farm
+Se5_12,Drainage,Oafrat,Se5,2,https://i.imgur.com/JK9nTWn.png,-5276,423,2768,1,Yes,"Cedar, Hemlock",Jerodar,Noxious Wetland
 Se6_1,Golf Course,dougmantis,Se6,1,https://i.imgur.com/7dnvtav.png,-9202,-517,-210,3,Yes,"Oak, Chestnut",Jerodar,
 Se6_2,Mountain Range,Narcissis,Se6,1,https://i.imgur.com/TVrAlrH.png,-10268,-594,-23,3,Yes,"Birch, Oak",Jerodar,
 Se6_3,Mini Biome,Ceramic_Plate,Se6,1,https://i.imgur.com/s37TLwt.png,-11326,490,-499,1,Yes,"Elm, Ash",Jerodar,
@@ -201,7 +201,10 @@ Se7_14,Red Leaf Rock,GreyEminenz,Se7,2,https://drive.google.com/open?id=0B1JNE5d
 Se7_15,Grass Bowl Island,the voice of freedom,Se7,2,https://drive.google.com/open?id=0B1JNE5dfFEp6azhCRDFuRWdFVkE,-6756,-550,-4952,1,No,Birch,Aezzon,
 Se7_16,Broken Tower,Zyglotop,Se7,2,https://drive.google.com/open?id=0B1JNE5dfFEp6NHU0Rk5RajVFWEk,-9200,-117,-4981,4,Yes,"Birch, Elm, Oak",Aezzon,
 Se8_1,Cityscape,Ms. Delirium,Se8,2,https://i.imgur.com/jo5QaGY.jpg,-2484,69,-6957,2,Yes,Palm & Chestnut,Blake81 and The_Gipsy_Danger,
-Se8_2,Circle of Harvest,jotty2,Se8,2,https://i.imgur.com/jqkuwYj.jpg,-3011,-379,-5688,5,No,"Ash, Palm, Chestnut, Oak, Birch",Blake81 and The_Gipsy_Danger,
+Se8_2,Circle of Harvest,jotty2,Se8,2,https://i.imgur.com/jqkuwYj.jpg,-3011,-379,-5688,5,No,"Ash, Palm, Chestnut, Oak, Birch, Cedar",Blake81 and The_Gipsy_Danger,
+Se8_3,Remote Cottage,Unknown,Se8,2,https://i.imgur.com/T5WoC7I.jpg,-3593,494,-6745,1,No,Birch,Blake81 and The_Gipsy_Danger,
+Se8_4,The Workshop,Outcast,Se8,2,https://i.imgur.com/w1PkMUu.jpg,-3463,-406,-11671,5,No,Chestnut,Blake81 and The_Gipsy_Danger,
+Se8_5,The Clouds' Ramparts,Nardo,Se8,2,https://i.imgur.com/h7p2T2E.jpg,-2032,-268,-9308,0,No,None,Blake81 and The_Gipsy_Danger,
 Si1_1,Dunluce Castle,InquisitorCrumdleduck,Si1,3,http://i.imgur.com/IcNEWaV.jpg,932,-625,-13901,3,Yes,"Oak, Chestnut, Hemlock",Commander'Sid,
 Si1_2,The Lonely Tower,Lexhy,Si1,3,http://i.imgur.com/sZLVnSp.jpg,-19,-555,-15322,4,Yes,"Elm, Birch",Commander'Sid,
 Si1_3,The Boneyard,Lexhy,Si1,3,http://i.imgur.com/WhPqoid.jpg,-1940,-283,-16276,3,Yes,"Chestnut, Birch",Commander'Sid,
