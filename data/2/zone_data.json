@@ -20,9 +20,9 @@
     "spacing": 0.5
   },
   "SIHNON": {
-    "pos": [-15000,-3800],
+    "pos": [-15000,-2300],
     "angle": -10,
-    "spacing": 0.3
+    "spacing": 0.2
   },
   "LILAC": {
     "pos": [2000,4500],
@@ -35,8 +35,8 @@
     "spacing": 0.4
   },
   "OSIRIS": {
-    "pos": [ -6000, -300 ],
-    "angle": -60,
+    "pos": [ -7500, 1000 ],
+    "angle": -70,
     "spacing": 0
   },
   "CANTON": {
