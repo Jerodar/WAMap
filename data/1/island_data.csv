@@ -1,4 +1,4 @@
-ID,Name,Author,Sec,Tier,Screenshot,X,Y,Z,XP,Res,Trees,Surveyor,Steam name
+d,Name,Author,Sec,Tier,Screenshot,X,Y,Z,XP,Res,Trees,Surveyor,Steam name
 A1_1,Ancient Harbor,laflyboy,A1,2,https://gyazo.com/8c9ac42bea1b69dda274bd324acd6282,8190,496,7331,5,Yes,"Hemlock, Chestnut, Birch",SonneillonZ,
 A1_2,Ladies Plaza,Memechanical Menace,A1,2,https://i.imgur.com/cdF5t0s.png,6968,298,8221,2,Yes,"Oak, Elm, Birch",SonneillonZ,
 A1_3,Trial of Light,Mausis,A1,2,https://gyazo.com/905bef727253ee8c94d38f3f16586594,8458,-153,9181,4,Yes,"Oak, Birch",SonneillonZ,
@@ -70,7 +70,7 @@ B2_6,Juno,Athen,B2,3,https://i.imgur.com/K2rU2D8.jpg,14500,-459,-15856,,,,Turk64
 B2_7,Swinger's Club,Dante,B2,3,https://i.imgur.com/QhJeOdI.jpg,16987,626,-15912,,,,Turk645,
 B2_8,Vestige,Dante,B2,3,https://i.imgur.com/kVUAHXT.jpg,15342,253,-16767,,,,Turk645,
 H1_1,Half Arena,Kranot,H1,4,https://i.imgur.com/T0k4Cfi.png,3533,-195,-7550,3,No,"Hemlock, Palm",Jerodar,
-H1_2,Dust Ball,WalfaIcon,H1,4,https://i.imgur.com/wsk5dPe.png,3947,-209,-9545,0,No,None,Jerodar,
+H1_2,Dust Ball,WalfaIcon,H1,4,https://i.imgur.com/wsk5dPe.png,3947,-209,-9545,1,No,None,Jerodar,
 H1_3,Tomb Marker,Iorek,H1,4,https://i.imgur.com/0SrU70x.png,3415,-396,-5820,5,No,Palm,Jerodar,
 H1_4,Ran Aground,Teras,H1,4,https://i.imgur.com/cZlvlNA.png,3737,-100,-4389,3,No,None,Jerodar,
 H1_5,Oasis,Mc.Marc,H1,4,https://i.imgur.com/Tx5bWAm.png,3518,-405,-2931,2,Yes,"Palm, Hemlock",Jerodar,
@@ -79,7 +79,7 @@ H1_7,Highbridge,Eternz,H1,4,https://i.imgur.com/8XKZ11P.png,6805,-330,-5996,1,Ye
 H1_8,Desert Outpost,Unknown,H1,4,https://i.imgur.com/nSMpK75.png,6620,-275,-7737,2,No,"Palm, Hemlock",Jerodar,
 H1_9,Upheaval,Lykren,H1,4,https://i.imgur.com/IIJ8G7P.png,8091,650,-7374,3,Yes,Hemlock,Jerodar,
 H1_10,Obelisk,Synovus,H1,4,https://i.imgur.com/KJUD8Sy.png,5004,-159,-6430,3,Yes,"Palm, Hemlock",Jerodar,
-H1_11,Gun Battery,Mr.Secundus,H1,4,https://i.imgur.com/MMTBKpt.png,4327,-470,-8532,3,No,Hemlock,Jerodar,
+H1_11,Gun Battery,Mr.Secundus,H1,4,https://i.imgur.com/MMTBKpt.png,4327,-470,-8532,4,No,Hemlock,Jerodar,
 H1_12,Boulevard,WiredKamikaze,H1,4,https://i.imgur.com/rMpJfGS.png,5585,-183,-8951,2,No,Hemlock,Jerodar,
 H2_1,Planetorium,NewWay,H2,4,https://i.imgur.com/9waKiHx.png,11593,383,-7728,4,Yes,"Palm, Hemlock",Jerodar,
 H2_2,Necropolis,Unknown,H2,4,https://i.imgur.com/SpuGP4R.png,12028,374,-9052,5,No,Palm,Jerodar,
