@@ -9,6 +9,11 @@ A1_7,Central Anchorage,Fenix,A1,3,http://imgur.com/a/TUqvx,-14146,157,15526,2,Ye
 A1_8,Crescent Isle,Plego,A1,3,http://imgur.com/a/PQlVo,-13666,-91,14082,2,Yes,"Palm, Elm",Simayi,Kambai Island
 A1_9,Aetherium Temple,mikhaeldionio,A1,3,http://imgur.com/a/4tAxy,-12806,-532,15409,2,No,"Hemlock, Palm, Ash, Chestnut, Elm",Simayi,Stariway to Aetherium
 A1_10,Skyloft,ArchEngel,A1,3,http://imgur.com/a/1hfv7,-12728,-273,16740,4,Yes,Oak,Simayi,Skyloft
+A2_1,Tower of the Six Shards,Taco6961,A2,3,http://imgur.com/a/0ZjeQ,-10140,-286,16901,5,Yes,Palm,Simayi,Sky Shard
+A2_2,Overpass City,rykaan,A2,3,http://imgur.com/a/FmMBR,-7978,-361,16713,2,No,Ash,Simayi,Monolith
+A2_3,Archipelago of Chains,Lexhy,A2,3,http://imgur.com/a/XmsTy,-5538,286,16546,3,No,"Birch, Elm",Simayi,Islands in chains
+A2_4,Crashed Ship,Wumply912xX,A2,3,http://imgur.com/a/SrYMm,-6583,358,16058,4,Yes,"Oak, Chestnut",Simayi,Crashed Ship
+A2_5,Oaken Monastery,Trolloflo,A2,3,http://imgur.com/a/xU8Su,-9082,131,16128,5,Yes,Oak,Simayi,Forgotten Monastery
 C1_1,Old Arena,ArchEngel,C1,4,http://i.imgur.com/Y8dpcfm.jpg,5473,531,9815,5,No,Palm,Rex Starborne,
 C1_2,Port Piza,Captainheathcliff,C1,4,http://i.imgur.com/w8zethE.jpg,7421,657,8120,2,No,Hemlock,Rex Starborne,
 C1_3,Ruined Throne,NewWay,C1,4,http://i.imgur.com/H52XS4s.jpg,6682,-386,9357,2,Yes,"Hemlock, Palm",Rex Starborne,
@@ -27,6 +32,8 @@ C2_4,Redusan District,Huntanian,C2,4,https://steamuserimages-a.akamaihd.net/ugc/
 C2_5,Sunken Throne,NewWay,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850633968/1AF0ACF49BE59687BE41FCF1CEE7BA6FE66788DF/,8200,-300,12400,1,Yes,"Palm, Hemlock","Bored, Mediokrek",Little Kingdom
 C2_6,Red Rock Mines,Nausical,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850634278/0C7D801CC1F5D7C8DCBA0977810AD4FF91025B89/,7100,-400,12800,2,Yes,"Birch, Hemlock","Bored, Mediokrek",Desperation
 C2_7,The Refinery,Kranot,C2,4,https://steamuserimages-a.akamaihd.net/ugc/848217154850831391/C82E1151B7A45D26A0E3FF8959A2D04EB3230A75/,8000,0,13300,2,No,Hemlock,Bored,Homestead of Ro
+C2_8,Crooked Spire,Unknown,C2,4,https://i.imgur.com/zdQ1GfW.jpg,7389,427,11672,4,Yes,Hemlock,Rex Starborne,
+C2_9,Divine Peak,ryedstar,C2,4,https://i.imgur.com/Ti9eiQR.jpg,6247,263,12525,3,No,None,Rex Starborne,
 C3_1,nw,?,C3,4,#raw_survey_data,4800,-450,17100,,,,Girgsi,
 C3_2,n,?,C3,4,#raw_survey_data,8500,-200,17100,,,,Girgsi,
 C3_3,ne,?,C3,4,#raw_survey_data,10200,800,17000,,,,Girgsi,
@@ -130,8 +137,9 @@ M1_13,Back Bone,Zƒ ● Retribution<3,M1,1,https://i.imgur.com/fXZGZvj.png,13342
 M2_1,Pancake,?,M2,2,https://i.imgur.com/j6FLsXt.jpg,16673,489,-5523,4,No,"Oak, Elm",Montolio,
 M2_2,Beehive,N3x,M2,2,https://i.imgur.com/4VyS6J1.jpg,16603,537,-6864,2,No,Oak,Montolio,
 M2_4,WindMill,CATman4L,M2,2,https://i.imgur.com/nZlFWa8.jpg,15347,483,-4726,1,No,"Elm, Cedar",Montolio,
-M3_1,Forgotten Spire,?,M3,1,https://i.imgur.com/SHYLa5h.jpg,5792,-216,-6884,3,Yes,"Elm, Oak",DeadlyPeriapsis,
+M3_1,Forgotten Spire,King Schrodingers cat the 1st,M3,1,https://i.imgur.com/SHYLa5h.jpg,5792,-216,-6884,3,Yes,"Elm, Oak",DeadlyPeriapsis,
 M3_2,Abridged Taurus ,Bong_Delonge,M3,1,https://i.imgur.com/jElrnsg.jpg,6145,686,-5531,3,Yes,"Birch, Chestnut",DeadlyPeriapsis,
+M3_3,Cratered Plains,Narciciss,M3,1,https://i.imgur.com/mDDboXu.jpg,6832,-390,-7793,4,Yes,"Oak, Birch",DeadlyPeriapsis,
 M4_1,Telescope,homecomp,M4,2,https://i.imgur.com/rUBfsIl.png,11256,568,-10288,2,No,"Elm, Chestnut, Birch",Jerodar,
 M4_2,Aquaduct,eli_eggy,M4,2,https://i.imgur.com/8LNElpd.png,10284,-373,-11345,3,Yes,"Hemlock, Elm",Jerodar,
 M4_3,Appendage,dougmantis,M4,2,https://i.imgur.com/Ge5lHCY.png,10183,-593,-13353,2,Yes,"Hemlock, Elm, Oak",Jerodar,
@@ -146,6 +154,19 @@ M4_11,World Ash Tree,B a r,M4,2,https://i.imgur.com/0CvTzHB.png,8916,538,-12918,
 M4_12,Four Tier,Think Tank,M4,2,https://i.imgur.com/ifdz2Wb.png,9184,557,-11712,2,Yes,"Chestnut, Birch",Jerodar,
 M4_13,Slide,Magnymbus,M4,2,https://i.imgur.com/d3yVmpV.png,8455,-558,-12220,3,Yes,"Oak, Birch, Elm",Jerodar,
 M4_14,Inverted Tree,Atarip_ | kickback.com,M4,2,https://i.imgur.com/btzks7A.png,11320,203,-11880,0,No,"Cedar, Ash",Jerodar,
+M5_1,Valley Bridge,[H] MeisterKeen,M5,1,https://i.imgur.com/ZjqgIPN.png,14186,575,-11660,2,Yes,Elm,Jerodar,
+M5_2,Beet,chupapanza,M5,1,https://i.imgur.com/IGw0rpq.png,14215,207,-10468,2,No,"Chestnut, Birch, Elm",Jerodar,
+M5_3,Tunnels,Mr.Secundus,M5,1,https://i.imgur.com/p3XQF2i.png,15221,305,-11616,5,No,Chestnut,Jerodar,
+M5_4,Cliffside Forest,MadStronk,M5,1,https://i.imgur.com/fd4I6Zz.png,15339,283,-12713,1,No,"Birch, Oak",Jerodar,
+M5_5,Donut,Huntanian,M5,1,https://i.imgur.com/nWCMaLB.png,15824,-549,-11070,1,Yes,"Birch, Elm",Jerodar,
+M5_6,Pink Valley,CaptainNova,M5,1,https://i.imgur.com/2qzgxlR.png,16378,-49,-12636,2,Yes,Ash,Jerodar,
+M5_7,Fault Line,uncle J,M5,1,https://i.imgur.com/ju0Ijpl.png,16678,299,-14483,4,No,Oak,Jerodar,
+M5_8,Treyarch,GermanLeagueGamingX,M5,1,https://i.imgur.com/FI6Z1YH.png,16606,-360,-16250,1,Yes,Elm,Jerodar,
+M5_9,Lighthouse,Jaros,M5,1,https://i.imgur.com/314zGVc.png,15730,51,-15224,3,No,Chestnut,Jerodar,
+M5_10,Willow Hills,DragonLord ツ,M5,1,https://i.imgur.com/Pt0MR6C.png,15191,-76,-16419,2,Yes,Cedar,Jerodar,
+M5_11,Goblet,ZeChile,M5,1,https://i.imgur.com/WGF4tps.png,14035,-6,-16091,2,No,Birch,Jerodar,
+M5_12,Sky Altar,Logen_NineFingers,M5,1,https://i.imgur.com/ofetgYz.png,14308,565,-14694,1,No,Chestnut,Jerodar,
+M5_13,Storm Bluff,Narciciss,M5,1,https://i.imgur.com/BHAsigM.png,14456,-200,-13443,5,Yes,Birch,Jerodar,
 O1_1,Cavum Complex,Synovus,O1,4,#raw_survey_data,-174,-233,-2610,5,No,Hemlock,MeisterKeen,
 O1_2,Understructure,Unknown,O1,4,#raw_survey_data,1724,-379,-2036,5,No,Hemlock,MeisterKeen,
 O1_3,Palma,Mc.Marc,O1,4,#raw_survey_data,-965,252,-3502,1,Yes,"Palm, Hemlock",MeisterKeen,
