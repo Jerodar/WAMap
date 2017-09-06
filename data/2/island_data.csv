@@ -10,7 +10,7 @@ A1_8,Crescent Isle,Plego,A1,3,http://imgur.com/a/PQlVo,-13666,-91,14082,2,Yes,"P
 A1_9,Aetherium Temple,mikhaeldionio,A1,3,http://imgur.com/a/4tAxy,-12806,-532,15409,2,No,"Hemlock, Palm, Ash, Chestnut, Elm",Simayi,Stariway to Aetherium
 A1_10,Skyloft,ArchEngel,A1,3,http://imgur.com/a/1hfv7,-12728,-273,16740,4,Yes,Oak,Simayi,Skyloft
 A2_1,Tower of the Six Shards,Taco6961,A2,3,http://imgur.com/a/0ZjeQ,-10140,-286,16901,5,Yes,Palm,Simayi,Sky Shard
-A2_2,Overpass City,rykaan,A2,3,http://imgur.com/a/FmMBR,-7978,-361,16713,2,No,Ash,Simayi,Monolith
+A2_2,Overpass City,rykaan,A2,3,http://imgur.com/a/FmMBR,-7978,-361,16713,4,No,Ash,Simayi,Monolith
 A2_3,Archipelago of Chains,Lexhy,A2,3,http://imgur.com/a/XmsTy,-5538,286,16546,3,No,"Birch, Elm",Simayi,Islands in chains
 A2_4,Crashed Ship,Wumply912xX,A2,3,http://imgur.com/a/SrYMm,-6583,358,16058,4,Yes,"Oak, Chestnut",Simayi,Crashed Ship
 A2_5,Oaken Monastery,Trolloflo,A2,3,http://imgur.com/a/xU8Su,-9082,131,16128,5,Yes,Oak,Simayi,Forgotten Monastery
@@ -237,7 +237,7 @@ Se3_8,Sheltered Valley,Splez | River,Se3,1,https://i.imgur.com/pu8OU0C.png,-1011
 Se3_9,Springboard Cliff,Splody,Se3,1,https://i.imgur.com/Zzgng5K.png,-9142,393,13908,2,No,"Birch, Oak",Jerodar,
 Se3_10,Open Fields,Entorox,Se3,1,https://i.imgur.com/nBUkYGY.png,-8407,423,13057,2,Yes,Birch,Jerodar,
 Se3_11,Forest of Giants,Starwanderer159,Se3,1,https://i.imgur.com/HcvPa6X.png,-7275,401,13467,2,No,Elm,Jerodar,
-Se3_12,Tiny Grove,phoenix/megumeme,Se3,1,https://i.imgur.com/UxqnQNd.png,-7827,-106,11852,1,No,"Oak, Birch",Jerodar,
+Se3_12,Tiny Grove,phoenix/megumeme,Se3,1,https://i.imgur.com/UxqnQNd.png,-7827,-106,11852,2,No,"Oak, Birch",Jerodar,
 Se3_13,Cloverleaf,Narciciss,Se3,1,https://i.imgur.com/ZUwxrFi.png,-8277,226,10384,5,Yes,"Oak, Birch",Jerodar,
 Se3_14,Hidden Valley,Avarice,Se3,1,https://i.imgur.com/YI1nd2M.png,-10095,-429,10122,1,No,Birch,Jerodar,
 Se3_15,Prairie Mountain,Narciciss,Se3,1,https://i.imgur.com/mB2u2i7.png,-9587,178,12006,5,Yes,Hemlock,Jerodar,
@@ -308,7 +308,7 @@ Se8_1,Cityscape,Ms. Delirium,Se8,2,https://i.imgur.com/jo5QaGY.jpg,-2484,69,-695
 Se8_2,Circle of Harvest,jotty2,Se8,2,https://i.imgur.com/jqkuwYj.jpg,-3011,-379,-5688,5,No,"Ash, Palm, Chestnut, Oak, Birch, Cedar",Blake81 and The_Gipsy_Danger,
 Se8_3,Remote Cottage,Unknown,Se8,2,https://i.imgur.com/T5WoC7I.jpg,-3593,494,-6745,1,No,Birch,Blake81 and The_Gipsy_Danger,
 Se8_4,The Workshop,Outcast,Se8,2,https://i.imgur.com/w1PkMUu.jpg,-3463,-406,-11671,5,No,Chestnut,Blake81 and The_Gipsy_Danger,
-Se8_5,The Clouds' Ramparts,Nardo,Se8,2,https://i.imgur.com/h7p2T2E.jpg,-2032,-268,-9308,0,No,None,Blake81 and The_Gipsy_Danger,
+Se8_5,The Clouds' Ramparts,Nardo,Se8,2,https://i.imgur.com/h7p2T2E.jpg,-2032,-268,-9308,1,No,None,Blake81 and The_Gipsy_Danger,
 Se8_6,The Redwood Crescent,Mr. Wabbit,Se8,2,https://i.imgur.com/43pQA8M.jpg,-2054,571,-7933,2,Yes,Chestnut,Blake81 and The_Gipsy_Danger,
 Se8_7,Shattergorge,N3x,Se8,2,https://i.imgur.com/r3HqHml.jpg,-3720,32,-8704,5,No,"Birch, Oak",Blake81 and The_Gipsy_Danger,
 Se8_8,Four Seasons,Zemy6,Se8,2,https://i.imgur.com/n6rhYaM.jpg,-4501,-407,-10715,2,No,"Chestnut, Hemlock, Oak, Birch, Elm, Ash",Blake81 and The_Gipsy_Danger,
