@@ -1,7 +1,7 @@
 {
   "parcelSize": 255,
   "duplicateRange": 30,
-  "shadingFactor": 0.6,
+  "shadingFactor": 1,
   "minX": -18000,
   "maxX": 18000,
   "minY": -18000,
