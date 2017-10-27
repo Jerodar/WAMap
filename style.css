@@ -21,8 +21,8 @@ html, body {
 }
 
 .leaflet-container .leaflet-control-mouseposition {
-  background-color: rgb(255, 255, 255);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #00A3A3;
+  background-color: rgba(0, 163, 163, 0.9);
   box-shadow: 0 0 5px #bbb;
   padding: 0 5px;
   margin: 0;
@@ -31,7 +31,7 @@ html, body {
 }
 
 .zone-label {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Cambria, Georgia, serif;
   font-weight: bold;
   font-size: xx-large;
   color: #555;
@@ -45,23 +45,23 @@ html, body {
 }
 
 .sector-label-1 {
-  color: rgb(147, 196, 125);
-  color: rgba(147, 196, 125, 0.5);
+  color: #FEDEB1;
+  color: rgba(254,222,177, 1);
 }
 
 .sector-label-2 {
-  color: rgb(109, 158, 235);
-  color: rgba(109, 158, 235, 0.5);
+ color: #FEDEB1;
+  color: rgba(254,222,177, 1);
 }
 
 .sector-label-3 {
-  color: rgb(142, 124, 195);
-  color: rgba(142, 124, 195, 0.5);
+ color: #FEDEB1;
+  color: rgba(254,222,177, 1);
 }
 
 .sector-label-4 {
-  color: rgb(246, 178, 107);
-  color: rgba(246, 178, 107, 0.5);
+  color: #FEDEB1;
+  color: rgba(254,222,177, 1);
 }
 
 .legend {
