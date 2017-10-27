@@ -12,9 +12,9 @@ html, body {
   padding: 0;
 }
 
-/*.leaflet-container {
+.leaflet-container {
   background: #00A3A3;
-}*/
+}
 
 .leaflet-marker-icon {
   border-radius: 50%;
@@ -42,26 +42,7 @@ html, body {
 .sector-label {
   font-weight: bold;
   font-size: x-large;
-}
-
-.sector-label-1 {
   color: #FEDEB1;
-  color: rgba(254,222,177, 1);
-}
-
-.sector-label-2 {
- color: #FEDEB1;
-  color: rgba(254,222,177, 1);
-}
-
-.sector-label-3 {
- color: #FEDEB1;
-  color: rgba(254,222,177, 1);
-}
-
-.sector-label-4 {
-  color: #FEDEB1;
-  color: rgba(254,222,177, 1);
 }
 
 .legend {
