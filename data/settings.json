@@ -41,8 +41,9 @@
   },
   "sectorLabelOptions": {
     "interactive": false, 
-    "zIndexOffset": -1000,
-    "pane": "overlayPane"
+    "zIndexOffset": 1000,
+    "pane": "overlayPane",
+    "riseOnHover": true
   },
   "colors": {
     "islands": {
