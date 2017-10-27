@@ -35,7 +35,7 @@
   "sectorOptions": {
     "fill": true,
     "stroke": false,
-    "fillcolor": "#ffffff",
+    "fillcolor": "#000000",
     "fillopacity": 0.2,
     "interactive": false
   },
