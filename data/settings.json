@@ -35,9 +35,8 @@
   "sectorOptions": {
     "fill": true,
     "stroke": false,
-    "fillcolor": "#ffffff",
-    "fillopacity": 1,
-    "opacity": 1,
+    "fillColor": "#ffffff",
+    "fillOpacity": 1,
     "interactive": false
   },
   "sectorLabelOptions": {
