@@ -12,9 +12,9 @@ html, body {
   padding: 0;
 }
 
-.leaflet-container {
+/*.leaflet-container {
   background: #00A3A3;
-}
+}*/
 
 .leaflet-marker-icon {
   border-radius: 50%;
