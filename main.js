@@ -537,6 +537,7 @@ var WAMap = (function () {
     else if (nextZoom === -6 && prevZoom > -6) {
       // switch to zone name display
       map.removeLayer(poiLayers.islandLayer);
+      map.removeLayer(poiLayers.sectorNameLayer);
     }
     else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
@@ -562,6 +563,7 @@ var WAMap = (function () {
     else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
       map.addLayer(poiLayers.islandLayer);
+      map.addLayer(poiLayers.sectorNameLayer);
     }
   }
   
