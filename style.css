@@ -34,7 +34,7 @@ html, body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
   font-size: xx-large;
-  color: rgba(254,222,177, 0.5);
+  color: rgba(254,222,177, 1);
   white-space: nowrap;
 }
 
