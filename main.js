@@ -338,7 +338,7 @@ var WAMap = (function () {
     }
     
     poiLayers.sectorNameLayer.setZIndex(-100);
-
+    map.removeLayer(poiLayers.sectorNameLayer);
     
     // Load the wall data
     // Async Load and read the csv file
