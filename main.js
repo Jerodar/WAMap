@@ -370,7 +370,7 @@ var WAMap = (function () {
         var color = settings.colors.walls[wall.Tier];
         var options = settings.wallOptions;
 	      if(wall.Tier = 1) {
-	      	options.width = 8;
+	      	options.width = 20;
 	      }
         options.color = rgb(color);
         
