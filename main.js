@@ -369,6 +369,9 @@ var WAMap = (function () {
         // Set the colors of the marker
         var color = settings.colors.walls[wall.Tier];
         var options = settings.wallOptions;
+	      if(wall.Tier = 1) {
+	      	options.width = 8;
+	      }
         options.color = rgb(color);
         
         // Create and add the marker to the island layer
