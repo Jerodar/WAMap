@@ -338,7 +338,7 @@ var WAMap = (function () {
     }
     
     poiLayers.sectorNameLayer.setZIndex(-100);
-
+    map.removeLayer(poiLayers.sectorNameLayer);
     
     // Load the wall data
     // Async Load and read the csv file
@@ -369,6 +369,9 @@ var WAMap = (function () {
         // Set the colors of the marker
         var color = settings.colors.walls[wall.Tier];
         var options = settings.wallOptions;
+	      if(wall.Tier = 1) {
+	      	options.width = 20;
+	      }
         options.color = rgb(color);
         
         // Create and add the marker to the island layer
@@ -534,6 +537,7 @@ var WAMap = (function () {
     else if (nextZoom === -6 && prevZoom > -6) {
       // switch to zone name display
       map.removeLayer(poiLayers.islandLayer);
+      map.removeLayer(poiLayers.sectorNameLayer);
     }
     else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
@@ -559,6 +563,7 @@ var WAMap = (function () {
     else if (nextZoom > -6 && prevZoom === -6) {
       // switch to island display
       map.addLayer(poiLayers.islandLayer);
+      map.addLayer(poiLayers.sectorNameLayer);
     }
   }
   

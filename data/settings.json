@@ -1,7 +1,7 @@
-﻿{
+{
   "parcelSize": 255,
   "duplicateRange": 30,
-  "shadingFactor": 0.6,
+  "shadingFactor": 0.5,
   "minX": -18000,
   "maxX": 18000,
   "minY": -18000,
@@ -16,7 +16,7 @@
   },
   "islandOptions": {
     "fill": true,
-    "fillColor": "#ffffff",
+    "fillColor": "#000000",
     "fillOpacity": 1,
     "stroke": true,
     "width": 0.5,
@@ -27,7 +27,7 @@
   "wallOptions": {
     "fill": false,
     "stroke": true,
-    "width": 2,
+    "width": 4,
     "color": "#000000",
     "opacity": 1,
     "interactive": false
@@ -35,28 +35,29 @@
   "sectorOptions": {
     "fill": true,
     "stroke": false,
-    "fillcolor": "#ffffff",
-    "fillopacity": 0.2,
+    "fillColor": "#ffffff",
+    "fillOpacity": 1,
     "interactive": false
   },
   "sectorLabelOptions": {
     "interactive": false, 
-    "zIndexOffset": -1000,
-    "pane": "overlayPane"
+    "zIndexOffset": 1000,
+    "pane": "overlayPane",
+    "riseOnHover": true
   },
   "colors": {
     "islands": {
-      "1": [ 147, 196, 125],
-      "2": [ 109, 158, 235],
-      "3": [ 142, 124, 195],
-      "4": [ 246, 178, 107],
+      "1": [ 56, 140, 56],
+      "2": [ 0, 128, 128],
+      "3": [ 128, 128, 128],
+      "4": [ 153, 122, 84],
       "5": [ 255, 20, 20]
     },
     "walls": {
-      "1": [ 0, 0, 0],
-      "2": [ 153, 153, 153],
-      "3": [ 0, 0, 255],
-      "4": [ 241, 194, 50]
+      "1": [ 192, 192, 192],
+      "2": [ 224, 224, 224],
+      "3": [ 40, 40, 40],
+      "4": [ 193, 154, 107]
     },
     "altitude": {
       "high": [ 217, 217, 217],
