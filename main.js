@@ -460,10 +460,29 @@ var WAMap = (function () {
         if (island.Respawner === 'Yes') {
           popup = popup + 'Has respawners<br>';
         }
-        
+
+        var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfHgdOzNJfk7XfZV6aWOfDZmAIgnY2viSak8Udz88fFDGfA/viewform?usp=pp_url&entry.565564019=';
+        if (selectedServer === 1) {
+          formUrl = formUrl + 'US+West+or+EU+East';
+        } else {
+          formUrl = formUrl + 'US+East+or+EU+West';
+        }
+        formUrl = formUrl + '&entry.1668213788=' + island.Name +
+          '&entry.1743663171=' + island.Author +
+          '&entry.1828617833=' + island.Sector +
+          '&entry.2064763837=' + island.Height +
+          '&entry.1870806519=' + island.Databanks +
+          '&entry.563492615=' + island.Respawner;
+        var treeArray = island.Trees.split(", ");
+        for (var j = 0; j < treeArray.length; j++) {
+          formUrl = formUrl + '&entry.1092906456=' + treeArray[j];
+        }
+
+        // &entry.1668213788= IslandName1 & entry.1743663171= IslandAuthor1 & entry.1828617833= IslandZone1 & entry.1916070537& entry.1870806519= 4 & entry.1092906456= Hemlock
         popup = popup + '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' +
           thumbnail + '\'></a><br>' +
-          'Surveyed by: ' + island.Surveyor;
+          'Surveyed by: ' + island.Surveyor + '<br>' +
+          '<a href="' + formUrl + '" target="_blank">Click here to submit new data for this island.</a>';
         
         marker.bindPopup(popup, {minWidth: '320'});
         zoomedMarker.bindPopup(popup, {minWidth: '320'});
