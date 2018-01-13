@@ -416,6 +416,19 @@ var WAMap = (function () {
         island.Respawner = data[i][10];
         island.Trees = data[i][11];
         island.Surveyor = data[i][12];
+        island.Ore = {};
+        island.Ore.Aluminium = (data[i][13] === "") ? 0 : Number(data[i][13]);
+        island.Ore.Bronze = (data[i][14] === "") ? 0 : Number(data[i][14]);
+        island.Ore.Copper = (data[i][15] === "") ? 0 : Number(data[i][15]);
+        island.Ore.Gold = (data[i][16] === "") ? 0 : Number(data[i][16]);
+        island.Ore.Iron = (data[i][17] === "") ? 0 : Number(data[i][17]);
+        island.Ore.Lead = (data[i][18] === "") ? 0 : Number(data[i][18]);
+        island.Ore.Nickel = (data[i][19] === "") ? 0 : Number(data[i][19]);
+        island.Ore.Silver = (data[i][20] === "") ? 0 : Number(data[i][20]);
+        island.Ore.Steel = (data[i][21] === "") ? 0 : Number(data[i][21]);
+        island.Ore.Tin = (data[i][22] === "") ? 0 : Number(data[i][22]);
+        island.Ore.Titanium = (data[i][23] === "") ? 0 : Number(data[i][23]);
+        island.Ore.Tungsten = (data[i][24] === "") ? 0 : Number(data[i][24]);
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
@@ -454,13 +467,32 @@ var WAMap = (function () {
           'Databanks: ' + island.Databanks + ', Sector: ' + island.Sector +
           ', Altitude: ' + island.Height + '<br>';
           
-        if (island.Trees !== "") {
+        if (island.Trees !== '') {
           popup = popup + 'Trees found: ' + island.Trees + '<br>';
         }
+
+        var OresFound = '';
+        OresFound = OresFound + ((island.Ore.Aluminium === 0) ? '' : 'Aluminium Q' + island.Ore.Aluminium + ', ');
+        OresFound = OresFound + ((island.Ore.Bronze === 0) ? '' : 'Bronze Q' + island.Ore.Bronze + ', ');
+        OresFound = OresFound + ((island.Ore.Copper === 0) ? '' : 'Copper Q' + island.Ore.Copper + ', ');
+        OresFound = OresFound + ((island.Ore.Gold === 0) ? '' : 'Gold Q' + island.Ore.Gold + ', ');
+        OresFound = OresFound + ((island.Ore.Iron === 0) ? '' : 'Iron Q' + island.Ore.Iron + ', ');
+        OresFound = OresFound + ((island.Ore.Lead === 0) ? '' : 'Lead Q' + island.Ore.Lead + ', ');
+        OresFound = OresFound + ((island.Ore.Nickel === 0) ? '' : 'Nickel Q' + island.Ore.Nickel + ', ');
+        OresFound = OresFound + ((island.Ore.Silver === 0) ? '' : 'Silver Q' + island.Ore.Silver + ', ');
+        OresFound = OresFound + ((island.Ore.Steel === 0) ? '' : 'Steel Q' + island.Ore.Steel + ', ');
+        OresFound = OresFound + ((island.Ore.Tin === 0) ? '' : 'Tin Q' + island.Ore.Tin + ', ');
+        OresFound = OresFound + ((island.Ore.Titanium === 0) ? '' : 'Titanium Q' + island.Ore.Titanium + ', ');
+        OresFound = OresFound + ((island.Ore.Tungsten === 0) ? '' : 'Tungsten Q' + island.Ore.Tungsten + ', ');
+        if (OresFound !== '') {
+          popup = popup + 'Ores found: ' + OresFound.slice(0, -2) + '<br>';
+        }
+        
         if (island.Respawner === 'Yes') {
           popup = popup + 'Has respawners<br>';
         }
 
+        // Build the url to the google form with pre-filled fields
         var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfHgdOzNJfk7XfZV6aWOfDZmAIgnY2viSak8Udz88fFDGfA/viewform?usp=pp_url&entry.565564019=';
         if (selectedServer === 1) {
           formUrl = formUrl + 'US+West+or+EU+East';
@@ -477,8 +509,19 @@ var WAMap = (function () {
         for (var j = 0; j < treeArray.length; j++) {
           formUrl = formUrl + '&entry.1092906456=' + treeArray[j];
         }
+        formUrl = formUrl + '&entry.930831494='  + island.Ore.Aluminium +
+          '&entry.1129775473=' + island.Ore.Bronze +
+          '&entry.1866350489=' + island.Ore.Copper +
+          '&entry.1187879825=' + island.Ore.Gold +
+          '&entry.1021476175=' + island.Ore.Iron +
+          '&entry.536411341=' + island.Ore.Lead +
+          '&entry.1001924318=' + island.Ore.Nickel +
+          '&entry.1543313292=' + island.Ore.Silver +
+          '&entry.1033931997=' + island.Ore.Steel +
+          '&entry.1695959979=' + island.Ore.Tin +
+          '&entry.2020020197=' + island.Ore.Titanium +
+          '&entry.1491142433=' + island.Ore.Tungsten;
 
-        // &entry.1668213788= IslandName1 & entry.1743663171= IslandAuthor1 & entry.1828617833= IslandZone1 & entry.1916070537& entry.1870806519= 4 & entry.1092906456= Hemlock
         popup = popup + '<a href=\'' + island.Screenshot + '\'  target=\'_blank\'><img src=\'' +
           thumbnail + '\'></a><br>' +
           'Surveyed by: ' + island.Surveyor + '<br>' +
@@ -505,9 +548,6 @@ var WAMap = (function () {
       success: function (text) {
         var data = $.csv.toArrays(text);
         onRouteDataLoaded(data);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.warn(errorThrown);
       }
     });
   }
