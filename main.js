@@ -633,7 +633,7 @@ var WAMap = (function () {
         poiLayers[layer].clearLayers();
       }
       
-      selectedServer = server;
+      selectedServer = Number(server);
       
       // Write a cooky to store preference
       var d = new Date();
