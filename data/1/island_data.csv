@@ -46,7 +46,7 @@ A4_4,Highrise,Zyglotop,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54TTdQaU
 A4_5,Beacon Town,Schwali,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54RDVCbGlfVjhsMWc,14601,227,-2012,1,No,"Birch, Elm",SonneillonZ,,,,,,,,,,,,,
 A4_6,Beachfront,Hiræther Harbinger de Behçet,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54cHFTOGI2QnVsVmc,15274,-379,-935,2,Yes,Palm,SonneillonZ,,,,,,,,,,,,,
 A4_7,Muddy Hills,A Typical Native,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54T0R0YWdpT2RqdHM,16383,-205,-1819,1,Yes,"Oak, Birch, Elm",SonneillonZ,,,,,,,,,,,,,
-A4_8,Bio Shrines,Lexhy,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54NjExREdZU0NlUVU,14455,-391,292,4,Yes,"Cedar, Elm",SonneillonZ,,,,,,,,,,,,,
+A4_8,Bio Shrines,Lexhy,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54NjExREdZU0NlUVU,14455,-391,292,5,Yes,"Cedar, Elm",SonneillonZ,,,,,,,,,,,,,
 A4_9,Appendage,dougmantis,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54VUVYWDd5azR5NWM,16429,384,137,2,Yes,Hemlock,SonneillonZ,,,,,,,,,,,,,
 A4_10,Crane Mountain,Jeremy_Kerman,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54TVZhWkNsbmNtRlE,15663,554,1320,4,No,Birch,SonneillonZ,,,,,,,,,,,,,
 A4_11,Manor,Frenk4,A4,2,https://drive.google.com/open?id=0B8h0dYtlmo54QWdWU2pLUFNKMnc,13489,-310,1571,1,No,"Birch, Chestnut",SonneillonZ,,,,,,,,,,,,,
@@ -91,11 +91,11 @@ H2_7,Machinery,Kranot,H2,4,https://i.imgur.com/cRHROI6.png,16655,-277,-8310,2,No
 H2_8,Crooked Spire,Unknown,H2,4,https://i.imgur.com/UIYaht5.png,12882,-167,-6235,5,No,"Palm, Hemlock",Jerodar,,,,,,,,,,9,,10,9
 H2_9,Alexandria,[H] WillyPete,H2,4,https://i.imgur.com/GI5vRca.png,12977,444,-8266,0,No,Palm,Jerodar,,,,,,,,,,,,,
 H2_10,Canyon Road,Synovus,H2,4,https://i.imgur.com/5RRiO3o.png,14808,577,-8079,3,No,Palm,Jerodar,,,,,,,,,,,,10,
-H2_11,Barracks,Zerbe,H2,4,https://i.imgur.com/sjMqWtM.png,13433,126,-7378,2,No,Birch,Jerodar,,,,,,,,,,,,,
-H2_12,Snowy Peaks,TVA.DivineEvil,H2,4,https://i.imgur.com/knZrscI.png,14414,282,-5547,4,No,None,Jerodar,,6,,,,,,,,10,,8,
+H2_11,Barracks,Zerbe,H2,4,https://i.imgur.com/sjMqWtM.png,13433,126,-7378,3,No,Birch,Jerodar,,,,,,,,,,,,,
+H2_12,Snowy Peaks,TVA.DivineEvil,H2,4,https://i.imgur.com/knZrscI.png,14414,282,-5547,4,No,None,Jerodar,,7,7,6,0,10,8,8,9,10,9,8,4
 H2_13,Construction Yard,[H] WillyPete,H2,4,https://i.imgur.com/J2kbo8C.png,15878,-329,-6364,2,No,None,Jerodar,,,,,,,,,,,,,
 H2_14,Crimson Burrows,davidjerlinger,H2,4,https://i.imgur.com/3y7MgQR.png,16646,500,-5618,5,No,Palm,Jerodar,,,,,,,,,,,,,
-H2_15,Marooned,Mr. Poopy-Butthole,H2,4,https://i.imgur.com/DTMHNK5.png,16060,201,-5022,0,No,Palm,Jerodar,,,,,,,,,,,,,
+H2_15,Marooned,Mr. Poopy-Butthole,H2,4,https://i.imgur.com/DTMHNK5.png,16060,201,-5022,0,No,Palm,Jerodar,,6,8,7,0,0,0,5,0,0,0,0,0
 I1_1,Final Restingplace,mikhaeldionio,I1,4,https://i.imgur.com/V2VQl40.png,7703,-200,11760,2,No,Hemlock,Archaegeo,,,,,,,,,,,,,
 I1_2,Dinosaur Bones,Diabase,I1,4,https://i.imgur.com/SWW5r2j.png,5653,-110,10914,2,No,Hemlock,Jerodar,,,,,,,,,,9,,10,
 I1_3,Sinkhole,Huntanian,I1,4,https://i.imgur.com/cnEOAY3.png,4322,235,11030,4,No,"Palm, Hemlock",Jerodar,,,,,,,,,,,,,
