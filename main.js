@@ -5,7 +5,6 @@ var WAMap = (function () {
   var map = {};
   var poiLayers = {};
   var prevZoom = -6;
-  var selectedServer = 1;
   var points = {};
 
   function init() {
@@ -21,32 +20,6 @@ var WAMap = (function () {
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
     map.getRenderer(map).options.padding = 100;
-    
-    // Check if the URL or cooky has a server preference
-    var urlVars = getUrlVars();
-    // First check url get parameters
-    if(urlVars["server"] === "euwuse") {
-      selectedServer = 2;
-    } else if(urlVars["server"] === "eueusw") {
-      selectedServer = 1;
-    }
-    else {
-    // Then check the cookies
-      // Check if there is a cookie to read
-      var allcookies = document.cookie;
-       
-       // Get all the cookies pairs in an array
-       var cookiearray = allcookies.split(';');
-       
-       // Now take key value pair out of this array
-       for(var i=0; i<cookiearray.length; i++){
-          var name = cookiearray[i].split('=')[0];
-          if (name === 'server') {
-            var value = cookiearray[i].split('=')[1];
-            selectedServer = Number(value);
-          }
-       }
-    }
     
     // Async load the settings file
     $.ajax({
@@ -110,7 +83,6 @@ var WAMap = (function () {
     var legend = L.control({position: 'topright'});
     legend.onAdd = constructLegend;
     legend.addTo(map);
-    $('.leaflet-radio-' + selectedServer).prop('checked',true);
     
     // Search bar
     var controlSearch = new L.control.search({
@@ -136,7 +108,7 @@ var WAMap = (function () {
     // Load the point data
     // Async Load and read the csv file
     $.ajax({
-      url: 'data/' + selectedServer + '/point_data.csv',
+      url: 'data/point_data.csv',
       type: 'GET',
       cache: false,
       success: function (text) {
@@ -203,26 +175,6 @@ var WAMap = (function () {
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
 
-    container.appendChild(document.createTextNode('Server select:'));
-    container.appendChild(document.createElement('br'));
-    var inputNode = document.createElement('input');
-    inputNode.setAttribute('type', 'radio');
-    inputNode.setAttribute('name', 'server');
-    inputNode.setAttribute('value', '1');
-    inputNode.setAttribute('class', 'leaflet-radio-1');
-    inputNode.setAttribute('onClick', 'WAMap.onServerChange(this);');
-    container.appendChild(inputNode);
-    container.appendChild(document.createTextNode('USW & EUE'));
-    container.appendChild(document.createElement('br'));
-    inputNode = document.createElement('input');
-    inputNode.setAttribute('type', 'radio');
-    inputNode.setAttribute('name', 'server');
-    inputNode.setAttribute('value', '2');
-    inputNode.setAttribute('class', 'leaflet-radio-2');
-    inputNode.setAttribute('onClick', 'WAMap.onServerChange(this);');
-    container.appendChild(inputNode);
-    container.appendChild(document.createTextNode('USE & EUW'));
-
     div.innerHTML = container.innerHTML;
     return div;
   }
@@ -264,7 +216,7 @@ var WAMap = (function () {
     // Async load the zone data file
     $.ajax({
       dataType: 'json',
-      url: 'data/' + selectedServer + '/zone_data.json',
+      url: 'data/zone_data.json',
       cache: false,
       success: onZoneDataLoaded,
       error: function (jqXHR, textStatus, errorThrown) {
@@ -289,7 +241,7 @@ var WAMap = (function () {
     // Load the sector data
     // Async Load and read the csv file
     $.ajax({
-      url: 'data/' + selectedServer + '/sector_data.csv',
+      url: 'data/sector_data.csv',
       type: 'GET',
       cache: false,
       success: function (text) {
@@ -343,7 +295,7 @@ var WAMap = (function () {
     // Load the wall data
     // Async Load and read the csv file
     $.ajax({
-      url: 'data/' + selectedServer + '/wall_data.csv',
+      url: 'data/wall_data.csv',
       type: 'GET',
       cache: false,
       success: function (text) {
@@ -380,7 +332,7 @@ var WAMap = (function () {
     // Load the POI data
     // Async Load and read the csv file
     $.ajax({
-      url: 'data/' + selectedServer + '/island_data.csv',
+      url: 'data/island_data.csv',
       type: 'GET',
       cache: false,
       success: function (text) {
@@ -448,7 +400,7 @@ var WAMap = (function () {
         var marker = new L.circleMarker([island.Y, island.X], options)
           .addTo(poiLayers.islandLayer);
         
-        island.Screenshot = 'img/' + selectedServer + '/' + island.Id + '.jpg';
+        island.Screenshot = 'img/islands/' + island.Id + '.jpg';
         
         // Create and add the marker to the zoomed island layer
         var myIcon = L.icon({
@@ -494,28 +446,25 @@ var WAMap = (function () {
         }
 
         // Build the url to the google form with pre-filled fields
-        var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfHgdOzNJfk7XfZV6aWOfDZmAIgnY2viSak8Udz88fFDGfA/viewform?usp=pp_url&entry.565564019=';
-        if (selectedServer === 1) {
-          formUrl = formUrl + 'US+West+or+EU+East';
-        } else {
-          formUrl = formUrl + 'US+East+or+EU+West';
-        }
-        formUrl = formUrl + '&entry.1668213788=' + island.Name +
+        var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdvfHgdOzNJfk7XfZV6aWOfDZmAIgnY2viSak8Udz88fFDGfA/viewform?usp=pp_url' + 
+          '&entry.302396488='  + island.Id +
+          '&entry.1668213788=' + island.Name +
           '&entry.1743663171=' + island.Author +
           '&entry.1828617833=' + island.Sector +
           '&entry.2064763837=' + island.Height +
           '&entry.1870806519=' + island.Databanks +
-          '&entry.563492615=' + island.Respawner;
+          '&entry.563492615='  + island.Respawner;
         var treeArray = island.Trees.split(", ");
         for (var j = 0; j < treeArray.length; j++) {
           formUrl = formUrl + '&entry.1092906456=' + treeArray[j];
         }
-        formUrl = formUrl + '&entry.930831494='  + island.Ore.Aluminium +
+        formUrl = formUrl + 
+          '&entry.930831494='  + island.Ore.Aluminium +
           '&entry.1129775473=' + island.Ore.Bronze +
           '&entry.1866350489=' + island.Ore.Copper +
           '&entry.1187879825=' + island.Ore.Gold +
           '&entry.1021476175=' + island.Ore.Iron +
-          '&entry.536411341=' + island.Ore.Lead +
+          '&entry.536411341='  + island.Ore.Lead +
           '&entry.1001924318=' + island.Ore.Nickel +
           '&entry.1543313292=' + island.Ore.Silver +
           '&entry.1033931997=' + island.Ore.Steel +
@@ -542,15 +491,15 @@ var WAMap = (function () {
 
     // Load the route data for tracing walls
     // Async Load and read the csv file
-    $.ajax({
-      url: 'data/' + selectedServer + '/route_data.csv',
-      type: 'GET',
-      cache: false,
-      success: function (text) {
-        var data = $.csv.toArrays(text);
-        onRouteDataLoaded(data);
-      }
-    });
+    //$.ajax({
+    //  url: 'data/route_data.csv',
+    // type: 'GET',
+    //  cache: false,
+    //  success: function (text) {
+    //    var data = $.csv.toArrays(text);
+    //    onRouteDataLoaded(data);
+    //  }
+    //});
   }
 
   function onRouteDataLoaded(data) {
@@ -621,51 +570,6 @@ var WAMap = (function () {
       map.addLayer(poiLayers.islandLayer);
     }
   }
-  
-  function onServerChange(e) {
-    console.log('Selected option: ' + e.value);
-    changeServerMap(e.value);
-  }
-  
-  function changeServerMap(server) {
-    if(selectedServer !== server) {
-      for (var layer in poiLayers) {
-        poiLayers[layer].clearLayers();
-      }
-      
-      selectedServer = Number(server);
-      
-      // Write a cooky to store preference
-      var d = new Date();
-      d.setTime(d.getTime() + (360 * 24 * 60 * 60 * 1000));
-      document.cookie='server=' + selectedServer + ';expires=' + d.toUTCString() + ';';
-      
-      // Load the point data
-      // Async Load and read the csv file
-      $.ajax({
-        url: 'data/' + selectedServer + '/point_data.csv',
-        type: 'GET',
-        cache: false,
-        success: function (text) {
-          var data = $.csv.toArrays(text);
-          onPointDataLoaded(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.error(errorThrown);
-        }
-      });
-    }
-  }
-
-  // Retrieve Html GET parameters
-  function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-    function(m,key,value) {
-      vars[key] = value;
-    });
-    return vars;
-  }
 
   // RGB helper functions
   function rgb(rgbarray) {
@@ -696,6 +600,5 @@ var WAMap = (function () {
 
   return {
       // Pass on any pubic function here
-    onServerChange: onServerChange
   };
 }());
