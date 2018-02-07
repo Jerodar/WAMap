@@ -369,19 +369,20 @@ var WAMap = (function () {
         island.Trees = data[i][11];
         island.Surveyor = data[i][12];
         // island.Steamname = data[i][13];
+        // island.URL = data[i][14];
         island.Ore = {};
-        island.Ore.Aluminium = (data[i][14] === "") ? 0 : Number(data[i][14]);
-        island.Ore.Bronze = (data[i][15] === "") ? 0 : Number(data[i][15]);
-        island.Ore.Copper = (data[i][16] === "") ? 0 : Number(data[i][16]);
-        island.Ore.Gold = (data[i][17] === "") ? 0 : Number(data[i][17]);
-        island.Ore.Iron = (data[i][18] === "") ? 0 : Number(data[i][18]);
-        island.Ore.Lead = (data[i][19] === "") ? 0 : Number(data[i][19]);
-        island.Ore.Nickel = (data[i][20] === "") ? 0 : Number(data[i][20]);
-        island.Ore.Silver = (data[i][21] === "") ? 0 : Number(data[i][21]);
-        island.Ore.Steel = (data[i][22] === "") ? 0 : Number(data[i][22]);
-        island.Ore.Tin = (data[i][23] === "") ? 0 : Number(data[i][23]);
-        island.Ore.Titanium = (data[i][24] === "") ? 0 : Number(data[i][24]);
-        island.Ore.Tungsten = (data[i][25] === "") ? 0 : Number(data[i][25]);
+        island.Ore.Aluminium = (data[i][15] === "") ? 0 : Number(data[i][15]);
+        island.Ore.Bronze = (data[i][16] === "") ? 0 : Number(data[i][16]);
+        island.Ore.Copper = (data[i][17] === "") ? 0 : Number(data[i][17]);
+        island.Ore.Gold = (data[i][18] === "") ? 0 : Number(data[i][18]);
+        island.Ore.Iron = (data[i][19] === "") ? 0 : Number(data[i][19]);
+        island.Ore.Lead = (data[i][20] === "") ? 0 : Number(data[i][20]);
+        island.Ore.Nickel = (data[i][21] === "") ? 0 : Number(data[i][21]);
+        island.Ore.Silver = (data[i][22] === "") ? 0 : Number(data[i][22]);
+        island.Ore.Steel = (data[i][23] === "") ? 0 : Number(data[i][23]);
+        island.Ore.Tin = (data[i][24] === "") ? 0 : Number(data[i][24]);
+        island.Ore.Titanium = (data[i][25] === "") ? 0 : Number(data[i][25]);
+        island.Ore.Tungsten = (data[i][26] === "") ? 0 : Number(data[i][26]);
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
