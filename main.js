@@ -350,39 +350,39 @@ var WAMap = (function () {
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
         var island = {};
-        island.Id = data[i][0];
-        island.Name = data[i][1];
-        island.Author = data[i][2];
-        island.Sector = data[i][3];
-        island.Tier = Number(data[i][4]);
-        // island.Screenshot = data[i][5];
+        island.Id = data[i][1];
+        island.Name = data[i][2];
+        island.Author = data[i][3];
+        island.Sector = data[i][4];
+        island.Tier = Number(data[i][5]);
+        // island.Screenshot = data[i][6];
         // Mapping to 2d plane, so X = X, Y = Height (used for coloring), Z = Y
-        island.X = Number(data[i][6]);
-        island.Height = Number(data[i][7]) + settings.ZtoAltitude;
-        island.Y = Number(data[i][8]);
-        if (data[i][9] === "") {
+        island.X = Number(data[i][7]);
+        island.Height = Number(data[i][8]) + settings.ZtoAltitude;
+        island.Y = Number(data[i][9]);
+        if (data[i][10] === "") {
           island.Databanks = "Unknown";
         } else {
-          island.Databanks = Number(data[i][9]);
+          island.Databanks = Number(data[i][10]);
         }
-        island.Respawner = data[i][10];
-        island.Trees = data[i][11];
-        island.Surveyor = data[i][12];
-        // island.Steamname = data[i][13];
-        // island.URL = data[i][14];
+        island.Respawner = data[i][11];
+        island.Trees = data[i][12];
+        island.Surveyor = data[i][13];
+        // island.Steamname = data[i][14];
+        // island.URL = data[i][15];
         island.Ore = {};
-        island.Ore.Aluminium = (data[i][15] === "") ? 0 : Number(data[i][15]);
-        island.Ore.Bronze = (data[i][16] === "") ? 0 : Number(data[i][16]);
-        island.Ore.Copper = (data[i][17] === "") ? 0 : Number(data[i][17]);
-        island.Ore.Gold = (data[i][18] === "") ? 0 : Number(data[i][18]);
-        island.Ore.Iron = (data[i][19] === "") ? 0 : Number(data[i][19]);
-        island.Ore.Lead = (data[i][20] === "") ? 0 : Number(data[i][20]);
-        island.Ore.Nickel = (data[i][21] === "") ? 0 : Number(data[i][21]);
-        island.Ore.Silver = (data[i][22] === "") ? 0 : Number(data[i][22]);
-        island.Ore.Steel = (data[i][23] === "") ? 0 : Number(data[i][23]);
-        island.Ore.Tin = (data[i][24] === "") ? 0 : Number(data[i][24]);
-        island.Ore.Titanium = (data[i][25] === "") ? 0 : Number(data[i][25]);
-        island.Ore.Tungsten = (data[i][26] === "") ? 0 : Number(data[i][26]);
+        island.Ore.Aluminium = (data[i][16] === "") ? 0 : Number(data[i][16]);
+        island.Ore.Bronze = (data[i][17] === "") ? 0 : Number(data[i][17]);
+        island.Ore.Copper = (data[i][18] === "") ? 0 : Number(data[i][18]);
+        island.Ore.Gold = (data[i][19] === "") ? 0 : Number(data[i][19]);
+        island.Ore.Iron = (data[i][20] === "") ? 0 : Number(data[i][20]);
+        island.Ore.Lead = (data[i][21] === "") ? 0 : Number(data[i][21]);
+        island.Ore.Nickel = (data[i][22] === "") ? 0 : Number(data[i][22]);
+        island.Ore.Silver = (data[i][23] === "") ? 0 : Number(data[i][23]);
+        island.Ore.Steel = (data[i][24] === "") ? 0 : Number(data[i][24]);
+        island.Ore.Tin = (data[i][25] === "") ? 0 : Number(data[i][25]);
+        island.Ore.Titanium = (data[i][26] === "") ? 0 : Number(data[i][26]);
+        island.Ore.Tungsten = (data[i][27] === "") ? 0 : Number(data[i][27]);
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
