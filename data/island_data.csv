@@ -7,7 +7,7 @@
 6,A1_6,Paradise Cave,</CODE_SkullDrexBG>,A1,2,https://gyazo.com/861c8e23667d6df094e33e028be0d691,9981,-479,7311,4,Yes,"Cedar, Birch, Palm, Oak",SonneillonZ,,,0,0,0,0,0,0,0,0,0,0,0,0
 7,A1_7,Autumn Island,Phlop,A1,2,https://gyazo.com/58e79f8cea5d34a6f3d37342ddb5c09b,9198,-340,6324,1,Yes,"Chestnut, Birch",SonneillonZ,,,0,0,0,0,0,0,0,0,0,0,0,0
 8,A1_8,Fertile Farm,énjoi,A1,2,https://i.imgur.com/Vi0T9mq.png,9076,227,5404,1,No,"Ash, Elm, Oak",SonneillonZ,,,0,0,0,0,0,0,0,0,0,0,0,0
-9,A1_9,Twin Towers,Davemane42,A1,2,https://i.imgur.com/PRyBaOy.png,9521,240,8053,2,No,Oak,Jerodar,Shard,https://steamcommunity.com/sharedfiles/filedetails/?id=891004920,0,0,0,0,0,0,0,0,0,0,0,0
+9,A1_9,Watchtower,Davemane42,A1,2,https://i.imgur.com/PRyBaOy.png,9521,240,8053,2,No,Oak,Jerodar,Shard,https://steamcommunity.com/sharedfiles/filedetails/?id=891004920,0,0,0,0,0,0,0,0,0,0,0,0
 10,A2_1,Angelic Hedgehog,Puppy Fur | Amber,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54X0pnOVlFRWl6SVE,11830,-406,4683,2,No,Elm,SonneillonZ,Days Lost,https://steamcommunity.com/sharedfiles/filedetails/?id=681653374,0,0,0,0,0,0,0,0,0,0,0,0
 11,A2_2,Vulcanic Mold,Moonstone,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54Njd5R1QwOTZEOHc,13891,182,4365,3,Yes,Chestnut,SonneillonZ,Petal Island,https://steamcommunity.com/sharedfiles/filedetails/?id=682209452,0,0,0,0,0,0,0,0,0,0,0,0
 12,A2_3,Reaching,VivaLaDoctor,A2,1,https://drive.google.com/open?id=0B8h0dYtlmo54bko0NWp3T3haOFU,16000,-243,4357,4,Yes,Elm,SonneillonZ,Lithuanior,https://steamcommunity.com/sharedfiles/filedetails/?id=677672384,0,0,0,0,0,0,0,0,0,0,0,0
@@ -25,7 +25,7 @@
 24,A2_15,Crevice,Drewscriver,A2,1,http://i.imgur.com/mzSK2am.jpg,14862,41,5199,2,Yes,"Birch, Elm, Oak",sortair,Zapped,https://steamcommunity.com/sharedfiles/filedetails/?id=870087854,0,0,0,0,0,0,0,0,0,0,0,0
 25,A3_1,Greenland,Malford,A3,1,https://i.imgur.com/pqJUle9.png,8722,-307,-1669,5,Yes,Elm,sortair,,,0,1,0,0,2,0,0,0,0,0,2,0
 26,A3_2,Lily Isle,Deaddropping,A3,1,https://i.imgur.com/v3LCacd.png,7640,-536,-2598,1,No,"Birch, Oak",sortair,Shrine to a Fallen Sailor,https://steamcommunity.com/sharedfiles/filedetails/?id=846046776,0,0,0,0,0,0,0,0,0,0,0,0
-27,A3_3,Burnt Peak,Drewscriver,A3,1,https://i.imgur.com/GxhvHaH.png,8821,347,-3151,5,No,Elm,sortair,DS,https://steamcommunity.com/sharedfiles/filedetails/?id=870078750,0,0,0,0,0,0,0,0,0,0,0,0
+27,A3_3,Burnt Peak,Drewscriver,A3,1,https://i.imgur.com/GxhvHaH.png,8821,347,-3151,5,Yes,Elm,sortair,DS,https://steamcommunity.com/sharedfiles/filedetails/?id=870078750,0,0,0,0,0,0,0,0,0,0,0,0
 28,A3_4,Treyarch,GermanLeagueGamingX,A3,1,https://i.imgur.com/BjmKK3Q.png,9140,164,-4117,2,Yes,Elm,sortair,Paradisia,https://steamcommunity.com/sharedfiles/filedetails/?id=845158302,0,0,0,0,0,0,0,0,0,0,0,0
 29,A3_5,Catwalk,Goose,A3,1,https://i.imgur.com/AOqQEdk.png,10012,13,-4975,2,Yes,"Birch, Hemlock, Oak",sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
 30,A3_6,Tether,Wargamer31,A3,1,https://i.imgur.com/DUHgdx7.png,10401,-91,-3987,4,Yes,"Birch, Elm, Palm",sortair,The Lost Fort,http://steamcommunity.com/sharedfiles/filedetails/?id=845078393,0,0,0,0,0,0,0,0,0,0,0,0
@@ -70,7 +70,7 @@
 69,B2_7,Swinger's Club,Synovus,B2,3,https://i.imgur.com/QhJeOdI.jpg,16987,626,-15912,5,,,Turk645,Swingers Club,https://steamcommunity.com/sharedfiles/filedetails/?id=853955174,0,0,0,0,0,0,0,0,0,0,0,0
 70,B2_8,Vestige,Dante,B2,3,https://i.imgur.com/kVUAHXT.jpg,15342,253,-16767,,,,Turk645,Vestige,https://steamcommunity.com/sharedfiles/filedetails/?id=677034283,0,0,0,0,0,0,0,0,0,0,0,0
 71,H1_1,Half Arena,Kranot,H1,4,https://i.imgur.com/T0k4Cfi.png,3533,-195,-7550,3,No,"Hemlock, Palm",Jerodar,Arena of Peace,https://steamcommunity.com/sharedfiles/filedetails/?id=834828119,0,0,0,0,0,0,0,0,0,0,0,0
-72,H1_2,Dust Ball,WalfaIcon,H1,4,https://i.imgur.com/wsk5dPe.png,3947,-209,-9545,2,No,None,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
+72,H1_2,Dust Ball,WalfaIcon,H1,4,https://i.imgur.com/wsk5dPe.png,3947,-209,-9545,3,No,None,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 73,H1_3,Tomb Marker,Iorek,H1,4,https://i.imgur.com/0SrU70x.png,3415,-396,-5820,5,No,Palm,Jerodar,Isla Arenosa,https://steamcommunity.com/sharedfiles/filedetails/?id=888154411,0,0,0,0,0,0,0,0,0,0,0,0
 74,H1_4,Ran Aground,Teras,H1,4,https://i.imgur.com/cZlvlNA.png,3737,-100,-4389,4,No,None,Jerodar,War Tales 6,https://steamcommunity.com/sharedfiles/filedetails/?id=885599611,0,0,0,0,0,0,0,0,0,0,0,0
 75,H1_5,Oasis,Mc.Marc,H1,4,https://i.imgur.com/Tx5bWAm.png,3518,-405,-2931,2,No,"Palm, Hemlock",Jerodar,Silent Oasis,https://steamcommunity.com/sharedfiles/filedetails/?id=853381531,0,0,0,0,0,0,0,0,0,0,0,0
@@ -98,7 +98,7 @@
 97,H2_15,Marooned,Mr. Poopy-Butthole,H2,4,https://i.imgur.com/DTMHNK5.png,16060,201,-5022,0,No,Palm,Jerodar,Castaway,https://steamcommunity.com/sharedfiles/filedetails/?id=845410575,0,0,0,0,0,0,0,0,0,0,0,0
 98,I1_1,Final Restingplace,mikhaeldionio,I1,4,https://i.imgur.com/V2VQl40.png,7703,-200,11760,2,No,Hemlock,Archaegeo,,,0,0,0,0,0,0,0,0,0,0,0,0
 99,I1_2,Dinosaur Bones,Diabase,I1,4,https://i.imgur.com/SWW5r2j.png,5653,-110,10914,2,No,Hemlock,Jerodar,Snakelands,https://steamcommunity.com/sharedfiles/filedetails/?id=862816553,0,0,0,0,0,0,0,0,0,0,0,0
-100,I1_3,Sinkhole,Huntanian,I1,4,https://i.imgur.com/cnEOAY3.png,4322,235,11030,4,No,"Palm, Hemlock",Jerodar,Old Saboria,https://steamcommunity.com/sharedfiles/filedetails/?id=902787788,0,0,0,0,0,0,0,0,0,0,0,0
+100,I1_3,Sinkhole,Huntanian,I1,4,https://i.imgur.com/cnEOAY3.png,4322,235,11030,4,No,"Palm, Hemlock",Jerodar,Old Saboria,https://steamcommunity.com/sharedfiles/filedetails/?id=902787788,2,10,9,0,7,10,0,6,7,8,10,7
 101,I1_4,Spire Harbor,NewWay,I1,4,https://i.imgur.com/5UoYWZP.png,4839,294,12028,2,No,"Palm, Hemlock",Jerodar,Abandoned dock,https://steamcommunity.com/sharedfiles/filedetails/?id=904006696,0,0,0,0,0,0,0,0,0,0,0,0
 102,I1_5,Sheltered,NewWay,I1,4,https://i.imgur.com/fmYOCRv.png,3796,335,12339,2,No,"Palm, Hemlock",Jerodar,Floating Oasis,https://steamcommunity.com/sharedfiles/filedetails/?id=709981144,0,0,0,0,0,0,0,0,0,0,0,0
 103,I1_6,Old Mines,Node,I1,4,https://i.imgur.com/wObqOhd.png,4798,-93,13611,5,No,Palm,Jerodar,Sabor Mining Co Outpost 14,https://steamcommunity.com/sharedfiles/filedetails/?id=872226487,0,0,0,0,0,0,0,0,0,0,0,0
@@ -131,7 +131,7 @@
 130,I3_9,Divide,#MOB| Mr.Stone :),I3,4,https://i.imgur.com/xZxOAe5.png,16148,-109,12953,2,No,"Oak, Birch, Hemlock",Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 131,I3_10,Sky Station,NoNameMouse,I3,4,https://i.imgur.com/VVnJc8U.png,15395,97,13747,5,No,"Birch, Palm",Jerodar,Royal Port,https://steamcommunity.com/sharedfiles/filedetails/?id=898671977,0,0,0,0,0,0,0,0,0,0,0,0
 132,I3_11,Migrant Isle,Nausical,I3,4,https://i.imgur.com/rCHQVSo.png,14714,297,12612,2,No,"Birch, Hemlock",Jerodar,Desperation,https://steamcommunity.com/sharedfiles/filedetails/?id=788172764,0,0,0,0,0,0,0,0,0,0,0,0
-133,I3_12,Watchers,Lexhy,I3,4,https://i.imgur.com/NgR5PSt.png,14601,334,15119,1,No,Palm,Jerodar,Prayer,https://steamcommunity.com/sharedfiles/filedetails/?id=836404372,0,0,0,0,0,0,0,0,0,0,0,0
+133,I3_12,Watchers,Lexhy,I3,4,https://i.imgur.com/NgR5PSt.png,14601,334,15119,4,No,Palm,Jerodar,Prayer,https://steamcommunity.com/sharedfiles/filedetails/?id=836404372,0,0,0,0,0,0,0,0,0,0,0,0
 134,K1_1,Ruins Peak,Unknown,K1,2,https://puu.sh/wtVUN/2c9d6fc388.png,-13500,-500,16400,2,,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 135,K1_2,Telescope,homecomp,K1,2,https://puu.sh/wtV1J/87db60afbf.png,-12400,500,17100,2,No,"Chestnut, Elm",Jerodar,Space Viewer,https://steamcommunity.com/sharedfiles/filedetails/?id=686473171,0,0,0,0,0,0,0,0,0,0,0,0
 136,K1_3,Beacon,BearNana,K1,2,https://puu.sh/wtU2v/e648ede05d.png,-10600,500,16800,3,Yes,"Birch, Elm, Oak",Jerodar,Cave Island,https://steamcommunity.com/sharedfiles/filedetails/?id=816024105,0,0,0,0,0,0,0,0,0,0,0,0
@@ -143,7 +143,7 @@
 142,K1_9,Control Tower,Xelion,K1,2,https://puu.sh/wtZWL/95c9300d01.png,-9600,500,13900,4,,"Elm, Oak",Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 143,K1_10,Twists,CaveCanem,K1,2,https://puu.sh/wtXqt/318dd92e73.png,-13500,-500,12800,2,,,Jerodar,Break Free,https://steamcommunity.com/sharedfiles/filedetails/?id=647810564,0,0,0,0,0,0,0,0,0,0,0,0
 144,K1_11,Rockcone,N3x,K1,2,https://puu.sh/wu6uJ/7fa2cc2e04.png,-11700,500,13100,2,,,Jerodar,Green Cavern,https://steamcommunity.com/sharedfiles/filedetails/?id=714518583,0,0,0,0,0,0,0,0,0,0,0,0
-145,K1_12,Blue,TVA.DivineEvil,K1,2,https://puu.sh/wtZp6/4c06282b85.png,-9700,-500,12500,3,No,"Cedar, Elm",Jerodar,Azure Garden,https://steamcommunity.com/sharedfiles/filedetails/?id=749756455,0,0,0,0,0,0,0,0,0,0,0,0
+145,K1_12,Blue,TVA.DivineEvil,K1,2,https://puu.sh/wtZp6/4c06282b85.png,-9700,-500,12500,3,No,"Ash, Cedar",Jerodar,Azure Garden,https://steamcommunity.com/sharedfiles/filedetails/?id=749756455,0,0,0,0,0,0,0,0,0,0,0,0
 146,K2_1,Screw,Rojo,K2,1,https://i.imgur.com/eMVvN7U.png,-537,484,14081,1,No,"Oak, Elm, Birch",Jerodar,Spiral Crahssite,https://steamcommunity.com/sharedfiles/filedetails/?id=799420228,0,0,0,0,0,0,0,0,0,0,0,0
 147,K2_2,Facing Caves,Malford,K2,1,https://i.imgur.com/nEyRg4P.png,-570,282,15405,3,Yes,Oak,Jerodar,Cave Gulch,https://steamcommunity.com/sharedfiles/filedetails/?id=880080307,0,0,0,0,2,0,0,0,0,0,0,0
 148,K2_3,Sport Field,Soul,K2,1,https://i.imgur.com/xUFt8ps.png,256,498,16359,2,Yes,Chestnut,Jerodar,Sunset Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=676313996,0,0,0,0,0,0,0,0,0,0,0,0
@@ -158,7 +158,7 @@
 157,K2_12,Monument Path,tiy0874,K2,1,https://i.imgur.com/NxN3U34.png,-5532,557,13463,1,Yes,Birch,Jerodar,Eve Fragment,https://steamcommunity.com/sharedfiles/filedetails/?id=874576359,0,0,0,0,0,0,0,0,0,0,0,0
 158,K2_13,Boulder Fields,Malford,K2,1,https://i.imgur.com/5wcu5Pr.png,-5278,-246,15102,5,Yes,Elm,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 159,K2_14,Mini Biome,Ceramic_Plate,K2,1,https://i.imgur.com/yVe9F0C.png,-3130,-305,13493,1,Yes,"Elm, Ash",Jerodar,Paradise,https://steamcommunity.com/sharedfiles/filedetails/?id=676928924,0,0,0,0,0,0,0,0,0,0,0,0
-160,K2_15,Golf Course,dougmantis,K2,1,https://i.imgur.com/1WNVTU0.png,-3844,229,14428,4,Yes,"Chestnut, Oak",Jerodar,Golf Course,https://steamcommunity.com/sharedfiles/filedetails/?id=801560332,0,0,0,0,0,0,0,0,0,0,0,0
+160,K2_15,Golf Course,Agent Smith,K2,1,https://i.imgur.com/1WNVTU0.png,-3844,229,14428,4,Yes,"Chestnut, Oak",Jerodar,Golf Course,https://steamcommunity.com/sharedfiles/filedetails/?id=801560332,0,0,0,0,0,0,0,0,0,0,0,0
 161,K3_1,Sheltered Jungle,Magnymbus,K3,1,https://i.imgur.com/UwLAlTd.png,-11152,562,9784,2,Yes,Oak,Jerodar,Fairy Bowl,https://steamcommunity.com/sharedfiles/filedetails/?id=727923582,0,1,0,0,2,1,0,0,0,0,0,0
 162,K3_2,Ant Hill,OddNova,K3,1,https://i.imgur.com/zLQ9HC3.png,-9425,-114,9953,2,No,"Birch, Chestnut, Elm, Oak, Palm, Hemlock",Jerodar,The Mountain,https://steamcommunity.com/sharedfiles/filedetails/?id=890037906,0,4,0,0,4,1,0,0,0,0,0,0
 163,K3_3,Giants Step,Caravack,K3,1,https://i.imgur.com/8IB3fJV.png,-10064,8,8988,2,Yes,"Birch, Oak",Jerodar,Liyla's Nook,https://steamcommunity.com/sharedfiles/filedetails/?id=846004755,0,3,0,0,3,1,0,0,0,0,0,0
@@ -185,9 +185,9 @@
 184,K4_9,Lost City,greeneD,K4,2,https://i.imgur.com/hQKRThr.png,-5771,-83,7150,4,No,Oak,djJrock,,,0,0,0,0,0,0,0,0,0,0,0,0
 185,K4_10,Sacrifice,jotty2,K4,2,https://i.imgur.com/nHEIJXm.png,-6269,-200,8762,5,No,"Birch, Chestnut, Ash, Cedar, Elm, Oak, Palm",djJrock,,,0,0,0,0,0,0,0,0,0,0,0,0
 186,K4_11,Four Towers,LameGreen,K4,2,https://i.imgur.com/ayel9sV.png,-4668,-432,8118,2,Yes,Elm,djJrock,Lost Civilization,https://steamcommunity.com/sharedfiles/filedetails/?id=762746386,0,0,0,0,0,0,0,0,0,0,0,0
-187,K5_1,Drops,Synovus,K5,1,https://i.imgur.com/OiBWTFx.png,747,656,9164,5,Yes,Hemlock,Despy,Wild Isles,https://steamcommunity.com/sharedfiles/filedetails/?id=908580656,0,0,0,0,0,0,0,0,0,0,0,0
+187,K5_1,Drops,Synovus,K5,1,https://i.imgur.com/OiBWTFx.png,747,656,9164,5,Yes,Hemlock,Despy,Wild Isles,https://steamcommunity.com/sharedfiles/filedetails/?id=908580656,0,0,0,0,4,3,0,0,0,0,0,0
 188,K5_2,Isolated,InterFlash,K5,1,https://i.imgur.com/NOeH8GW.png,1400,-245,10240,2,No,"Birch, Oak",djJrock,Small Island,https://steamcommunity.com/sharedfiles/filedetails/?id=850628537,0,0,0,0,0,0,0,0,0,0,0,0
-189,K5_3,Hidden Caverns,Seypho,K5,1,https://i.imgur.com/AACsAq4.png,2188,-373,8863,4,Yes,"Birch, Oak",djJrock,The Altar,https://steamcommunity.com/sharedfiles/filedetails/?id=849901925,0,0,0,0,0,0,0,0,0,0,0,0
+189,K5_3,Hidden Caverns,Seypho,K5,1,https://i.imgur.com/AACsAq4.png,2188,-373,8863,5,Yes,"Birch, Oak",djJrock,The Altar,https://steamcommunity.com/sharedfiles/filedetails/?id=849901925,0,0,0,0,0,0,0,0,0,0,0,0
 190,K5_4,Lonely Mountain,Malford,K5,1,https://i.imgur.com/xA476lM.png,-672,-73,7516,5,Yes,Hemlock,djJrock,,,0,0,0,0,0,0,0,0,0,0,0,0
 191,K5_5,Lighthouse,Jaros,K5,1,https://i.imgur.com/sIx98YP.png,-283,-410,5302,3,No,Chestnut,djJrock,,,0,0,0,0,0,0,0,0,0,0,0,0
 192,K5_6,Hermit's Hold,olobit,K5,1,https://i.imgur.com/KmTqrWK.png,-2163,142,6459,4,No,Birch,djJrock,The Grieving Island,https://steamcommunity.com/sharedfiles/filedetails/?id=852586481,0,0,0,0,0,0,0,0,0,0,0,0
@@ -199,7 +199,7 @@
 198,K6_5,Cleaved Mountain,Mr.Secundus,K6,2,https://i.imgur.com/wlTFgyb.png,-5310,-118,4111,5,Yes,"Birch, Chestnut",Jerodar,Twin Peak Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=676972131,0,3,3,0,5,6,4,0,0,0,0,0
 199,K6_6,Drainage,Oafrat,K6,2,https://i.imgur.com/pWQP1JA.png,-5237,-276,2864,3,Yes,"Cedar, Hemlock",Jerodar,Noxious Wetland,https://steamcommunity.com/sharedfiles/filedetails/?id=906246492,0,0,0,0,0,0,0,0,0,0,0,0
 200,K6_7,Lonely Cottage,Kranot,K6,2,https://i.imgur.com/e8qXowg.png,-3619,-369,3120,3,No,"Birch, Hemlock",Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
-201,K6_8,Defensive Cannon,The voice of freedom,K6,2,https://i.imgur.com/zrBPJ8Z.png,-2160,461,3755,2,No,Birch,Jerodar,Gun Emplacement,https://steamcommunity.com/sharedfiles/filedetails/?id=883620117,0,0,0,0,0,0,0,0,0,0,0,0
+201,K6_8,Defensive Cannon,The voice of freedom,K6,2,https://i.imgur.com/zrBPJ8Z.png,-2160,461,3755,3,No,Birch,Jerodar,Gun Emplacement,https://steamcommunity.com/sharedfiles/filedetails/?id=883620117,0,0,0,0,0,0,0,0,0,0,0,0
 202,M1_1,Garden of Industry,Kranot,M1,3,http://i.imgur.com/XZ2E4v1.png,2239,326,3428,2,No,Birch,Lonely Fox & Exiles Crew,,,0,0,0,0,0,0,0,0,0,0,0,0
 203,M1_2,Nightwatch Hold,Lexhy,M1,3,http://i.imgur.com/pllLzcU.png,2877,455,2237,5,No,Cedar,Lonely Fox & Exiles Crew,Starlight Temple,https://steamcommunity.com/sharedfiles/filedetails/?id=818084370,0,0,0,0,0,0,0,0,0,0,0,0
 204,M1_3,Derelict Watch,RLCannibal,M1,3,http://i.imgur.com/2cLKwJO.png,3395,-440,1270,3,Yes,"Cedar, Chestnut",Lonely Fox & Exiles Crew,Old Ruins,https://steamcommunity.com/sharedfiles/filedetails/?id=842498980,0,0,0,0,0,0,0,0,0,0,0,0
@@ -259,7 +259,7 @@
 258,T1_5,Chains,Lexhy,T1,3,https://i.imgur.com/bgHxa9B.png,-15371,582,16624,4,No,,Jerodar,Islands in Chains,https://steamcommunity.com/sharedfiles/filedetails/?id=782917965,0,0,0,0,0,0,0,0,0,0,0,0
 259,T1_6,Hamlet,Lexhy,T1,3,https://i.imgur.com/P2wxr70.png,-16793,74,16910,5,No,,Jerodar,Shanty Town Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=796884407,0,0,0,0,0,0,0,0,0,0,0,0
 260,T1_7,Landslide,davidjerlinger,T1,3,https://i.imgur.com/bXZAqzQ.png,-15156,426,15490,5,Yes,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
-261,T2_1,Lookout Peak,I'm so sorry,T2,3,https://i.imgur.com/wmtPxmL.png,-16491,693,9604,3,No,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
+261,T2_1,Lookout Peak,Abracadabra,T2,3,https://i.imgur.com/wmtPxmL.png,-16491,693,9604,3,No,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 262,T2_2,Trapped Tunnels,Synovus,T2,3,https://i.imgur.com/UWfWKz1.png,-15165,-516,9691,5,Yes,,Jerodar,Indigene,https://steamcommunity.com/sharedfiles/filedetails/?id=898930764,0,0,0,0,0,0,0,0,0,0,0,0
 263,T2_3,Fort Knox,Lexhy,T2,3,https://i.imgur.com/w5O8Jpq.png,-16153,419,11111,5,Yes,,Jerodar,Castle of Imp,https://steamcommunity.com/sharedfiles/filedetails/?id=816952610,0,0,0,0,0,0,0,0,0,0,0,0
 264,T2_4,Workshop,Literally Hitler,T2,3,https://i.imgur.com/2qlZn42.png,-14527,215,10846,2,Yes,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
@@ -283,7 +283,7 @@
 282,Z1_8,Lighttower,Klumz,Z1,1,https://puu.sh/wrAxm/0b0a7e7a7f.png,-12100,-500,-4200,2,No,"Chestnut, Elm, Oak",Jerodar,Lighthouse,http://steamcommunity.com/sharedfiles/filedetails/?id=753586020,0,0,0,0,0,0,0,0,0,0,0,0
 283,Z1_9,Crosses,DrDraxi,Z1,1,https://i.imgur.com/gstm0Vu.png,-14778,490,-4223,2,Yes,"Elm, Oak",Jerodar,Dry Dock,https://steamcommunity.com/sharedfiles/filedetails/?id=674575507,0,3,0,0,2,1,2,0,2,0,0,0
 284,Z1_10,Savanah,Malford,Z1,1,https://puu.sh/wrAaa/a0efdf6e47.png,-13400,500,-5200,5,Yes,Hemlock,Jerodar,,,0,2,0,0,2,2,1,0,0,0,0,0
-285,Z1_11,Plane Crash,ClippedWings,Z1,1,https://puu.sh/wrFXI/847c811196.png,-15978,-421,-5090,2,Yes,"Birch, Elm, Oak",Jerodar,The Gouge,https://steamcommunity.com/sharedfiles/filedetails/?id=897596913,0,2,0,0,4,4,0,0,0,0,0,0
+285,Z1_11,Plane Crash,ClippedWings,Z1,1,https://puu.sh/wrFXI/847c811196.png,-15978,-421,-5090,5,Yes,"Birch, Elm, Oak",Jerodar,The Gouge,https://steamcommunity.com/sharedfiles/filedetails/?id=897596913,0,2,0,0,4,4,0,0,0,0,0,0
 286,Z1_12,Boulders,Death10201,Z1,1,https://i.imgur.com/kjJpbex.png,-14436,489,-5413,3,Yes,"Birch, Oak",Jerodar,A Start,https://steamcommunity.com/sharedfiles/filedetails/?id=847740802,0,0,0,0,3,4,0,0,0,0,0,0
 288,Z1_14,Stairway,Oiax,Z1,1,https://puu.sh/wrE9h/72ec311910.png,-15202,617,-6347,2,Yes,Palm,Jerodar,Isla de Tropica,https://steamcommunity.com/sharedfiles/filedetails/?id=804745150,0,2,0,0,4,4,0,0,0,3,0,0
 289,Z1_15,Green Hills,Aiavaso[YKT],Z1,1,https://puu.sh/wrE1M/e76e716d64.png,-13300,0,-7100,3,Yes,Birch,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
@@ -297,7 +297,7 @@
 297,Z2_7,Halo Peak,Atriox,Z2,2,https://puu.sh/wsnZS/1c5e8b2152.png,-14600,-500,-11100,5,,"Chestnut, Oak, Palm",Jerodar,Tomb Raider,https://steamcommunity.com/sharedfiles/filedetails/?id=855660688,0,0,0,0,0,0,0,0,0,0,0,0
 298,Z2_8,Aquaduct,eli_eggy,Z2,2,https://puu.sh/wsnfv/0da3d4b2a2.png,-15300,0,-12100,3,,,Jerodar,The Chapel,https://steamcommunity.com/sharedfiles/filedetails/?id=714563253,0,0,0,0,0,0,0,0,0,0,0,0
 299,Z2_9,Roots,Swift-Sausages,Z2,2,https://puu.sh/wst4Q/550b8cddf0.png,-11400,0,-11600,4,,,Jerodar,Victim of the Vine,https://steamcommunity.com/sharedfiles/filedetails/?id=849729072,0,0,0,0,0,0,0,0,0,0,0,0
-300,Z2_10,Monolith,Unknown,Z2,2,https://puu.sh/wsrUT/29ad8e0db7.png,-13100,-500,-12800,1,,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
+300,Z2_10,Monolith,Bubbles,Z2,2,https://puu.sh/wsrUT/29ad8e0db7.png,-13100,-500,-12800,1,,,Jerodar,Land's End,https://steamcommunity.com/sharedfiles/filedetails/?id=685414477,0,0,0,0,0,0,0,0,0,0,0,0
 301,Z2_11,AA Guns,The voice of freedom,Z2,2,https://puu.sh/wssKp/9a052ee0a3.png,-11700,0,-13700,1,,,Jerodar,Double Gun Emplacement,https://steamcommunity.com/sharedfiles/filedetails/?id=883686834,0,0,0,0,0,0,0,0,0,0,0,0
 302,Z3_1,Old Church,krystofperkey,Z3,2,https://puu.sh/wsvuU/b92ac572b4.png,-17500,500,-14000,2,,,Jerodar,A Simple Grass Island,https://steamcommunity.com/sharedfiles/filedetails/?id=853052290,0,0,0,0,0,0,0,0,0,0,0,0
 303,Z3_2,Ringwall,Nardo,Z3,2,https://puu.sh/wsxlM/be5860c4b8.png,-14800,0,-14600,1,,,Jerodar,Bowl,https://steamcommunity.com/sharedfiles/filedetails/?id=903356540&searchtext=,0,0,0,0,0,0,0,0,0,0,0,0
@@ -326,18 +326,18 @@
 326,Z4_17,Burrow,Kestril,Z4,1,https://puu.sh/wsTCO/11e79070ad.png,-8900,500,-15000,2,,,Jerodar,Treasure Caves,https://steamcommunity.com/sharedfiles/filedetails/?id=844276779,0,0,0,0,0,0,0,0,0,0,0,0
 327,Z4_18,Green Plateau,Malford,Z4,1,https://puu.sh/wsTC1/c878e3dd23.png,-6700,0,-15000,4,Yes,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 328,Z4_19,Donut,Huntanian,Z4,1,https://puu.sh/wt087/a9a4fcf8bd.png,-5400,0,-15400,3,,,Jerodar,Hunter Cove,https://steamcommunity.com/sharedfiles/filedetails/?id=900371136,0,0,0,0,0,0,0,0,0,0,0,0
-329,Z4_20,Pink Valley,CaptainNova,Z4,1,https://puu.sh/wsAOC/aca0a9030d.png,-9800,-500,-16400,2,,,Jerodar,Tortoise Terrace,https://steamcommunity.com/sharedfiles/filedetails/?id=750934752,0,0,0,0,0,0,0,0,0,0,0,0
+329,Z4_20,Pink Valley,CaptainNova,Z4,1,https://puu.sh/wsAOC/aca0a9030d.png,-9800,-500,-16400,2,Yes,Ash,Jerodar,Tortoise Terrace,https://steamcommunity.com/sharedfiles/filedetails/?id=750934752,0,1,0,0,1,4,0,0,0,0,0,0
 330,Z4_21,Cherry Hills,Senpai,Z4,1,https://puu.sh/wt0dy/0497aa0060.png,-6500,500,-16300,2,,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
-331,Z4_22,Peak,DeathByWafflez,Z4,1,https://puu.sh/wsBcd/c4d35e5382.png,-9200,-500,-17500,2,,,Jerodar,Hidden Shrine,https://steamcommunity.com/sharedfiles/filedetails/?id=746561015,0,0,0,0,0,0,0,0,0,0,0,0
-332,Z4_23,Rock Forest,CrocBain,Z4,1,https://puu.sh/wsCLm/47e46810f0.png,-7600,0,-17000,5,,,Jerodar,Beautiful Wildlands,https://steamcommunity.com/sharedfiles/filedetails/?id=742077672,0,0,0,0,0,0,0,0,0,0,0,0
+331,Z4_22,Peak,DeathByWafflez,Z4,1,https://puu.sh/wsBcd/c4d35e5382.png,-9200,-500,-17500,2,No,"Birch, Chestnut",Jerodar,Hidden Shrine,https://steamcommunity.com/sharedfiles/filedetails/?id=746561015,0,1,0,0,1,1,0,0,0,0,0,0
+332,Z4_23,Rock Forest,CrocBain,Z4,1,https://puu.sh/wsCLm/47e46810f0.png,-7600,0,-17000,5,Yes,"Birch, Oak, Hemlock",Jerodar,Beautiful Wildlands,https://steamcommunity.com/sharedfiles/filedetails/?id=742077672,0,1,0,0,1,1,0,0,0,0,0,0
 333,Z5_1,Plaza,That Pixel Kid,Z5,2,https://puu.sh/wt7ka/4f6fe9274a.png,-1400,-500,-14100,5,,,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 334,Z5_2,Glider Race,LittleShoes,Z5,2,https://puu.sh/wt7Ii/eeeb1d1baf.png,500,500,-13700,2,,,Jerodar,Kings Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=860051574,0,0,0,0,0,0,0,0,0,0,0,0
 335,Z5_3,Windmill,CATman4L,Z5,2,https://i.imgur.com/hmCDAqM.png,1100,-500,-14800,1,No,"Birch, Cedar",Jerodar,Hermit Hut,https://steamcommunity.com/sharedfiles/filedetails/?id=871784927,0,0,0,0,0,0,0,0,0,0,0,0
 336,Z5_4,Hex,OddNova,Z5,2,https://puu.sh/wt6KQ/d091851e11.png,-1800,500,-15400,2,No,,Jerodar,Quan Library,https://steamcommunity.com/sharedfiles/filedetails/?id=887550634,0,0,0,0,0,0,0,0,0,0,0,0
-337,Z5_5,Volcano,Jackchallenge,Z5,2,https://puu.sh/wt2CY/5cdb61a3a7.png,-3400,-500,-16100,5,,,Jerodar,The Ashpeak,https://steamcommunity.com/sharedfiles/filedetails/?id=888090672,0,0,0,0,0,0,0,0,0,0,0,0
-338,Z5_6,Loading Dock,catfishmeme,Z5,2,https://puu.sh/wt43J/6975bd94fd.png,-5200,-500,-17300,2,,,Jerodar,Ruined port,https://steamcommunity.com/sharedfiles/filedetails/?id=800729031,0,0,0,0,0,0,0,0,0,0,0,0
+337,Z5_5,Volcano,Jackchallenge,Z5,2,https://puu.sh/wt2CY/5cdb61a3a7.png,-3400,-500,-16100,5,Yes,"Birch, Oak, Palm",Jerodar,The Ashpeak,https://steamcommunity.com/sharedfiles/filedetails/?id=888090672,0,0,3,0,4,0,0,0,0,0,0,0
+338,Z5_6,Loading Dock,Funk Engine,Z5,2,https://puu.sh/wt43J/6975bd94fd.png,-5200,-500,-17300,2,,,Jerodar,Ruined port,https://steamcommunity.com/sharedfiles/filedetails/?id=800729031,0,0,0,0,0,0,0,0,0,0,0,0
 339,Z5_7,Commune,VonKlutch,Z5,2,https://puu.sh/wt4om/3764e2c053.png,-2800,-500,-17000,4,No,,Jerodar,Tavern on the Hill,https://steamcommunity.com/sharedfiles/filedetails/?id=803703742,0,0,0,0,0,0,0,0,0,0,0,0
-340,Z5_8,Alps,eddie price,Z5,2,https://puu.sh/wt5mo/e053481071.png,-1500,500,-17600,2,,,Jerodar,Carrier Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=744541614,0,0,0,0,0,0,0,0,0,0,0,0
+340,Z5_8,Alps,eddie price,Z5,2,https://puu.sh/wt5mo/e053481071.png,-1500,500,-17600,2,Yes,,Jerodar,Carrier Isle,https://steamcommunity.com/sharedfiles/filedetails/?id=744541614,0,0,0,0,0,0,0,0,0,0,0,0
 341,Z5_9,Arc,Kalikars,Z5,2,https://puu.sh/wt8YD/e4219acd1c.png,1300,-500,-17300,3,Yes,"Birch, Elm, Oak, Palm",Jerodar,Forkridge Fields,https://steamcommunity.com/sharedfiles/filedetails/?id=675490663,0,0,0,0,0,0,0,0,0,0,0,0
 342,Z6_1,Rocky Hills,Phoenix009,Z6,1,https://i.imgur.com/QBK1hpk.png,3500,-500,-11900,2,Yes,"Birch, Oak",Jerodar,Phoenix Nest Island,https://steamcommunity.com/sharedfiles/filedetails/?id=844772748,0,0,0,0,0,0,0,0,0,0,0,0
 343,Z6_2,Ripple Hills,Kranot,Z6,1,https://puu.sh/wtLqs/3955278dda.png,6900,0,-11900,3,,,Jerodar,The Crown,https://steamcommunity.com/sharedfiles/filedetails/?id=782613058,0,0,0,0,0,0,0,0,0,0,0,0
