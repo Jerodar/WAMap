@@ -489,7 +489,15 @@ var WAMap = (function () {
         props.author = island.Author;
       }
     }
-
+    
+    var options = settings.islandOptions;
+    options.icon = L.divIcon();
+    options.opacity = 0;
+    // Create and add the marker to the island layer
+    var marker = new L.Marker([0,0], options)
+      .addTo(map);
+    marker.bindPopup('<h1>Wipe Hype!</h1>The current map is no longer valid, because we\'ve got a new world to map. <br> Please give us some time to map out the new world, and if you want to help out visit <a href="https://discord.gg/ezjfcY4">our Discord</a>, thanks!');
+    marker.openPopup();
     // Load the route data for tracing walls
     // Async Load and read the csv file
     //$.ajax({
