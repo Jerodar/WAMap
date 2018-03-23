@@ -492,15 +492,18 @@ var WAMap = (function () {
     
     // Load the route data for tracing walls
     // Async Load and read the csv file
-    //$.ajax({
-    //  url: 'data/route_data.csv',
-    // type: 'GET',
-    //  cache: false,
-    //  success: function (text) {
-    //    var data = $.csv.toArrays(text);
-    //    onRouteDataLoaded(data);
-    //  }
-    //});
+    
+    if (false) {
+      $.ajax({
+        url: 'data/route_data.csv',
+       type: 'GET',
+        cache: false,
+        success: function (text) {
+          var data = $.csv.toArrays(text);
+          onRouteDataLoaded(data);
+        }
+      });
+    }
   }
 
   function onRouteDataLoaded(data) {
