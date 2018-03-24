@@ -493,7 +493,7 @@ var WAMap = (function () {
     // Load the route data for tracing walls
     // Async Load and read the csv file
     
-    if (false) {
+    if (0) {
       $.ajax({
         url: 'data/route_data.csv',
        type: 'GET',
