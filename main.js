@@ -50,8 +50,6 @@ var WAMap = (function () {
     
     // Add the various layergroups
     poiLayers.pointLayer = new L.LayerGroup();
-    // Only used for debugging point data
-    // poiLayers.pointLayer.addTo(map);
     poiLayers.zoneLayer = new L.LayerGroup();
     poiLayers.zoneLayer.addTo(map);
     poiLayers.sectorLayer = new L.LayerGroup();
@@ -492,8 +490,9 @@ var WAMap = (function () {
     
     // Load the route data for tracing walls
     // Async Load and read the csv file
-    
+    // For mapping walls only, disable for public build
     if (0) {
+      poiLayers.pointLayer.addTo(map);
       $.ajax({
         url: 'data/route_data.csv',
        type: 'GET',
