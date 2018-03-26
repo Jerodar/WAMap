@@ -1,2 +1,42 @@
 ﻿{
+  "ANANSI": {
+    "pos": [ 16500, -12900 ],
+    "angle": 0,
+    "spacing": 1
+  },
+  "COYOTE": {
+    "pos": [ 14000, 7500 ],
+    "angle": 0,
+    "spacing": 0.1
+  },
+  "WUKONG": {
+    "pos": [ 7000, -14000 ],
+    "angle": 0,
+    "spacing": 1.6
+  },
+  "HERMES": {
+    "pos": [ 0, -14200 ],
+    "angle": 50,
+    "spacing": 0.7
+  },
+  "SET": {
+    "pos": [ -9400, 0 ],
+    "angle": 0,
+    "spacing": 0.6
+  },
+  "REYNARD": {
+    "pos": [ 0, 7000 ],
+    "angle": 60,
+    "spacing": 0.6
+  },
+  "LOKI": {
+    "pos": [ 0, 12300 ],
+    "angle": 0,
+    "spacing": 0.1
+  },
+  "MAUI": {
+    "pos": [ -12000, -17200 ],
+    "angle": 0,
+    "spacing": 0.1
+  }
 }
