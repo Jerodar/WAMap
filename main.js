@@ -491,7 +491,7 @@ var WAMap = (function () {
     // Load the route data for tracing walls
     // Async Load and read the csv file
     // For mapping walls only, disable for public build
-    if (0) {
+    if (1) {
       poiLayers.pointLayer.addTo(map);
       $.ajax({
         url: 'data/route_data.csv',
