@@ -1,6 +1,8 @@
 var WAMap = (function () {
   'use strict';
 
+  var debug = 0;
+
   var settings = {};
   var map = {};
   var poiLayers = {};
@@ -491,7 +493,7 @@ var WAMap = (function () {
     // Load the route data for tracing walls
     // Async Load and read the csv file
     // For mapping walls only, disable for public build
-    if (0) {
+    if (debug) {
       poiLayers.pointLayer.addTo(map);
       $.ajax({
         url: 'data/route_data.csv',
