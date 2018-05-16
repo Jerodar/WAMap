@@ -350,39 +350,46 @@ var WAMap = (function () {
     for (var i = 1; i < data.length; i++) {
       if (data[i][0] !== '') {
         var island = {};
-        island.Id = data[i][1];
-        island.Name = data[i][2];
-        island.Author = data[i][3];
-        island.Sector = data[i][4];
-        island.Tier = Number(data[i][5]);
-        // island.Screenshot = data[i][6];
+        var column = 0;
+        island.Id = data[i][column++];
+        island.Name = data[i][column++];
+        island.Author = data[i][column++];
+        island.Sector = data[i][column++];
+        island.Tier = Number(data[i][column++]);
+        island.Type = data[i][column++];
+        island.Screenshot = data[i][column++];
         // Mapping to 2d plane, so X = X, Y = Height (used for coloring), Z = Y
-        island.X = Number(data[i][7]);
-        island.Height = Number(data[i][8]) + settings.ZtoAltitude;
-        island.Y = Number(data[i][9]);
-        if (data[i][10] === "") {
+        island.X = Number(data[i][column++]);
+        island.Height = Number(data[i][column++]) + settings.ZtoAltitude;
+        island.Y = Number(data[i][column++]);
+        if (data[i][column] === "") {
           island.Databanks = "Unknown";
+          column++;
         } else {
-          island.Databanks = Number(data[i][10]);
+          island.Databanks = Number(data[i][column++]);
         }
-        island.Respawner = data[i][11];
-        island.Trees = data[i][12];
-        island.Surveyor = data[i][13];
-        // island.Steamname = data[i][14];
-        // island.URL = data[i][15];
+        island.Respawner = data[i][column++];
+        island.Dangers = {};
+        island.Dangers.Walls = data[i][column++];
+        island.Dangers.Spikes = data[i][column++];
+        island.Dangers.Turrets = data[i][column++];
+        island.Trees = data[i][column++];
+        island.Surveyor = data[i][column++];
+        island.Steamname = data[i][column++];
+        island.URL = data[i][column++];
         island.Ore = {};
-        island.Ore.Aluminium = (data[i][16] === "") ? 0 : Number(data[i][16]);
-        island.Ore.Bronze = (data[i][17] === "") ? 0 : Number(data[i][17]);
-        island.Ore.Copper = (data[i][18] === "") ? 0 : Number(data[i][18]);
-        island.Ore.Gold = (data[i][19] === "") ? 0 : Number(data[i][19]);
-        island.Ore.Iron = (data[i][20] === "") ? 0 : Number(data[i][20]);
-        island.Ore.Lead = (data[i][21] === "") ? 0 : Number(data[i][21]);
-        island.Ore.Nickel = (data[i][22] === "") ? 0 : Number(data[i][22]);
-        island.Ore.Silver = (data[i][23] === "") ? 0 : Number(data[i][23]);
-        island.Ore.Steel = (data[i][24] === "") ? 0 : Number(data[i][24]);
-        island.Ore.Tin = (data[i][25] === "") ? 0 : Number(data[i][25]);
-        island.Ore.Titanium = (data[i][26] === "") ? 0 : Number(data[i][26]);
-        island.Ore.Tungsten = (data[i][27] === "") ? 0 : Number(data[i][27]);
+        island.Ore.Aluminium = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Bronze = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Copper = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Gold = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Iron = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Lead = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Nickel = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Silver = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Steel = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Tin = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Titanium = (data[i][column] === "") ? 0 : Number(data[i][column++]);
+        island.Ore.Tungsten = (data[i][column] === "") ? 0 : Number(data[i][column++]);
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
@@ -452,9 +459,13 @@ var WAMap = (function () {
           '&entry.1668213788=' + island.Name +
           '&entry.1743663171=' + island.Author +
           '&entry.1828617833=' + island.Sector +
+          '&entry.979831460=' + island.Type +
           '&entry.2064763837=' + island.Height +
           '&entry.1870806519=' + island.Databanks +
-          '&entry.563492615='  + island.Respawner;
+          '&entry.563492615='  + island.Respawner +
+          '&entry.24867058='  + island.Dangers.Walls +
+          '&entry.891822314='  + island.Dangers.Spikes +
+          '&entry.658813634='  + island.Dangers.Turrets;
         var treeArray = island.Trees.split(", ");
         for (var j = 0; j < treeArray.length; j++) {
           formUrl = formUrl + '&entry.1092906456=' + treeArray[j];
@@ -489,14 +500,7 @@ var WAMap = (function () {
         props.author = island.Author;
       }
     }
-    var options = settings.islandOptions;
-    options.icon = L.divIcon();
-    options.opacity = 0;
-    // Create and add the marker to the island layer
-    var marker = new L.Marker([0,0], options)
-      .addTo(map);
-    marker.bindPopup('<h1>Wipe Hype!</h1>The current map is no longer valid, because we\'ve got a new world to map. <br> Please give us some time to map out the new world, and if you want to help out visit <a href="https://discord.gg/ezjfcY4">our Discord</a>, thanks!');
-    marker.openPopup();
+    
     // Load the route data for tracing walls
     // Async Load and read the csv file
     // For mapping walls only, disable for public build
