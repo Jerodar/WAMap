@@ -531,6 +531,7 @@ var WAMap = (function () {
           // Set the colors of the marker
           var options = settings.wallOptions;
           options.color = '#FF0000';
+          options.weight = 4;
 
           // Create and add the marker to the island layer
           var marker = new L.polyline([wall.P1, wall.P2], options)
