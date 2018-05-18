@@ -27,7 +27,7 @@
   "wallOptions": {
     "fill": false,
     "stroke": true,
-    "weight": 10,
+    "weight": 4,
     "color": "#000000",
     "opacity": 1,
     "interactive": false
