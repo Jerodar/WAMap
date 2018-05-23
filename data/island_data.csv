@@ -1,7 +1,7 @@
 Id,Name,Author,Sec,Tier,Type,Screenshot,X,Y,Z,XP,Res,Walls,Spikes,Turrets,Trees,Surveyor,Steam name,Steam URL,Aluminium,Bronze,Copper,Gold,Iron,Lead,Nickel,Silver,Steel,Tin,Titanium,Tungsten
 X1_01,Ancient Burrows,Veros,X1,1,Saborian,https://i.imgur.com/I34nz17.png,13681,193,7637,4,Yes,No,No,No,Birch,Jerodar,,,0,0,0,0,0,2,0,0,0,0,0,0
 X1_02,Folded Hills,thedirtyferret,X1,1,Saborian,https://i.imgur.com/WIY66Sf.png,12759,-212,6887,3,Yes,No,No,No,"Chestnut, Palm",Jerodar,,,0,3,3,0,3,3,0,0,0,0,0,0
-X1_03,Cliffside Manor,Eternz,X1,1,Saborian,https://i.imgur.com/z1GaNem.png,12999,-18,5128,2,Yes,No,No,No,"Elm, Oak",Jerodar,,,0,2,0,0,4,4,0,0,0,0,0,0
+X1_03,Cliffside Manor,Eternz,X1,1,Saborian,https://i.imgur.com/z1GaNem.png,12999,-18,5128,4,Yes,No,No,No,"Elm, Oak",Jerodar,,,0,2,0,0,4,4,0,0,0,0,0,0
 X1_04,Pillar Hill,A WILD GOON,X1,1,Saborian,https://i.imgur.com/vIDskcW.png,11447,-477,5795,4,Yes,No,No,No,Oak,Jerodar,,,0,0,0,0,0,0,0,0,0,0,0,0
 X1_05,Split Peaks,Synovus,X1,1,Saborian,https://i.imgur.com/TRW8Qwl.png,11973,-57,4018,4,Yes,No,No,No,"Birch, Elm, Oak",JeremyKerman,Splitpeak Pass,https://steamcommunity.com/sharedfiles/filedetails/?id=966489234,0,0,0,0,0,0,0,0,0,0,0,0
 X1_06,Church hill,Eternz,X1,1,Saborian,https://i.imgur.com/moFCJro.png,13685,-251,3549,4,Yes,No,No,No,"Elm, Oak",Skullking Von Mooncrest,,,0,2,0,0,3,2,0,0,0,0,0,0
@@ -29,7 +29,7 @@ X2_11,Velvet Orange,Histarium,X2,1,Saborian,https://cdn.discordapp.com/attachmen
 X2_12,Barren Creek,ClippedWings,X2,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446773122218065920/20180517215758_1.jpg,-9271,262,-16535,2,Yes,No,No,No,"Birch, Cedar, Elm, Oak",Panzercult and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
 X2_13,The Forest Cup,ThcMonkee,X2,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446808362764468264/20180518015627_1.jpg,-16757,14,-14918,5,Yes,No,No,No,"Birch, Oak",Panzercult and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
 X2_14,Conic,101,X2,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446809485948878851/20180518020027_1.jpg,-14298,454,-11953,1,No,No,No,No,"Birch, Oak",Panzercult and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
-X3_01,Birch Forest,UgLY,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446400082925846539/20180516155401_1.jpg,-7899,-171,-2507,4,Yes,No,No,No,Birch,Saber,,,0,3,0,0,1,3,0,0,0,0,0,0
+X3_01,Birch Forest,UgLY,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446400082925846539/20180516155401_1.jpg,-7899,-171,-2507,4,Yes,No,No,No,Birch,Saber,,,0,3,0,0,1,3,0,0,0,0,1,0
 X3_02,Grassy Knoll,Synovus,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446380707166814219/20180516143247_1.jpg,-9852,-282,-3821,3,Yes,No,No,No,"Ash, Birch, Elm, Oak",Saber,,,0,1,0,0,3,0,0,0,0,1,0,0
 X3_03,Archway,Falu,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446388163829694464/20180516150220_1.jpg,-7487,-66,-4257,2,Yes,No,No,No,"Ash, Chestnut, Oak",Saber,,,0,3,0,0,3,4,0,0,0,0,0,0
 X3_04,Birch Spire,Eternz,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446438029356302336/20180516163110_1.jpg,-9260,440,-1774,5,Yes,No,No,No,Birch,Saber,,,0,1,0,0,3,4,0,0,0,0,0,0
@@ -40,14 +40,14 @@ X3_08,Scattered Steps,�,X3,1,Saborian,https://cdn.discordapp.com/attachments/2
 X3_09,Shattered Spires,The.Derpy.Deed,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446470036836843543/20180516195603_1.jpg,-11936,154,544,2,No,No,No,No,"Birch, Elm, Oak",Saber,Shattered Spires,https://steamcommunity.com/sharedfiles/filedetails/?id=1159573203,0,4,0,0,1,3,0,0,0,0,0,0
 X3_10,Cloudtop Arch,RoosterFangz,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446485180870557698/20180516205022_1.jpg,-10144,-771,1501,3,Yes,No,No,No,Oak,Saber,Quaintarch,https://steamcommunity.com/sharedfiles/filedetails/?id=937626873,0,0,0,0,1,2,0,0,0,3,0,0
 X3_11,Rockslide,suh mike hok,X3,1,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446491196517384193/20180516213139_1.jpg,-8813,48,924,3,No,No,No,No,"Birch, Chestnut, Elm",Saber,fresh,https://steamcommunity.com/sharedfiles/filedetails/?id=945476099,0,3,0,0,3,0,0,0,0,0,0,0
-X4_01,Big and Small,Crash2990,X4,2,Saborian,http://puu.sh/AnpRa/cf2228a143.jpg,16482,-73,14381,5,Yes,No,No,No,,Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
-X4_02,Radar Station ,Oddnova,X4,2,Saborian,http://puu.sh/Anq4s/040c6c4f55.jpg,16654,220,16677,5,Yes,No,No,No,,Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
-X4_03,Temple,Cpl. Sommer,X4,2,Saborian,https://i.imgur.com/jHTdOjG.jpg,14636,592,13059,2,Yes,No,No,No,"Hemlock, Palm","Cardinal Mckmsntr, Sulfur",,,0,0,0,0,0,0,0,0,0,0,0,0
+X4_01,Big and Small,Crash2990,X4,2,Saborian,http://puu.sh/AnpRa/cf2228a143.jpg,16482,-73,14381,5,Yes,No,No,No,,Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,6,0,0,0,0,0,0,0
+X4_02,Radar Station ,Oddnova,X4,2,Saborian,http://puu.sh/Anq4s/040c6c4f55.jpg,16654,220,16677,5,Yes,No,No,No,"Birch, Oak",Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
+X4_03,Temple,Cpl. Sommer,X4,2,Saborian,https://i.imgur.com/jHTdOjG.jpg,14636,592,13059,2,Yes,No,No,No,"Hemlock, Palm","Cardinal Mckmsntr, Sulfur",,,0,0,0,0,5,4,0,0,0,0,0,0
 X4_04,Titan Fall,SPOOK,X4,2,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/446416818265915392/Titan_Fall.jpg,14772,38,16148,4,Yes,No,No,No,"Birtch, Chestntut","Cardinal Mckmnstr, Sulfur, Aryeonos",,,0,0,0,0,0,0,0,0,0,0,0,0
 X4_05,Bottom Towers ,Davemane42,X4,2,Saborian,http://puu.sh/Anrhc/c9836ce085.jpg,12743,131,16644,4,Yes,No,No,No,,Durbanpoison and Verduban Skyships[RU],DrunkRaven Inn,https://steamcommunity.com/sharedfiles/filedetails/?id=924807150,0,0,0,0,0,0,0,0,0,0,0,0
 X4_06,Fallout Bunkers ,Oddnova,X4,2,Saborian,http://puu.sh/Ans7j/fdae3c97ad.jpg,11530,8,14882,5,Yes,No,No,No,Birch,Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
 X4_07,Forest Fort ,Corentix,X4,2,Saborian,http://puu.sh/AnsLE/3533adbecd.jpg,11088,276,13629,5,No,No,No,No,"Birch, Oak",Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,0,0,0,0,0,0,0
-X4_08,Marble House,Oddnova,X4,2,Saborian,http://puu.sh/AnvOG/dba11534ec.jpg,13032,487,13746,4,Yes,No,No,No,"Chestnut, Elm, Oak",Durbanpoison and Verduban Skyships[RU],,,0,0,0,0,0,5,4,0,0,0,0,0
+X4_08,Marble House,Oddnova,X4,2,Saborian,http://puu.sh/AnvOG/dba11534ec.jpg,13032,487,13746,4,Yes,No,No,No,"Chestnut, Elm, Oak",Durbanpoison and Verduban Skyships[RU],,,0,5,0,3,0,0,0,0,0,0,0,0
 X4_09,Bassalt Jungle,Mc.Marc,X4,2,Saborian,https://i.imgur.com/jb3JGp6.jpg,14323,455,14295,3,Yes,No,Yes,No,"Birch, Elm, Oak",Cardinal Mckmnstr,,,0,3,0,3,0,6,4,0,0,5,0,0
 X4_10,DrunkRaven Inn,Crumbleduck,X4,2,Saborian,https://i.imgur.com/D4FxZyB.jpg,12842,629,15714,5,No,No,No,No,Chestnut,Cardinal Mckmnstr,,,0,0,0,0,0,0,0,0,0,0,0,0
 X4_11,Colosseum,Loaf,X4,2,Saborian,https://i.imgur.com/l3Jn8k5.jpg,10496,-370,11651,3,Yes,No,No,No,"Birch, Oak",Cardinal Mckmnstr,,,0,0,0,0,0,0,0,0,0,0,0,0
@@ -112,7 +112,7 @@ X9_09,Sail Down,Redscarf,X9,3,Kioki,https://i.imgur.com/TD4tJFf.jpg,2687,-190,37
 X9_10,Shells,OddNova,X9,3,Kioki,https://i.imgur.com/GJzD3sh.jpg,2271,93,2363,4,Yes,No,No,No,Oak,Sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
 X9_11,Kioki City,luki28,X9,3,Kioki,https://i.imgur.com/EX3rDu1.jpg,4900,-494,4008,4,Yes,No,No,No,Elm,Sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
 X9_12,Trader's Village,OddNova,X9,3,Kioki,https://cdn.discordapp.com/attachments/271377221006917634/447450241420230656/20180519123428_1.jpg,8594,50,4773,4,Yes,No,No,No,"Birch, Oak",Dragonbone,,,0,0,0,0,0,0,0,0,0,0,0,0
-X9_13,Hall of Traders,MXXI,X9,3,Kioki,https://cdn.discordapp.com/attachments/271377221006917634/447472770918645784/20180519144906_1.jpg,8908,193,2533,4,Yes,No,No,No,Palm,Dragonbone,,,0,0,0,0,0,0,0,0,0,0,0,0
+X9_13,Hall of Traders,MXXI,X9,3,Kioki,https://cdn.discordapp.com/attachments/271377221006917634/447472770918645784/20180519144906_1.jpg,8908,193,2533,5,Yes,No,No,No,Palm,Dragonbone,,,0,0,0,0,0,0,0,0,0,0,0,0
 X9_14,Rest,TrIpTiCuS,X9,3,Kioki,https://i.imgur.com/wl88oVQ.jpg,5382,419,5231,5,No,No,No,No,"Hemlock, Palm",Sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
 X9_15,Jungle,Murdersauce,X9,3,Kioki,https://i.imgur.com/mhyvmuO.jpg,4080,515,5329,2,No,No,No,No,Palm,Sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
 X9_16,Qualm,OddNova,X9,3,Kioki,https://i.imgur.com/mpk3Ttz.jpg,3267,165,6298,5,No,Yes,No,No,"Birch, Oak, Palm",Sortair,,,0,0,0,0,0,0,0,0,0,0,0,0
@@ -168,7 +168,7 @@ X12_13,Farland,KolaKage,X12,2,Kioki,https://cdn.discordapp.com/attachments/27137
 X13_01,Dekie Dog Island,Sofia Qyvalar,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447288774632800257/Screenshot_87.png,-8553,419,-10199,2,Yes,No,No,No,"Birch, Oak",Bombg,Artificial Island,https://steamcommunity.com/sharedfiles/filedetails/?id=675264829,0,0,0,0,0,0,0,0,0,0,0,0
 X13_02,Drink and War,Teras,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447295068978675712/Screenshot_90.png,-7995,66,-11813,3,No,No,No,No,Chestnut,Bombg,War Tales 4,https://steamcommunity.com/sharedfiles/filedetails/?id=850849112,0,0,0,0,0,0,0,0,0,0,0,0
 X13_03,Lost Armada,[RIP] Lexhy,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447521671465664532/Screenshot_93.png,-4676,-309,-11585,3,Yes,No,No,No,"Birch, Chestnut",Bombg,The Armada of Old,https://steamcommunity.com/sharedfiles/filedetails/?id=801032234,0,0,0,0,0,3,4,4,0,0,0,0
-X13_04,The Vault,Mr. Secundus,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447526917957222401/Screenshot_94.png,-5285,84,-12753,3,Yes,No,No,No,Chestnut,Bombg,The Vault,https://steamcommunity.com/sharedfiles/filedetails/?id=1095810561,0,0,0,0,0,0,0,0,0,0,0,0
+X13_04,The Vault,Mr. Secundus,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447526917957222401/Screenshot_94.png,-5285,84,-12753,4,Yes,No,No,No,Chestnut,Bombg,The Vault,https://steamcommunity.com/sharedfiles/filedetails/?id=1095810561,0,0,0,0,0,0,0,0,0,0,0,0
 X13_05,Milky Way,Synovus,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447531883572756490/Screenshot_95.png,-7398,-427,-13324,5,Yes,No,No,No,"Cedar, Chestnut, Elm, Palm",Bombg,Milky Way,https://steamcommunity.com/sharedfiles/filedetails/?id=878604071,3,0,4,0,6,0,7,4,4,4,0,0
 X13_06,Ancient Family Grave,UgLY,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447552886553968641/Screenshot_97.png,-6846,479,-9384,5,No,No,No,No,"Chestnut, Palm",Bombg,Ancient Family Grave,https://steamcommunity.com/sharedfiles/filedetails/?id=1178534795,0,0,0,0,0,0,0,0,0,0,0,0
 X13_07,Tomb of Amunet,[RIP] Lexhy,X13,3,Saborian,https://cdn.discordapp.com/attachments/271377221006917634/447567717923291136/Screenshot_101.png,-6122,-239,-10305,5,Yes,No,No,No,Chestnut,Bombg,Tomb of Amunet,https://steamcommunity.com/sharedfiles/filedetails/?id=1135248716,0,0,0,0,0,0,0,0,0,0,0,0
