@@ -7,6 +7,7 @@ var WAMap = (function () {
   var map = {};
   var poiLayers = {};
   var prevZoom = -6;
+  var nextZoom = 0;
   var points = {};
 
   function init() {
@@ -45,6 +46,7 @@ var WAMap = (function () {
                     [settings.maxY + settings.maxBounds, settings.maxX + settings.maxBounds]];
     map.setMaxBounds(maxBounds);
     map.setView([0, 0], -6);
+    map.on('zoomstart', onZoomStart);
     map.on('zoomanim', onZoomAnim);
     map.on('zoomend', onZoomEnd);
     
@@ -555,9 +557,12 @@ var WAMap = (function () {
   // ZoomAnim fires at the start and lists the target zoom level
   // Hide the old layers here
   // ZoomEnd fires at the end, display the new layers here
-  function onZoomAnim(e) {
+  function onZoomStart(e) {
     prevZoom = map.getZoom();
-    var nextZoom = e.zoom;
+  }
+
+  function onZoomAnim(e) {
+    nextZoom = e.zoom;
     console.log('Zoomed from:' + prevZoom + ' to: ' + nextZoom);
     if (nextZoom > -4 && prevZoom <= -4) {
       // if zoomed in to the max display island screenshots instead of markers
@@ -578,7 +583,6 @@ var WAMap = (function () {
   }
 
   function onZoomEnd(e) {
-    var nextZoom = map.getZoom();
     console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
     if (nextZoom > -4 && prevZoom <= -4) {
       // if zoomed in to the max display island screenshots instead of markers
