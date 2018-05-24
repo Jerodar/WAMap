@@ -236,6 +236,7 @@ var WAMap = (function () {
       var labelIcon = new L.divIcon({ html: html, className: 'zone-label'});
       var options = Object.assign({}, settings.sectorLabelOptions);
       options.icon = labelIcon;
+      options.pane = 'markerPane'
       var label = new L.Marker(zones[zone].pos, options).addTo(poiLayers.zoneLayer);
     }
 

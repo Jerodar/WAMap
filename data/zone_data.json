@@ -1,2 +1,42 @@
 ﻿{
+  "ORION": {
+    "pos": [ 0, -3000 ],
+    "angle": 50,
+    "spacing": 1.6
+  },
+  "HYDRA": {
+    "pos": [ 17000, -5000 ],
+    "angle": 20,
+    "spacing": 1.8
+  },
+  "URSA": {
+    "pos": [ 16000, -16000 ],
+    "angle": 80,
+    "spacing": 1
+  },
+  "LEO": {
+    "pos": [ 0, -15000 ],
+    "angle": 70,
+    "spacing": 2
+  },
+  "FORMAX": {
+    "pos": [ 13500, -10500 ],
+    "angle": 70,
+    "spacing": 0
+  },
+  "INDUS": {
+    "pos": [ 7000, 3000 ],
+    "angle": 30,
+    "spacing": 0.2
+  },
+  "SCORPIUS": {
+    "pos": [ -9000, -8000 ],
+    "angle": 30,
+    "spacing": 0.2
+  },
+  "CYGNUS": {
+    "pos": [ -8000, 11000 ],
+    "angle": 40,
+    "spacing": 0
+  }
 }
