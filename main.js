@@ -328,6 +328,14 @@ var WAMap = (function () {
         // Create and add the marker to the island layer
         var marker = L.polyline([wall.P1, wall.P2], options)
             .addTo(poiLayers.wallLayer);
+        if (wall.Tier === 3 || wall.Tier === 4) {
+          options = Object.assign({}, settings.wallOptions);
+          options.color = '#000000';
+          options.weight = 4;
+          options.pane = 'markerPane';
+          L.polyline([wall.P1, wall.P2], options)
+            .addTo(poiLayers.zoneLayer);
+        }
       }
     }
     
