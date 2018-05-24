@@ -205,10 +205,11 @@ var WAMap = (function () {
         points[Id].Z = Number(data[i][2]);
         
         // Create and add the marker to the island layer
-        var labelIcon = new L.divIcon({ html: Id, className: 'sector-label'});
-        var options = settings.sectorLabelOptions;
-        options.fillcolor = '#AAAAAA';
+        var labelIcon = new L.divIcon({ html: Id, className: 'point-label'});
+        var options = Object.assign({}, settings.sectorLabelOptions);
         options.icon = labelIcon;
+        options.color = 'white';
+        options.pane = 'markerPane';
         var label = new L.Marker([points[Id].Z, points[Id].X], options).addTo(poiLayers.pointLayer);
       }
     }  
@@ -233,7 +234,7 @@ var WAMap = (function () {
       }
       var html = '<div style="transform: rotate(' + zones[zone].angle + 'deg); letter-spacing: ' + zones[zone].spacing + 'em">' + zone + '</div>';
       var labelIcon = new L.divIcon({ html: html, className: 'zone-label'});
-      var options = settings.sectorLabelOptions;
+      var options = Object.assign({}, settings.sectorLabelOptions);
       options.icon = labelIcon;
       var label = new L.Marker(zones[zone].pos, options).addTo(poiLayers.zoneLayer);
     }
@@ -272,7 +273,7 @@ var WAMap = (function () {
         
         // Set the colors of the marker
         var color = settings.colors.islands[sector.Tier];
-        var options = settings.sectorOptions;
+        var options = Object.assign({}, settings.sectorOptions);
         options.fillColor = rgb(color);
         
         // Create and add the marker to the island layer
@@ -283,7 +284,7 @@ var WAMap = (function () {
         var labelPoint = map.latLngToContainerPoint(labelPos);
         labelPoint = L.point([labelPoint.x - 10, labelPoint.y - 10]);
         labelPos = map.containerPointToLatLng(labelPoint);
-        options = settings.sectorLabelOptions;
+        options = Object.assign({}, settings.sectorLabelOptions);
         options.icon = labelIcon;
         var label = new L.Marker(labelPos,options).addTo(poiLayers.sectorNameLayer);
       }
@@ -320,11 +321,11 @@ var WAMap = (function () {
         
         // Set the colors of the marker
         var color = settings.colors.walls[wall.Tier];
-        var options = settings.wallOptions;
+        var options = Object.assign({}, settings.wallOptions);
         options.color = rgb(color);
         
         // Create and add the marker to the island layer
-        var marker = new L.polyline([wall.P1, wall.P2], options)
+        var marker = L.polyline([wall.P1, wall.P2], options)
             .addTo(poiLayers.wallLayer);
       }
     }
@@ -393,7 +394,7 @@ var WAMap = (function () {
         
         // Set the colors of the marker
         var color = settings.colors.islands[island.Tier];
-        var options = settings.islandOptions;
+        var options = Object.assign({}, settings.islandOptions);
         // Share or tint the base color based on height
         if (island.Height < settings.lowThreshold) {
           color = ShadeRgb(color);
@@ -529,7 +530,7 @@ var WAMap = (function () {
         var distanse = Math.hypot(wall.P1[0] - wall.P2[0], wall.P1[1] - wall.P2[1]);
         if (distanse < 1000) {
           // Set the colors of the marker
-          var options = settings.wallOptions;
+          var options = Object.assign({}, settings.wallOptions);
           options.color = '#FF0000';
           options.weight = 4;
 
@@ -586,6 +587,13 @@ var WAMap = (function () {
       // switch to island display
       map.addLayer(poiLayers.islandLayer);
     }
+    var revzoom = nextZoom+7;
+    var newweight1 = revzoom*6;
+    var newweight2 = revzoom*revzoom*6;
+    var newweight = newweight1+newweight2
+    poiLayers.wallLayer.eachLayer(function(wall) {
+      wall.setStyle({weight: newweight});
+    });
   }
 
   // RGB helper functions

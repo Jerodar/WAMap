@@ -64,6 +64,17 @@ html, body {
   color: rgba(246, 178, 107, 0.5);
 }
 
+.point-label {
+  font-weight: bold;
+  font-size: x-large;
+  color: rgb(255, 255, 255);
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
 .legend {
   text-align: left;
   line-height: 18px;
