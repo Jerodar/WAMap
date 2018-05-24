@@ -19,10 +19,10 @@
     "angle": 70,
     "spacing": 2
   },
-  "FORMAX": {
-    "pos": [ 13500, -10500 ],
-    "angle": 70,
-    "spacing": 0
+  "VELA": {
+    "pos": [ 11000, -11500 ],
+    "angle": 20,
+    "spacing": 0.2
   },
   "INDUS": {
     "pos": [ 7000, 3000 ],
@@ -34,9 +34,9 @@
     "angle": 30,
     "spacing": 0.2
   },
-  "CYGNUS": {
-    "pos": [ -8000, 11000 ],
-    "angle": 40,
-    "spacing": 0
+  "RETI": {
+    "pos": [ -8000, 11500 ],
+    "angle": 20,
+    "spacing": 0.2
   }
 }
