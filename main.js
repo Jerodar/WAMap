@@ -60,8 +60,8 @@ var WAMap = (function () {
     poiLayers.sectorLayer.addTo(map);
     poiLayers.sectorNameLayer = new L.LayerGroup();
     poiLayers.sectorNameLayer.addTo(map);
+    poiLayers.wallBackgroundLayer = new L.LayerGroup();
     poiLayers.wallLayer = new L.LayerGroup();
-    poiLayers.wallLayer.addTo(map);
     poiLayers.islandLayer = new L.LayerGroup();
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
     poiLayers.routeLayer = new L.LayerGroup();
@@ -330,16 +330,18 @@ var WAMap = (function () {
         // Create and add the marker to the island layer
         var marker = L.polyline([wall.P1, wall.P2], options)
             .addTo(poiLayers.wallLayer);
-        if (wall.Tier === 3 || wall.Tier === 4) {
-          options = Object.assign({}, settings.wallOptions);
-          options.color = '#000000';
-          options.weight = 4;
-          options.pane = 'markerPane';
+        if (wall.Tier !== 1) {
+          options = Object.assign({}, settings.wallBackgroundOptions);
+		  color = settings.colors.wallBackgrounds[wall.Tier];
+          options.color =  rgb(color);
           L.polyline([wall.P1, wall.P2], options)
-            .addTo(poiLayers.zoneLayer);
+            .addTo(poiLayers.wallBackgroundLayer);
         }
       }
     }
+    
+    poiLayers.wallBackgroundLayer.addTo(map);
+    poiLayers.wallLayer.addTo(map);
     
     // Load the POI data
     // Async Load and read the csv file
@@ -604,7 +606,7 @@ var WAMap = (function () {
     var newweight1 = revzoom*6;
     var newweight2 = revzoom*revzoom*6;
     var newweight = newweight1+newweight2
-    poiLayers.wallLayer.eachLayer(function(wall) {
+    poiLayers.wallBackgroundLayer.eachLayer(function(wall) {
       wall.setStyle({weight: newweight});
     });
   }

@@ -27,6 +27,14 @@
   "wallOptions": {
     "fill": false,
     "stroke": true,
+    "weight": 8,
+    "color": "#000000",
+    "opacity": 1,
+    "interactive": false
+  },
+  "wallBackgroundOptions": {
+    "fill": false,
+    "stroke": true,
     "weight": 12,
     "color": "#000000",
     "opacity": 1,
@@ -54,9 +62,15 @@
     },
     "walls": {
       "1": [ 0, 0, 0],
-      "2": [ 193, 193, 193],
-      "3": [ 147, 154, 237],
-      "4": [ 237, 215, 156]
+      "2": [ 153, 153, 153],
+      "3": [ 0, 0, 255],
+      "4": [ 241, 194, 50]
+    },
+	"wallBackgrounds": {
+      "1": [ 0, 0, 0],
+      "2": [ 216, 216, 216],
+      "3": [ 191, 194, 239],
+      "4": [ 234, 222, 187]
     },
     "altitude": {
       "high": [ 217, 217, 217],
