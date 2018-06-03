@@ -6,7 +6,7 @@ var WAMap = (function () {
   var settings = {};
   var map = {};
   var poiLayers = {};
-  var markers = [];
+  var markers = {};
   var prevZoom = -6;
   var nextZoom = 0;
   var points = {};
@@ -23,7 +23,7 @@ var WAMap = (function () {
     });
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
-    map.getRenderer(map).options.padding = 1;
+    map.getRenderer(map).options.padding = 100;
     
     // Async load the settings file
     $.ajax({
@@ -65,8 +65,11 @@ var WAMap = (function () {
     poiLayers.wallBackgroundLayer = new L.LayerGroup();
     poiLayers.wallLayer = new L.LayerGroup();
     poiLayers.islandLayer = new L.LayerGroup();
+    markers.islandMarkers = [];
     poiLayers.detailedIslandLayer = new L.LayerGroup();
+    markers.detailedIslandMarkers = [];
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
+    markers.zoomedIslandMarkers = [];
     poiLayers.routeLayer = new L.LayerGroup();
     poiLayers.routeLayer.addTo(map);
 
@@ -137,30 +140,58 @@ var WAMap = (function () {
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createTextNode('Altitudes:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.high, ShadeRgb(settings.colors.altitude.high)));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.high, ShadeRgb(settings.colors.altitude.high)));
     container.appendChild(document.createTextNode('High'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.medium, ShadeRgb(settings.colors.altitude.medium)));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.medium, ShadeRgb(settings.colors.altitude.medium)));
     container.appendChild(document.createTextNode('Medium'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.altitude.low, ShadeRgb(settings.colors.altitude.low)));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.low, ShadeRgb(settings.colors.altitude.low)));
     container.appendChild(document.createTextNode('Low'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
     
     container.appendChild(document.createTextNode('Biome:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
     container.appendChild(document.createTextNode('Wilderness'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[2], ShadeRgb(settings.colors.islands[2])));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[2], ShadeRgb(settings.colors.islands[2])));
     container.appendChild(document.createTextNode('Expanse'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[3], ShadeRgb(settings.colors.islands[3])));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[3], ShadeRgb(settings.colors.islands[3])));
     container.appendChild(document.createTextNode('Remnants'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.island, settings.colors.islands[4], ShadeRgb(settings.colors.islands[4])));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[4], ShadeRgb(settings.colors.islands[4])));
     container.appendChild(document.createTextNode('Badlands'));
+    container.appendChild(document.createElement('br'));
+    container.appendChild(document.createElement('br'));
+
+    container.appendChild(document.createTextNode('Culture:'));
+    container.appendChild(document.createElement('br'));
+    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    container.appendChild(document.createTextNode('Saborian'));
+    container.appendChild(document.createElement('br'));
+    container.appendChild(generateSvgImage(settings.shapes.kioki, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    container.appendChild(document.createTextNode('Kioki'));
+    container.appendChild(document.createElement('br'));
+    container.appendChild(document.createElement('br'));
+
+    container.appendChild(document.createTextNode('Info:'));
+    container.appendChild(document.createElement('br'));
+    var respawnImage = generateSvgImage(settings.shapes.respawn, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1]));
+    respawnImage.setAttribute('width', '30');
+    respawnImage.setAttribute('height', '30');
+    respawnImage.setAttribute('viewBox', '0 0 30 30');
+    container.appendChild(respawnImage);
+    container.appendChild(document.createTextNode('Respawner'));
+    container.appendChild(document.createElement('br'));
+    var databankText = document.createElement('span');
+    databankText.setAttribute('class', 'databank-label');
+    databankText.setAttribute('style', 'text-shadow: -1px -1px 0 #58754b, 1px -1px 0 #58754b, -1px 1px 0 #58754b, 1px 1px 0 #58754b; margin: 0px 6px;');
+    databankText.appendChild(document.createTextNode('5'));
+    container.appendChild(databankText);
+    container.appendChild(document.createTextNode('Databanks'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
     
@@ -427,7 +458,6 @@ var WAMap = (function () {
         options.radius = options.radius * 1.5;
         options.icon = createSVGicon(island.Type, options, "island-icon");
         var detailedMarker = new L.Marker([island.Y, island.X], options);
-        markers.push(detailedMarker);
 
         if (island.Respawner === 'Yes') {
           var resOptions = Object.assign({}, options);
@@ -437,7 +467,7 @@ var WAMap = (function () {
           resOptions.radius = options.radius * 1.7;
           resOptions.icon = createSVGicon("respawner", resOptions, "respawner-icon");
           var respawnmarker = new L.Marker([island.Y, island.X], resOptions);
-          markers.push(respawnmarker);
+          markers.detailedIslandMarkers.push(respawnmarker);
         }
         if (island.Databanks !== "Unknown") {
           var dbOptions = Object.assign({}, options);
@@ -450,10 +480,10 @@ var WAMap = (function () {
             iconAnchor: [dbOptions.radius * 0.3, dbOptions.radius * 1.8]
           });
           var dbmarker = new L.Marker([island.Y, island.X], dbOptions);
-          markers.push(dbmarker);
+          markers.detailedIslandMarkers.push(dbmarker);
         }
-
-        marker.addTo(poiLayers.islandLayer);
+        markers.detailedIslandMarkers.push(detailedMarker);
+        markers.islandMarkers.push(marker);
         
         island.Screenshot = 'img/islands/' + island.Id + '.jpg';
         
@@ -463,8 +493,8 @@ var WAMap = (function () {
           iconUrl: island.Screenshot.replace('.jpg','s.jpg'),
           iconSize: [90,90]
         });
-        var zoomedMarker = L.marker([island.Y, island.X], {icon: myIcon})
-          .addTo(poiLayers.zoomedIslandLayer);
+        var zoomedMarker = L.marker([island.Y, island.X], { icon: myIcon });
+        markers.zoomedIslandMarkers.push(zoomedMarker);
         
         // Create the popup that will appear when clicked
         // Copy of screenshot ending with m is a thumbnail of 320 width
@@ -646,7 +676,6 @@ var WAMap = (function () {
     }
     else if (nextZoom > -5 && prevZoom <= -5) {
       // zooming in: switch to detailed display
-      onMove(true);
       map.addLayer(poiLayers.detailedIslandLayer);
     }
 
@@ -662,22 +691,43 @@ var WAMap = (function () {
     var newweight1 = revzoom*6;
     var newweight2 = revzoom*revzoom*6;
     var newweight = newweight1 + newweight2;
-    poiLayers.wallBackgroundLayer.eachLayer(function(wall) {
-      wall.setStyle({weight: newweight});
+    poiLayers.wallBackgroundLayer.eachLayer(function (wall) {
+      wall.setStyle({ weight: newweight });
     });
     prevZoom = nextZoom;
+    onMove(true);
   }
 
   function onMove(e) {
     var zoom = map.getZoom();
-    if (zoom > -5 && zoom <= -4) {
-      var CurrentView = map.getBounds();
-      var arrayLength = markers.length;
-      for (var i = 0; i < arrayLength; i++) {
-        if (CurrentView.contains(markers[i].getLatLng())) {
-          markers[i].addTo(poiLayers.detailedIslandLayer);
+    var CurrentView = map.getBounds();
+    var arrayLength;
+    var i;
+    if (zoom > -6 && zoom <= -5) {
+      arrayLength = markers.islandMarkers.length;
+      for (i = 0; i < arrayLength; i++) {
+        if (CurrentView.contains(markers.islandMarkers[i].getLatLng())) {
+          markers.islandMarkers[i].addTo(poiLayers.islandLayer);
         } else {
-          markers[i].remove();
+          markers.islandMarkers[i].remove();
+        }
+      }
+    } else if (zoom > -5 && zoom <= -4) {
+      arrayLength = markers.detailedIslandMarkers.length;
+      for (i = 0; i < arrayLength; i++) {
+        if (CurrentView.contains(markers.detailedIslandMarkers[i].getLatLng())) {
+          markers.detailedIslandMarkers[i].addTo(poiLayers.detailedIslandLayer);
+        } else {
+          markers.detailedIslandMarkers[i].remove();
+        }
+      }
+    } else if (zoom > -4 && zoom <= -3) {
+      arrayLength = markers.zoomedIslandMarkers.length;
+      for (i = 0; i < arrayLength; i++) {
+        if (CurrentView.contains(markers.zoomedIslandMarkers[i].getLatLng())) {
+          markers.zoomedIslandMarkers[i].addTo(poiLayers.zoomedIslandLayer);
+        } else {
+          markers.zoomedIslandMarkers[i].remove();
         }
       }
     }
