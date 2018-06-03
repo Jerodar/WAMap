@@ -6,7 +6,7 @@
   "maxX": 18000,
   "minY": -18000,
   "maxY": 18000,
-  "maxBounds": 25000,
+  "maxBounds": 18000,
   "ZtoAltitude" : 2000,
   "lowThreshold": 1800,
   "highThreshold": 2200,

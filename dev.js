@@ -22,7 +22,7 @@ var WAMap = (function () {
     });
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
-    map.getRenderer(map).options.padding = 100;
+    map.getRenderer(map).options.padding = 1;
     
     // Async load the settings file
     $.ajax({
@@ -63,6 +63,7 @@ var WAMap = (function () {
     poiLayers.wallBackgroundLayer = new L.LayerGroup();
     poiLayers.wallLayer = new L.LayerGroup();
     poiLayers.islandLayer = new L.LayerGroup();
+    poiLayers.detailedIslandLayer = new L.LayerGroup();
     poiLayers.zoomedIslandLayer = new L.LayerGroup();
     poiLayers.routeLayer = new L.LayerGroup();
     poiLayers.routeLayer.addTo(map);
@@ -421,6 +422,9 @@ var WAMap = (function () {
 
         // Create and add the marker to the island layer
         var marker = new L.Marker([island.Y, island.X], options);
+        options.radius = options.radius * 1.5;
+        options.icon = createSVGicon(island.Type, options, "island-icon");
+        var detailedMarker = new L.Marker([island.Y, island.X], options);
 
         if (island.Respawner === 'Yes') {
           var resOptions = Object.assign({}, options);
@@ -430,7 +434,7 @@ var WAMap = (function () {
           resOptions.radius = options.radius * 1.7;
           resOptions.icon = createSVGicon("respawner", resOptions, "respawner-icon");
           var respawmarker = new L.Marker([island.Y, island.X], resOptions)
-            .addTo(poiLayers.islandLayer);
+            .addTo(poiLayers.detailedIslandLayer);
         }
         if (island.Databanks !== "Unknown") {
           var dbOptions = Object.assign({}, options);
@@ -440,12 +444,13 @@ var WAMap = (function () {
           dbOptions.icon = L.divIcon({
             html: "<p style='text-shadow: -1px -1px 0 " + dbOptions.color + ", 1px -1px 0 " + dbOptions.color + ", -1px 1px 0 " + dbOptions.color + ", 1px 1px 0 " + dbOptions.color + ";'>" + island.Databanks + "</p>",
             className: "databank-label",
-            iconAnchor: [dbOptions.radius * 0.3, dbOptions.radius * 1.7]
+            iconAnchor: [dbOptions.radius * 0.3, dbOptions.radius * 1.8]
           });
           var dbmarker = new L.Marker([island.Y, island.X], dbOptions)
-            .addTo(poiLayers.islandLayer);
+            .addTo(poiLayers.detailedIslandLayer);
         }
 
+        detailedMarker.addTo(poiLayers.detailedIslandLayer);
         marker.addTo(poiLayers.islandLayer);
         
         island.Screenshot = 'img/islands/' + island.Id + '.jpg';
@@ -529,7 +534,8 @@ var WAMap = (function () {
           'Surveyed by: ' + island.Surveyor + '<br>' +
           '<a href="' + formUrl + '" target="_blank">Click here to submit new data for this island.</a>';
         
-        marker.bindPopup(popup, {minWidth: '320'});
+        marker.bindPopup(popup, { minWidth: '320' });
+        detailedMarker.bindPopup(popup, { minWidth: '320' });
         zoomedMarker.bindPopup(popup, {minWidth: '320'});
         
         // Add searchable features to the marker
@@ -592,40 +598,61 @@ var WAMap = (function () {
   function onZoomAnim(e) {
     nextZoom = e.zoom;
     console.log('Zoomed from:' + prevZoom + ' to: ' + nextZoom);
-    if (nextZoom > -4 && prevZoom <= -4) {
-      // if zoomed in to the max display island screenshots instead of markers
-      map.removeLayer(poiLayers.islandLayer);
-    }
-    else if (nextZoom <= -4 && prevZoom > -4) {
-      // switch back to circle markers
+    
+    if (nextZoom <= -4 && prevZoom > -4) {
+      // zooming out: switch to detailed display
       map.removeLayer(poiLayers.zoomedIslandLayer);
     }
-    else if (nextZoom === -6 && prevZoom > -6) {
-      // switch to zone name display
+    else if (nextZoom > -4 && prevZoom <= -4) {
+      // zooming in: switch to screenshot display
+      map.removeLayer(poiLayers.detailedIslandLayer);
+    }
+
+    else if (nextZoom <= -5 && prevZoom > -5) {
+      // zooming out: switch to island display
+      map.removeLayer(poiLayers.detailedIslandLayer);
+    }
+    else if (nextZoom > -5 && prevZoom <= -5) {
+      // zooming in: switch to detailed display
       map.removeLayer(poiLayers.islandLayer);
     }
-    else if (nextZoom > -6 && prevZoom === -6) {
-      // switch to island display
+
+    else if (nextZoom <= -6 && prevZoom > -6) {
+      // zooming out: switch to zone name display
+      map.removeLayer(poiLayers.islandLayer);
+    }
+    else if (nextZoom > -6 && prevZoom <= -6) {
+      // zooming in: switch to island display
       map.removeLayer(poiLayers.zoneLayer);
     }
   }
 
   function onZoomEnd(e) {
     console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
-    if (nextZoom > -4 && prevZoom <= -4) {
-      // if zoomed in to the max display island screenshots instead of markers
+    if (nextZoom <= -4 && prevZoom > -4) {
+      // zooming out: switch to detailed display
+      map.addLayer(poiLayers.detailedIslandLayer);
+    }
+    else if (nextZoom > -4 && prevZoom <= -4) {
+      // zooming in: switch to screenshot display
       map.addLayer(poiLayers.zoomedIslandLayer);
     }
-    else if (nextZoom <= -4 && prevZoom > -4) {
-      // switch back to circle markers
+
+    else if (nextZoom <= -5 && prevZoom > -5) {
+      // zooming out: switch to island display
       map.addLayer(poiLayers.islandLayer);
     }
-    else if (nextZoom === -6 && prevZoom > -6) {
-      // switch to zone name display
+    else if (nextZoom > -5 && prevZoom <= -5) {
+      // zooming in: switch to detailed display
+      map.addLayer(poiLayers.detailedIslandLayer);
+    }
+
+    else if (nextZoom <= -6 && prevZoom > -6) {
+      // zooming out: switch to zone name display
       map.addLayer(poiLayers.zoneLayer);
     }
-    else if (nextZoom > -6 && prevZoom === -6) {
-      // switch to island display
+    else if (nextZoom > -6 && prevZoom <= -6) {
+      // zooming in: switch to island display
       map.addLayer(poiLayers.islandLayer);
     }
     var revzoom = nextZoom+7;
@@ -676,7 +703,7 @@ var WAMap = (function () {
     }
     if (shape === "Kioki") {
       d = d
-        + " m " + ((s - s * 0.9)) + "," + (s + (s-s*0.9))
+        + " m " + ((s - s * 0.9)) + "," + (s)
         + " a " + (s * 0.9) + " " + (s * 0.9) + " 0 1 1 " + (s * 0.9 * 2) + "," + (0)
         + " a " + (s * 0.9) + " " + (s * 0.9) + " 0 1 1 " + (-s * 0.9 * 2) + "," + (0)
         + " z";
