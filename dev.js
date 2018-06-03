@@ -6,6 +6,7 @@ var WAMap = (function () {
   var settings = {};
   var map = {};
   var poiLayers = {};
+  var markers = [];
   var prevZoom = -6;
   var nextZoom = 0;
   var points = {};
@@ -49,6 +50,7 @@ var WAMap = (function () {
     map.on('zoomstart', onZoomStart);
     map.on('zoomanim', onZoomAnim);
     map.on('zoomend', onZoomEnd);
+    map.on('move', onMove);
     
     // L.imageOverlay('img/map.png', bounds).addTo(map);
     
@@ -425,6 +427,7 @@ var WAMap = (function () {
         options.radius = options.radius * 1.5;
         options.icon = createSVGicon(island.Type, options, "island-icon");
         var detailedMarker = new L.Marker([island.Y, island.X], options);
+        markers.push(detailedMarker);
 
         if (island.Respawner === 'Yes') {
           var resOptions = Object.assign({}, options);
@@ -433,8 +436,8 @@ var WAMap = (function () {
           resOptions.bubblingMouseEvents = true;
           resOptions.radius = options.radius * 1.7;
           resOptions.icon = createSVGicon("respawner", resOptions, "respawner-icon");
-          var respawmarker = new L.Marker([island.Y, island.X], resOptions)
-            .addTo(poiLayers.detailedIslandLayer);
+          var respawnmarker = new L.Marker([island.Y, island.X], resOptions);
+          markers.push(respawnmarker);
         }
         if (island.Databanks !== "Unknown") {
           var dbOptions = Object.assign({}, options);
@@ -446,11 +449,10 @@ var WAMap = (function () {
             className: "databank-label",
             iconAnchor: [dbOptions.radius * 0.3, dbOptions.radius * 1.8]
           });
-          var dbmarker = new L.Marker([island.Y, island.X], dbOptions)
-            .addTo(poiLayers.detailedIslandLayer);
+          var dbmarker = new L.Marker([island.Y, island.X], dbOptions);
+          markers.push(dbmarker);
         }
 
-        detailedMarker.addTo(poiLayers.detailedIslandLayer);
         marker.addTo(poiLayers.islandLayer);
         
         island.Screenshot = 'img/islands/' + island.Id + '.jpg';
@@ -644,6 +646,7 @@ var WAMap = (function () {
     }
     else if (nextZoom > -5 && prevZoom <= -5) {
       // zooming in: switch to detailed display
+      onMove(true);
       map.addLayer(poiLayers.detailedIslandLayer);
     }
 
@@ -662,6 +665,22 @@ var WAMap = (function () {
     poiLayers.wallBackgroundLayer.eachLayer(function(wall) {
       wall.setStyle({weight: newweight});
     });
+    prevZoom = nextZoom;
+  }
+
+  function onMove(e) {
+    var zoom = map.getZoom();
+    if (zoom > -5 && zoom <= -4) {
+      var CurrentView = map.getBounds();
+      var arrayLength = markers.length;
+      for (var i = 0; i < arrayLength; i++) {
+        if (CurrentView.contains(markers[i].getLatLng())) {
+          markers[i].addTo(poiLayers.detailedIslandLayer);
+        } else {
+          markers[i].remove();
+        }
+      }
+    }
   }
 
   // RGB helper functions
