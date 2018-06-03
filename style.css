@@ -97,6 +97,12 @@ html, body {
   margin-right: 2px;
 }
 
+.databank-label {
+  font-weight: bold;
+  font-size: smaller;
+  color: rgb(255, 255, 255);
+}
+
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
   background: rgb(255, 255, 255);
   background: rgba(255,255,255,0.8);

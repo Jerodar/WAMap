@@ -417,10 +417,36 @@ var WAMap = (function () {
         }
         options.fillColor = rgb(color);
         options.color = rgb(ShadeRgb(color));
+        options.icon = createSVGicon(island.Type, options, "island-icon");
 
         // Create and add the marker to the island layer
-        var marker = new L.circleMarker([island.Y, island.X], options)
-          .addTo(poiLayers.islandLayer);
+        var marker = new L.Marker([island.Y, island.X], options);
+
+        if (island.Respawner === 'Yes') {
+          var resOptions = Object.assign({}, options);
+          resOptions.zIndexOffset = -1000;
+          resOptions.interactive = false;
+          resOptions.bubblingMouseEvents = true;
+          resOptions.radius = options.radius * 1.7;
+          resOptions.icon = createSVGicon("respawner", resOptions, "respawner-icon");
+          var respawmarker = new L.Marker([island.Y, island.X], resOptions)
+            .addTo(poiLayers.islandLayer);
+        }
+        if (island.Databanks !== "Unknown") {
+          var dbOptions = Object.assign({}, options);
+          dbOptions.zIndexOffset = 1000;
+          dbOptions.interactive = false;
+          dbOptions.bubblingMouseEvents = true;
+          dbOptions.icon = L.divIcon({
+            html: "<p style='text-shadow: -1px -1px 0 " + dbOptions.color + ", 1px -1px 0 " + dbOptions.color + ", -1px 1px 0 " + dbOptions.color + ", 1px 1px 0 " + dbOptions.color + ";'>" + island.Databanks + "</p>",
+            className: "databank-label",
+            iconAnchor: [dbOptions.radius * 0.3, dbOptions.radius * 1.7]
+          });
+          var dbmarker = new L.Marker([island.Y, island.X], dbOptions)
+            .addTo(poiLayers.islandLayer);
+        }
+
+        marker.addTo(poiLayers.islandLayer);
         
         island.Screenshot = 'img/islands/' + island.Id + '.jpg';
         
@@ -633,6 +659,50 @@ var WAMap = (function () {
     for (var i = 0; i < color.length; i++)
       tint[i] = color[i] + ((255 - color[i]) * settings.shadingFactor);
     return tint;
+  }
+
+  // Creates a divIcon containing a custom SVG icon
+  function createSVGicon(shape, options, classname) {
+    var s = options.radius;
+    var d = "M " + options.width + "," + options.width;
+
+    if (shape === "Saborian") {
+      d = d
+        + " m " + (s) + "," + (0)
+        + " l " + (s) + "," + (s)
+        + " l " + (-s) + "," + (s)
+        + " l " + (-s) + "," + (-s)
+        + " z";
+    }
+    if (shape === "Kioki") {
+      d = d
+        + " m " + ((s - s * 0.9)) + "," + (s + (s-s*0.9))
+        + " a " + (s * 0.9) + " " + (s * 0.9) + " 0 1 1 " + (s * 0.9 * 2) + "," + (0)
+        + " a " + (s * 0.9) + " " + (s * 0.9) + " 0 1 1 " + (-s * 0.9 * 2) + "," + (0)
+        + " z";
+    }
+    if (shape === "respawner") {
+      d = d
+        + " m " + (s * (56 / 29)) + "," + (s * (24 / 29))
+        + " c " + (s * (-3 / 29)) + "," + (s * (-3 / 29)) + " " + (s * (-4 / 29)) + "," + (s * (-4 / 29)) + " " + (s * (-4 / 29)) + "," + (s * (-7 / 29))
+        + " c " + (s * (2 / 29)) + "," + (s * (-1 / 29)) + " " + (s * (4 / 29)) + "," + (s * (-2 / 29)) + " " + (s * (6 / 29)) + "," + (s * (-4 / 29))
+        + " c " + (s * (-3 / 29)) + "," + (s * (-2 / 29)) + " " + (s * (-5 / 29)) + "," + (s * (-4 / 29)) + " " + (s * (-6 / 29)) + "," + (s * (-7 / 29))
+        + " c " + (s * (-11 / 29)) + "," + (s * (11 / 29)) + " " + (s * (-35 / 29)) + "," + (s * (11 / 29)) + " " + (s * (-46 / 29)) + "," + (0)
+        + " c " + (s * (-1 / 29)) + "," + (s * (3 / 29)) + " " + (s * (-3 / 29)) + "," + (s * (5 / 29)) + " " + (s * (-6 / 29)) + "," + (s * (7 / 29))
+        + " c " + (s * (2 / 29)) + "," + (s * (2 / 29)) + " " + (s * (4 / 29)) + "," + (s * (3 / 29)) + " " + (s * (6 / 29)) + "," + (s * (4 / 29))
+        + " c " + (0) + "," + (s * (3 / 29)) + " " + (s * (-1 / 29)) + "," + (s * (4 / 29)) + " " + (s * (-4 / 29)) + "," + (s * (7 / 29))
+        + " c " + (s * (14 / 29)) + "," + (s * (3 / 29)) + " " + (s * (40 / 29)) + "," + (s * (3 / 29)) + " " + (s * (54 / 29)) + "," + (0)
+        + " z";
+    }
+
+    var iconSize = (s + options.width) * 2;
+    var svgElement = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='" + iconSize + "' height='" + iconSize + "'><path stroke='" + options.color + "' stroke-width='" + options.width + "' fill='" + options.fillColor + "' d='" + d + "'/></svg>";
+    var svgIcon = L.divIcon({
+      html: svgElement,
+      className: classname,
+      iconSize: [iconSize,iconSize]
+    });
+    return svgIcon;
   }
 
   // Start the app

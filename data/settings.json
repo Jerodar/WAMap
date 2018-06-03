@@ -19,10 +19,10 @@
     "fillColor": "#ffffff",
     "fillOpacity": 1,
     "stroke": true,
-    "width": 0.5,
+    "width": 3,
     "color": "#aaaaaa",
     "opacity": 1,
-    "radius": 8
+    "radius": 10
   },
   "wallOptions": {
     "fill": false,
