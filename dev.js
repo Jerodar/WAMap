@@ -630,62 +630,37 @@ var WAMap = (function () {
   function onZoomAnim(e) {
     nextZoom = e.zoom;
     console.log('Zoomed from:' + prevZoom + ' to: ' + nextZoom);
-    
-    if (nextZoom <= -4 && prevZoom > -4) {
-      // zooming out: switch to detailed display
+    // zoom 6 = zoneLayer
+	// zoom 5-6 = islandLayer
+	// zoom 4-5 = detailedIslandLayer
+	// zoom 3-4 = zoomedIslandLayer
+    if (nextZoom <= -4) {
       map.removeLayer(poiLayers.zoomedIslandLayer);
     }
-    else if (nextZoom > -4 && prevZoom <= -4) {
-      // zooming in: switch to screenshot display
+    if (nextZoom > -4 || nextZoom <= -5) {
       map.removeLayer(poiLayers.detailedIslandLayer);
     }
-
-    else if (nextZoom <= -5 && prevZoom > -5) {
-      // zooming out: switch to island display
-      map.removeLayer(poiLayers.detailedIslandLayer);
-    }
-    else if (nextZoom > -5 && prevZoom <= -5) {
-      // zooming in: switch to detailed display
+    if (nextZoom > -5 || nextZoom <= -6) {
       map.removeLayer(poiLayers.islandLayer);
     }
-
-    else if (nextZoom <= -6 && prevZoom > -6) {
-      // zooming out: switch to zone name display
-      map.removeLayer(poiLayers.islandLayer);
-    }
-    else if (nextZoom > -6 && prevZoom <= -6) {
-      // zooming in: switch to island display
+    if (nextZoom > -6) {
       map.removeLayer(poiLayers.zoneLayer);
     }
   }
 
   function onZoomEnd(e) {
     console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
-    if (nextZoom <= -4 && prevZoom > -4) {
-      // zooming out: switch to detailed display
-      map.addLayer(poiLayers.detailedIslandLayer);
-    }
-    else if (nextZoom > -4 && prevZoom <= -4) {
-      // zooming in: switch to screenshot display
+    if (nextZoom > -4) {
       map.addLayer(poiLayers.zoomedIslandLayer);
     }
-
-    else if (nextZoom <= -5 && prevZoom > -5) {
-      // zooming out: switch to island display
-      map.addLayer(poiLayers.islandLayer);
-    }
-    else if (nextZoom > -5 && prevZoom <= -5) {
-      // zooming in: switch to detailed display
+    else if (nextZoom > -5 && nextZoom <= -4) {
       map.addLayer(poiLayers.detailedIslandLayer);
     }
-
-    else if (nextZoom <= -6 && prevZoom > -6) {
-      // zooming out: switch to zone name display
-      map.addLayer(poiLayers.zoneLayer);
-    }
-    else if (nextZoom > -6 && prevZoom <= -6) {
-      // zooming in: switch to island display
+    else if (nextZoom > -6 && nextZoom <= -5) {
       map.addLayer(poiLayers.islandLayer);
+    }
+    else if (nextZoom <= -6) {
+      map.addLayer(poiLayers.zoneLayer);
     }
     var revzoom = nextZoom+7;
     var newweight1 = revzoom*6;
