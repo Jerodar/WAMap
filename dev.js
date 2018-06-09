@@ -261,22 +261,22 @@ var WAMap = (function () {
     container.appendChild(document.createTextNode('Walls:'));
     container.appendChild(document.createElement('br'));
     options.fillColor = rgb(settings.colors.walls[1]);
-    options.color = rgb(ShadeRgb(settings.colors.walls[1]));
+    options.color = rgb(settings.colors.walls[1]);
     container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('World Border'));
     container.appendChild(document.createElement('br'));
     options.fillColor = rgb(settings.colors.walls[2]);
-    options.color = rgb(ShadeRgb(settings.colors.walls[2]));
+    options.color = rgb(settings.colors.walls[2]);
     container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Windwall'));
     container.appendChild(document.createElement('br'));
     options.fillColor = rgb(settings.colors.walls[3]);
-    options.color = rgb(ShadeRgb(settings.colors.walls[3]));
+    options.color = rgb(settings.colors.walls[3]);
     container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Stormwall'));
     container.appendChild(document.createElement('br'));
     options.fillColor = rgb(settings.colors.walls[4]);
-    options.color = rgb(ShadeRgb(settings.colors.walls[4]));
+    options.color = rgb(settings.colors.walls[4]);
     container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Sandstorm'));
     container.appendChild(document.createElement('br'));
@@ -705,10 +705,17 @@ var WAMap = (function () {
   function onZoomAnim(e) {
     nextZoom = e.zoom;
     console.log('Zoomed from:' + prevZoom + ' to: ' + nextZoom);
+    if (nextZoom > -6) {
+      map.removeLayer(poiLayers.zoneLayer);
+    }
+  }
+
+  function onZoomEnd(e) {
+    console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
     // zoom 6 = zoneLayer
-	// zoom 5-6 = islandLayer
-	// zoom 4-5 = detailedIslandLayer
-	// zoom 3-4 = zoomedIslandLayer
+    // zoom 5-6 = islandLayer
+    // zoom 4-5 = detailedIslandLayer
+    // zoom 3-4 = zoomedIslandLayer
     if (nextZoom <= -4) {
       map.removeLayer(poiLayers.zoomedIslandLayer);
     }
@@ -718,13 +725,7 @@ var WAMap = (function () {
     if (nextZoom > -5 || nextZoom <= -6) {
       map.removeLayer(poiLayers.islandLayer);
     }
-    if (nextZoom > -6) {
-      map.removeLayer(poiLayers.zoneLayer);
-    }
-  }
 
-  function onZoomEnd(e) {
-    console.log('Zoom ended from:' + prevZoom + ' to: ' + nextZoom);
     if (nextZoom > -4) {
       map.addLayer(poiLayers.zoomedIslandLayer);
     }
