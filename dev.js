@@ -83,6 +83,8 @@ var WAMap = (function () {
     poiLayers.sectorNameLayer.addTo(map);
     poiLayers.wallBackgroundLayer = new L.LayerGroup();
     poiLayers.wallLayer = new L.LayerGroup();
+    poiLayers.searchLayer = new L.LayerGroup();
+    poiLayers.searchLayer.addTo(map);
     poiLayers.islandLayer = new L.LayerGroup();
     markers.islandMarkers = [];
     poiLayers.detailedIslandLayer = new L.LayerGroup();
@@ -114,7 +116,7 @@ var WAMap = (function () {
     // Search bar
     var controlSearch = new L.control.search({
       position:'topleft',
-      layer: poiLayers.islandLayer,
+      layer: poiLayers.searchLayer,
       textPlaceholder: 'Search Authors...',
       targetProperty: 'author',
       displayProperty: 'name',
@@ -640,7 +642,11 @@ var WAMap = (function () {
         zoomedMarker.bindPopup(popup, {minWidth: '320'});
         
         // Add searchable features to the marker
-        var feature = marker.feature = marker.feature || {};
+        options.icon = L.divIcon({ html: ' ', className: "search-marker"});
+        var searchMarker = new L.Marker([island.Y, island.X], options).addTo(poiLayers.searchLayer);
+        searchMarker.bindPopup(popup, { minWidth: '320' });
+
+        var feature = searchMarker.feature = searchMarker.feature || {};
         feature.type = feature.type || "Feature"; // Initialize feature.type
         var props = feature.properties = feature.properties || {}; // Initialize feature.properties
         props.name = island.Name;
