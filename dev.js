@@ -10,6 +10,7 @@ var WAMap = (function () {
   var prevZoom = -6;
   var nextZoom = 0;
   var points = {};
+  var hideWelcome = false;
 
   function init() {
     // Create the map container
@@ -24,6 +25,24 @@ var WAMap = (function () {
     
     // Set the renderer to render beyond the viewport to prevent weird half rendered polygons
     map.getRenderer(map).options.padding = 100;
+
+    // Check if there is a cookie to read
+    var allcookies = document.cookie;
+
+    // Get all the cookies pairs in an array
+    var cookiearray = allcookies.split(';');
+
+    // Now take key value pair out of this array
+    for (var i = 0; i < cookiearray.length; i++) {
+      var name = cookiearray[i].split('=')[0];
+      if (name[0] === ' ') {
+        name = name.substring(1);
+      }
+      if (name === 'hideWelcome') {
+        var value = cookiearray[i].split('=')[1];
+        hideWelcome = Boolean(value);
+      }
+    }
     
     // Async load the settings file
     $.ajax({
@@ -111,7 +130,19 @@ var WAMap = (function () {
     map.removeLayer(poiLayers.islandLayer);
     
     // Cursor coordinate display
-    L.control.mousePosition({separator: ',', lngFirst: true, numDigits: -1}).addTo(map);
+    L.control.mousePosition({ separator: ',', lngFirst: true, numDigits: -1 }).addTo(map);
+
+    if (hideWelcome === false) {
+      // Create the welcome message
+      var options = Object.assign({}, settings.islandOptions);
+      options.icon = L.divIcon();
+      options.opacity = 0;
+      // Create and add the marker to the island layer
+      var marker = new L.Marker([-10000, 0], options)
+        .addTo(map);
+      marker.bindPopup('<h1>Welcome!</h1>Here are a few tips on how to use the map:<ul><li>When you zoom in you can see the islands, zoom in further to see more information and eventually also screenshot thumbnails.</li><li>Click on any island marker to see all the information for that island, including ore qualities.</li><li>If you are trying to figure out where you are, use your scanner on the ground to find the author of the island, then click on the search button here in the top left to search for that author and get a list of all his islands.</li></ul><input id="hideCheckbox" type="checkbox" onClick="WAMap.onHideWelcome(this)">Don\'t show this message again.');
+      marker.openPopup();
+    }
 
     // Load the point data
     // Async Load and read the csv file
@@ -130,6 +161,9 @@ var WAMap = (function () {
   }
   
   function constructLegend(map) {
+    var options = Object.assign({}, settings.islandOptions);
+    options.radius = 8;
+
     var div = L.DomUtil.create('div', 'info legend');
     var container = document.createElement('div');
     var imageNode = document.createElement('img');
@@ -140,47 +174,74 @@ var WAMap = (function () {
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createTextNode('Altitudes:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.high, ShadeRgb(settings.colors.altitude.high)));
+    options.fillColor = rgb(settings.colors.altitude.high);
+    options.color = rgb(ShadeRgb(settings.colors.altitude.high));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('High'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.medium, ShadeRgb(settings.colors.altitude.medium)));
+    options.fillColor = rgb(settings.colors.altitude.medium);
+    options.color = rgb(ShadeRgb(settings.colors.altitude.medium));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Medium'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.altitude.low, ShadeRgb(settings.colors.altitude.low)));
+    options.fillColor = rgb(settings.colors.altitude.low);
+    options.color = rgb(ShadeRgb(settings.colors.altitude.low));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Low'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
     
     container.appendChild(document.createTextNode('Biome:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    options.fillColor = rgb(settings.colors.islands[1]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[1]));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Wilderness'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[2], ShadeRgb(settings.colors.islands[2])));
+    options.fillColor = rgb(settings.colors.islands[2]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[2]));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Expanse'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[3], ShadeRgb(settings.colors.islands[3])));
+    options.fillColor = rgb(settings.colors.islands[3]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[3]));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Remnants'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[4], ShadeRgb(settings.colors.islands[4])));
+    options.fillColor = rgb(settings.colors.islands[4]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[4]));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Badlands'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
 
     container.appendChild(document.createTextNode('Culture:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.saborian, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    options.fillColor = rgb(settings.colors.islands[1]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[1]));
+    container.appendChild(generateSvgImage('Saborian', options));
     container.appendChild(document.createTextNode('Saborian'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.kioki, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1])));
+    options.fillColor = rgb(settings.colors.islands[1]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[1]));
+    container.appendChild(generateSvgImage('Kioki', options));
     container.appendChild(document.createTextNode('Kioki'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
 
     container.appendChild(document.createTextNode('Info:'));
     container.appendChild(document.createElement('br'));
-    var respawnImage = generateSvgImage(settings.shapes.respawn, settings.colors.islands[1], ShadeRgb(settings.colors.islands[1]));
-    respawnImage.setAttribute('width', '30');
+    options.fillColor = rgb(settings.colors.islands[1]);
+    options.color = rgb(ShadeRgb(settings.colors.islands[1]));
+    options.radius = 16;
+    var respawnImage = generateSvgImage('respawner', options);
+    options.radius = 10;
+    var pathNode = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    pathNode.setAttribute('style', 'fill: ' + options.fillColor + '; stroke: '
+      + options.color + '; stroke-width:3px;');
+    pathNode.setAttribute('d', 'm 6,6 ' + createSVGpath("Saborian", options));
+    respawnImage.appendChild(pathNode);
+    respawnImage.setAttribute('width', '40');
     respawnImage.setAttribute('height', '30');
     respawnImage.setAttribute('viewBox', '0 0 30 30');
     container.appendChild(respawnImage);
@@ -197,16 +258,24 @@ var WAMap = (function () {
     
     container.appendChild(document.createTextNode('Walls:'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[1], settings.colors.walls[1]));
+    options.fillColor = rgb(settings.colors.walls[1]);
+    options.color = rgb(ShadeRgb(settings.colors.walls[1]));
+    container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('World Border'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[2], settings.colors.walls[2]));
+    options.fillColor = rgb(settings.colors.walls[2]);
+    options.color = rgb(ShadeRgb(settings.colors.walls[2]));
+    container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Windwall'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[3], settings.colors.walls[3]));
+    options.fillColor = rgb(settings.colors.walls[3]);
+    options.color = rgb(ShadeRgb(settings.colors.walls[3]));
+    container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Stormwall'));
     container.appendChild(document.createElement('br'));
-    container.appendChild(generateSvgImage(settings.shapes.wall, settings.colors.walls[4], settings.colors.walls[4]));
+    options.fillColor = rgb(settings.colors.walls[4]);
+    options.color = rgb(ShadeRgb(settings.colors.walls[4]));
+    container.appendChild(generateSvgImage('wall', options));
     container.appendChild(document.createTextNode('Sandstorm'));
     container.appendChild(document.createElement('br'));
     container.appendChild(document.createElement('br'));
@@ -215,16 +284,16 @@ var WAMap = (function () {
     return div;
   }
 
-  function generateSvgImage(shape, fillcolor, strokecolor) {
+  function generateSvgImage(shape, options) {
     var svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svgNode.setAttribute('width', '20');
     svgNode.setAttribute('height', '20');
     svgNode.setAttribute('viewBox', '0 0 20 20');
     svgNode.setAttribute('class', 'svgImage');
     var pathNode = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    pathNode.setAttribute('style', 'fill: ' + rgb(fillcolor) + '; stroke: '
-      + rgb(strokecolor) + '; stroke-width:3px;');
-    pathNode.setAttribute('d', shape);
+    pathNode.setAttribute('style', 'fill: ' + options.fillColor + '; stroke: '
+      + options.color + '; stroke-width:3px;');
+    pathNode.setAttribute('d', createSVGpath(shape,options));
     svgNode.appendChild(pathNode);
     return svgNode;
   }
@@ -708,6 +777,13 @@ var WAMap = (function () {
     }
   }
 
+  function onHideWelcome(e) {
+    // Write a cooky to store preference
+    var d = new Date();
+    d.setTime(d.getTime() + (3600 * 24 * 60 * 60 * 1000));
+    document.cookie = 'hideWelcome=' + e.checked + ';expires=' + d.toUTCString() + ';';
+  }
+
   // RGB helper functions
   function rgb(rgbarray) {
     rgbarray[0] = Math.floor(rgbarray[0]);
@@ -734,8 +810,21 @@ var WAMap = (function () {
 
   // Creates a divIcon containing a custom SVG icon
   function createSVGicon(shape, options, classname) {
+    var path = createSVGpath(shape, options);
+
+    var iconSize = (options.radius + options.width) * 2;
+    var svgElement = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='" + iconSize + "' height='" + iconSize + "'><path stroke='" + options.color + "' stroke-width='" + options.width + "' fill='" + options.fillColor + "' d='" + path + "'/></svg>";
+    var svgIcon = L.divIcon({
+      html: svgElement,
+      className: classname,
+      iconSize: [iconSize,iconSize]
+    });
+    return svgIcon;
+  }
+
+  function createSVGpath(shape, options) {
     var s = options.radius;
-    var d = "M " + options.width + "," + options.width;
+    var d = "m " + options.width + "," + options.width;
 
     if (shape === "Saborian") {
       d = d
@@ -765,15 +854,11 @@ var WAMap = (function () {
         + " c " + (s * (14 / 29)) + "," + (s * (3 / 29)) + " " + (s * (40 / 29)) + "," + (s * (3 / 29)) + " " + (s * (54 / 29)) + "," + (0)
         + " z";
     }
-
-    var iconSize = (s + options.width) * 2;
-    var svgElement = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='" + iconSize + "' height='" + iconSize + "'><path stroke='" + options.color + "' stroke-width='" + options.width + "' fill='" + options.fillColor + "' d='" + d + "'/></svg>";
-    var svgIcon = L.divIcon({
-      html: svgElement,
-      className: classname,
-      iconSize: [iconSize,iconSize]
-    });
-    return svgIcon;
+    if (shape === "wall") {
+      d = d
+        + "l " + (s * 2) + "," + (s * 2);
+    }
+    return d;
   }
 
   // Start the app
@@ -781,5 +866,6 @@ var WAMap = (function () {
 
   return {
       // Pass on any pubic function here
+      onHideWelcome: onHideWelcome
   };
 }());
